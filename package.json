@@ -1,0 +1,39 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "UI for Oar",
+  "main": "index.jsx",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server --mode development ./src/index.jsx --output ./dist/main.js --watch --open",
+    "prod": "webpack --mode production"
+  },
+  "author": "venkata mutyala",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "btoa": "^1.2.1",
+    "css-loader": "^1.0.0",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "html-webpack-plugin": "^3.2.0",
+    "node-sass": "^4.9.4",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.9"
+  },
+  "dependencies": {
+    "govuk-frontend": "^2.2.0",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-redux": "^5.0.7",
+    "react-redux-loading-bar": "^4.0.8",
+    "react-responsive-navbar": "^1.0.11",
+    "redux": "^4.0.1",
+    "server": "^1.0.18"
+  }
+}
