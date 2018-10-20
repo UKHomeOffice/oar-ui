@@ -1,42 +1,55 @@
 import React, { Component } from 'react';
+import 'react-tabs/style/react-tabs.css';
+import 'govuk-frontend/all.scss';
+import '../../../public/styles/oarstyle.scss';
 
-import "../../../../public/styles/govuk-frontend.css"
+import { Tabs } from 'govuk-frontend';
+// const GOVUKFrontend = require('govuk-frontend')
+// GOVUKFrontend.initAll()
+// import { initAll } from 'govuk-frontend';
+// initAll()
 
-class Shift extends Component {
-    render() {
-      console.log('====== in Shift component')
-      return (
-        <div className="App">
-        <div class="govuk-width-container">
-                <div class="grid-row">
-
-        <div class="govuk-grid-column-two-thirds govuk-section-break--xl">
-        <main role="main" id="govuk-width-container" class="govuk-width-container" lang="en">
-
-        <p class="govuk-heading-l">Operational activity reporting</p>
-        <p class="govuk-label--l"> Shift Home</p>
-        <p class="govuk-label--m"><a href="#">Wednesday 20 October 2018</a></p>
-        <p class="govuk-label"> DS02F1 - Dover</p>
-        <hr/>
-
-        <p class="govuk-label--m"><a href="#">Wednesday 20 October 2018</a></p>
-        <p class="govuk-label"> DS02F1 - Dover</p>
-
-        <hr/>
-        <p>
-        <button class="govuk-button" type="submit">Add shift</button>
-        </p>
-
-        </main>
-
-        </div>
-
-        </div>
-        </div>
-
-        </div>
-      );
-    }
+class ShiftHome extends Component {
+  constructor() {
+    super();
+    this.state = { tabIndex: 0 };
   }
-  
-  export default Shift
+  render() {
+    return (
+      <div >
+      <div className="govuk-tabs" data-module="tabs">
+  <h2 className="govuk-tabs__title">
+    Contents
+  </h2>
+
+  <ul className="govuk-tabs__list">
+    <li className="govuk-tabs__list-item">
+      <a className="govuk-tabs__tab govuk-tabs__tab--selected" href="#past-day">
+        Past day
+      </a>
+    </li>
+    <li className="govuk-tabs__list-item">
+      <a className="govuk-tabs__tab" href="#past-week">
+        Past week
+      </a>
+    </li>
+    <li className="govuk-tabs__list-item">
+      <a className="govuk-tabs__tab" href="#past-month">
+        Past month
+      </a>
+    </li>
+    <li className="govuk-tabs__list-item">
+      <a className="govuk-tabs__tab" href="#past-year">
+        Past year
+      </a>
+    </li>
+  </ul>
+
+</div>
+
+      </div>
+      
+    );
+  }
+}
+export default ShiftHome
