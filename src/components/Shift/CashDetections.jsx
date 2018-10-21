@@ -4,8 +4,8 @@ import 'govuk-frontend/all.scss';
 import { Tabs } from 'govuk-frontend';
 // const GOVUKFrontend = require('govuk-frontend')
 // GOVUKFrontend.initAll()
-// import { initAll } from 'govuk-frontend';
-// initAll()
+import { initAll } from 'govuk-frontend';
+initAll()
 
 class CashDetections extends Component {
   componentWillMount() {
@@ -164,7 +164,7 @@ onChange(event) {
     <span id="how-contacted-conditional-hint" className="govuk-hint">
     Form of currency
     </span>
-    <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+    <div className="govuk-radios govuk-radios--conditional" data-module="radios">
 
       <div className="govuk-radios__item">
         <input className="govuk-radios__input" id="how-contacted-conditional-1" name="how-contacted" type="radio" value="email" data-aria-controls="conditional-how-contacted-conditional-1"/>
@@ -185,22 +185,125 @@ onChange(event) {
           Other form of currency
           </label>
           <select className="govuk-select govuk-input--width-m" id="select-box" name="select-box" width="100%" onChange={this.onChange.bind(this)}>>
-          {this.populateDropdowns(currency)}
+          {this.populateDropdowns(othercurrency)}
           </select>
         </div>
       </div>
+      <div className="govuk-form-group">
+          <label className="govuk-label" for="contact-by-email">
+          Currency
+          </label>
+          <select className="govuk-select govuk-input--width-m" id="select-box" name="select-box" width="100%" onChange={this.onChange.bind(this)}>>
+          {this.populateDropdowns(currency)}
+          </select>
       </div>
+    
+    <div className="govuk-form-group">
+    <label className="govuk-label" for="select-box">Amount</label>
+    <span id="dob-hint" className="govuk-hint">
+    In the selected currency and must not include pence or cents. For example, 12000
+    </span>
+    <input className="govuk-input govuk-input--width-20" id="ni-number" type="text" name="ni-number"/>
+    </div>   
+
+
+    <div className="govuk-form-group">
+    <label className="govuk-label" for="select-box">Agency detection was referred to
+    </label>
+    <div className="govuk-checkboxes">
+      <div className="govuk-checkboxes__item">
+        <input className="govuk-checkboxes__input" id="waste-1" name="waste" type="checkbox" value="carcasses"/>
+        <label className="govuk-label govuk-checkboxes__label" for="waste-1">
+        Charity Commission
+        </label>
+      </div>
+      <div className="govuk-checkboxes__item">
+        <input className="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines"/>
+        <label className="govuk-label govuk-checkboxes__label" for="waste-2">
+        DWP
+        </label>
+      </div>
+      <div className="govuk-checkboxes__item">
+        <input className="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm"/>
+        <label className="govuk-label govuk-checkboxes__label" for="waste-3">
+        HMRC
+        </label>
+      </div>
+
+
+     <div className="govuk-checkboxes__item">
+        <input className="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines"/>
+        <label className="govuk-label govuk-checkboxes__label" for="waste-2">
+        NCA
+        </label>
+      </div>
+      <div className="govuk-checkboxes__item">
+        <input className="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm"/>
+        <label className="govuk-label govuk-checkboxes__label" for="waste-3">
+        Police / Special Branch
+        </label>
+      </div>
+ <div className="govuk-radios govuk-radios--conditional" data-module="radios">
+      <div className="govuk-radios__item">
+        <input className="govuk-radios__input" id="how-contacted-conditional-1" name="how-contacted" type="radio" value="email" data-aria-controls="conditional-how-contacted-conditional-1"/>
+        <label className="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
+          Other
+        </label>
+      </div>
+      <div className="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-1">
+        <div className="govuk-form-group">
+          <label className="govuk-label" for="contact-by-email">
+          Agency
+          </label>
+          <select className="govuk-select govuk-input--width-m" id="select-box" name="select-box" width="100%" onChange={this.onChange.bind(this)}>>
+          {this.populateDropdowns(othercurrency)}
+          </select>
+        </div>
+        </div>
+        </div>
+
+
+<p>
+<label className="govuk-label" for="select-box"> Seized</label>
+ <div className="govuk-radios govuk-radios--inline">
+      <div className="govuk-radios__item">
+        <input className="govuk-radios__input" id="changed-name-1" name="changed-name" type="radio" value="yes"/>
+        <label className="govuk-label govuk-radios__label" for="changed-name-1">
+          Yes
+        </label>
+      </div>
+      <div className="govuk-radios__item">
+        <input className="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no"/>
+        <label className="govuk-label govuk-radios__label" for="changed-name-2">
+          No
+        </label>
+      </div>
+ </div>
+ </p>
+
+
+    </div>
+
+    </div>   
+
+    </div>
+   
+
+
       </div>
 
 
 
+      
 
 {/* OVERRIDES:_ govuk-\!-font-size-36 */}
 
 <p>
 <div className="govuk-grid-row govuk-!-margin-top-9">
 <div className="govuk-grid-column-one-quarter">
-<button className="govuk-button" type="submit">Save</button>
+<a href="http://localhost:4001/agencydetails" role="button" draggable="false" className="govuk-button">
+  Continue
+</a>
 
 </div>
 <div className="govuk-grid-column-one-quarter govuk-!-margin-top-2">

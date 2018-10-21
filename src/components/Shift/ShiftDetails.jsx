@@ -97,8 +97,11 @@ class ShiftDetails extends Component {
               <h2 className="govuk-heading-l govuk-!-margin-top-5">Cash detections</h2>
               <label className="govuk-label" for="select-box">
                         No cash detections added to this shift</label>
-              <button className="govuk-button govuk-!-margin-top-5" type="submit"> Add a cash detection</button>
+              <a href="http://localhost:4001/cashdetections" role="button" draggable="false" className="govuk-button">
+              Add a cash detection
+              </a>
               </TabPanel>
+              
 
               <TabPanel>
               <h2 className="govuk-heading-l">Shift details</h2>

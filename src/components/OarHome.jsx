@@ -66,20 +66,18 @@ return      <div className="App">
 <label className="govuk-!-margin-left-3"><a href="#">Sign out</a> </label>
 
 
-<p className="govuk-label--m"><a href="#">Wednesday 20 October 2018</a></p>
+<p className="govuk-label--m"><a href="http://localhost:4001/shiftdetails">Wednesday 20 October 2018</a></p>
 <p className="govuk-label"> DS02F1 - Dover</p>
 <hr/>
 
-<p className="govuk-label--m"><a href="#">Wednesday 20 October 2018</a></p>
+<p className="govuk-label--m"><a href="http://localhost:4001/shiftdetails">Wednesday 20 October 2018</a></p>
 <p className="govuk-label"> DS02F1 - Dover</p>
 
 <hr/>
 
-<p>
-<button className="govuk-button" type="submit">Add shift</button>
-</p>
-
-
+<a href="http://localhost:4001/createshift" role="button" draggable="false" className="govuk-button">
+Add shift
+</a>
 
 
 </main>
@@ -93,14 +91,5 @@ return      <div className="App">
 }
 }
 
-
-// const mapDispatchToProps = dispatch => bindActionCreators({
-//     resetError: () => dispatch({type: errorActionTypes.RESET_ERROR})
-// }, dispatch);
-
-
-// export default withRouter(connect((state) => {
-//     return {}
-// }, mapDispatchToProps)(OarHome))
 
 export default OarHome

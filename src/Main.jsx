@@ -6,6 +6,7 @@ import StartPage from './components/StartPage';
 import ShiftDetails from './components/Shift/ShiftDetails';
 import ShiftHome from './components/Shift/ShiftHome';
 import CashDetections from './components/Shift/CashDetections';
+import AgencyDetails from './components/Shift/AgencyDetails';
 
 const Main = () => (
     <main>
@@ -28,7 +29,10 @@ const Main = () => (
             )}/>  
              <Route name="cashdetections" exact path="/cashdetections" render={() => (
                 <CashDetections/>
-            )}/>                  
+            )}/>  
+             <Route name="agencydetails" exact path="/agencydetails" render={() => (
+                <AgencyDetails/>
+            )}/>                             
             <Redirect to="/home"/>
         </Switch>
         </BrowserRouter>

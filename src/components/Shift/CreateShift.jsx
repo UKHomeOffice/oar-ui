@@ -182,7 +182,9 @@ class CreateShift extends Component {
 <p>
 <div className="govuk-grid-row govuk-!-margin-top-9">
 <div className="govuk-grid-column-one-quarter">
-<button className="govuk-button" type="submit">Save</button>
+<a href="http://localhost:4001/oarhome" role="button" draggable="false" className="govuk-button">
+ Save
+</a>
 
 </div>
 <div className="govuk-grid-column-one-quarter govuk-!-margin-top-2">
