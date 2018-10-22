@@ -6,6 +6,8 @@ import ResponsiveMenu from 'react-responsive-navbar';
 import * as errorActionTypes from '../error/actionTypes';
 import {bindActionCreators} from "redux";
 import PubSub from "pubsub-js";
+import '../../public/styles/oarstyle.scss';
+import 'govuk-frontend/all.scss';
 
 class Header extends React.Component {
 

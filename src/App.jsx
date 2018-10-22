@@ -8,12 +8,15 @@ const App = () => (
     <div>
         <Header/>
         <SubmissionBanner />
+    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+    
         <div className="container" style={{paddingTop : '20px', height:'100vh'}}>
+        
 
             <Main/>
-        </div>
+        </div> 
 
-        <Footer/>
+        {/* <Footer/> */}
     </div>
 );
 

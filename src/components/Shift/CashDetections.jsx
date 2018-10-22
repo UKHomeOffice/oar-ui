@@ -50,6 +50,20 @@ onChange(event) {
  this.setState({typed: event.target.value});
  this.setState({regionArr: this.getNextArr(event.target.value)});
 }
+
+ onClickFunc() {
+ alert("=======" );
+   //var elemnt = document.getElementById("other-agency");
+  // alert("=======" + elemnt.id);
+  // alert("=======" + elemnt.style.display);
+
+ /// x.style.display = 'block';
+//elemnt.classList.add('is-visible');
+//  this.setState({typed: event.target.value});
+//  this.setState({regionArr: this.getNextArr(event.target.value)});
+}
+
+
   render() {
    const teams = ['Select:', 'DS0201 - Team1', 'DS0202 - Team2', 'DS0203 - Team3',];
    const locations = ['Select:', 'Location1', 'Location2', 'Location3'];
@@ -161,25 +175,25 @@ onChange(event) {
  </p>
 
 
-    <span id="how-contacted-conditional-hint" className="govuk-hint">
+    <span id="formofcurrency-conditional-hint" className="govuk-hint">
     Form of currency
     </span>
     <div className="govuk-radios govuk-radios--conditional" data-module="radios">
 
       <div className="govuk-radios__item">
-        <input className="govuk-radios__input" id="how-contacted-conditional-1" name="how-contacted" type="radio" value="email" data-aria-controls="conditional-how-contacted-conditional-1"/>
-        <label className="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
+        <input className="govuk-radios__input" id="formofcurrency-conditional-1" name="formofcurrency" type="radio" value="email" data-aria-controls="conditional-formofcurrency-conditional-1"/>
+        <label className="govuk-label govuk-radios__label" for="formofcurrency-conditional-1">
         Cash
         </label>
       </div>
     <div className="govuk-radios govuk-radios--conditional" data-module="radios">
       <div className="govuk-radios__item">
-        <input className="govuk-radios__input" id="how-contacted-conditional-1" name="how-contacted" type="radio" value="email" data-aria-controls="conditional-how-contacted-conditional-1"/>
-        <label className="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
+        <input className="govuk-radios__input" id="formofcurrency-conditional-1" name="formofcurrency" type="radio" value="email" data-aria-controls="conditional-formofcurrency-conditional-1" aria-expanded="false"/>
+        <label className="govuk-label govuk-radios__label" for="formofcurrency-conditional-1">
           Other
         </label>
       </div>
-      <div className="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-1">
+      <div className="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-formofcurrency-conditional-1">
         <div className="govuk-form-group">
           <label className="govuk-label" for="contact-by-email">
           Other form of currency
@@ -245,12 +259,13 @@ onChange(event) {
       </div>
  <div className="govuk-radios govuk-radios--conditional" data-module="radios">
       <div className="govuk-radios__item">
-        <input className="govuk-radios__input" id="how-contacted-conditional-1" name="how-contacted" type="radio" value="email" data-aria-controls="conditional-how-contacted-conditional-1"/>
+      {/* <input className="govuk-radios__input" id="how-contacted-conditional-1" name="how-contacted" type="radio" value="email" data-aria-controls="other-agency" onClick={this.onClickFunc.bind(document.getElementById("other-agency"))}/> */}
+      <input className="govuk-radios__input" id="how-contacted-conditional-1" name="how-contacted" type="radio" value="email" data-aria-controls="other-agency" onclick="onClickFunc()"/>
         <label className="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
           Other
         </label>
       </div>
-      <div className="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-1">
+      <div className="govuk-radios__conditional govuk-radios__conditional--hidden hide-conditional" id="other-agency">
         <div className="govuk-form-group">
           <label className="govuk-label" for="contact-by-email">
           Agency

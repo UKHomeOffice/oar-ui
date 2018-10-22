@@ -18,11 +18,9 @@ return      <div className="App">
 <p className="govuk-label"> Use this service to:</p>
 
 <ul className="govuk-list govuk-list--bullet govuk-!-margin-top-5">
-    <li>Service 1</li>
-    <li>Service 2</li>
-    <li>Service 3</li>
-    <li>Service 4</li>
-    <li>Service 5</li>
+    <li>submit end of shift activities and cash detections</li>
+    <li>submit CT referrals</li>
+    <li>generate reports</li>
 </ul>
 
 <a href="#" role="button" className="govuk-button govuk-button--start">

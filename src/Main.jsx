@@ -7,6 +7,9 @@ import ShiftDetails from './components/Shift/ShiftDetails';
 import ShiftHome from './components/Shift/ShiftHome';
 import CashDetections from './components/Shift/CashDetections';
 import AgencyDetails from './components/Shift/AgencyDetails';
+import Activity_PCP from './components/Shift/Activity_PCP';
+//import ActivityIntTradeCheck from './components/Shift/ActivityIntTradeCheck';
+
 
 const Main = () => (
     <main>
@@ -32,7 +35,14 @@ const Main = () => (
             )}/>  
              <Route name="agencydetails" exact path="/agencydetails" render={() => (
                 <AgencyDetails/>
-            )}/>                             
+            )}/>  
+             <Route name="activity_pcp" exact path="/activity_pcp" render={() => (
+                <Activity_PCP/>
+            )}/> 
+             {/* <Route name="activityinttradecheck" exact path="/activityinttradecheck" render={() => (
+                <ActivityIntTradeCheck />
+            )}/>    */}
+
             <Redirect to="/home"/>
         </Switch>
         </BrowserRouter>

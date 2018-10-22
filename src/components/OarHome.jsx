@@ -55,15 +55,9 @@ return      <div className="App">
 
 <p className="govuk-heading-l">Operational activity reporting</p>
 
-
-{/* <div className="govuk-grid-row">
-<div className="govuk-grid-column-one-quarter"> Signed in as  </div>
-<div className="govuk-grid-column-one-quarter govuk-\!-font-weight-bold display: inline-block">  Gillian Armstrong. </div>
-<div className="govuk-grid-column-one-quarter">  Sign out </div>
-</div> */}
-
-<label>Signed in as</label><label className="govuk-label--s"> Gillian Armstrong.</label>
-<label className="govuk-!-margin-left-3"><a href="#">Sign out</a> </label>
+<div className="govuk-label govuk-!-display-inline"> Signed in as</div>
+<div className="govuk-label--s govuk-!-display-inline"> Gillian Armstrong.</div>
+<div className="govuk-label govuk-!-margin-left-3 govuk-!-display-inline"><a href="#">Sign out</a> </div>
 
 
 <p className="govuk-label--m"><a href="http://localhost:4001/shiftdetails">Wednesday 20 October 2018</a></p>

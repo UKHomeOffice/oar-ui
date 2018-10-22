@@ -111,7 +111,7 @@ class CreateShift extends Component {
     <label className="govuk-label" for="select-box">Region</label>
     </p>
     <p>
-    <select className="govuk-select govuk-input--width-m" id="select-box" name="select-box" width="100%" onChange={this.onChange.bind(this)}>>
+    <select className="govuk-select govuk-input--width-m" id="select-box" name="select-box" width="100%" onChange={this.onChange.bind(this)} >
     {this.populateDropdowns(locations)}
     </select>
    </p>
@@ -124,6 +124,33 @@ class CreateShift extends Component {
     {this.populateDropdowns(this.state.regionArr)}
     </select>
    </p>
+
+
+
+
+<p>
+<label className="govuk-label" for="select-box"> Shift type </label>
+ <div className="govuk-radios govuk-radios--inline">
+      <div className="govuk-radios__item">
+        <input className="govuk-radios__input" id="changed-name-1" name="changed-name" type="radio" value="yes"/>
+        <label className="govuk-label govuk-radios__label" for="changed-name-1">
+        Early
+        </label>
+      </div>
+      <div className="govuk-radios__item">
+        <input className="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no"/>
+        <label className="govuk-label govuk-radios__label" for="changed-name-2">
+          Late
+        </label>
+      </div>
+      <div className="govuk-radios__item">
+        <input className="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no"/>
+        <label className="govuk-label govuk-radios__label" for="changed-name-2">
+          Night
+        </label>
+      </div>
+ </div>
+ </p>
 
 
    <p className="govuk-label--m"> Staff details</p>
