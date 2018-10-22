@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 
-import "../../../../public/styles/govuk-frontend.css"
-
-class Shift extends Component {
+class EditShift extends Component {
     render() {
       console.log('====== in Shift component')
       return (
@@ -41,4 +39,4 @@ class Shift extends Component {
     }
   }
   
-  export default Shift
+  export default EditShift

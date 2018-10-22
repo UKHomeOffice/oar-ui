@@ -5,10 +5,9 @@ import {bindActionCreators} from "redux";
 class CreateShift extends Component {
 
   componentWillMount() {
-    console.log("bbbbbbbbb===componentWillMount");
        this.state = {
         routerPath: '',
-        typed: 'Venkata',
+        typed: '',
         regionArr: ['Select:']
     }
   }
@@ -56,10 +55,10 @@ class CreateShift extends Component {
       return (
         <div className="App">
           <div className="govuk-width-container">
-          <div class="govuk-grid-row">
+          <div className="govuk-grid-row">
 
           <div className="govuk-grid-column-two-thirds">
-          <a href="#" class="govuk-back-link">Back</a>
+          <a href="#" className="govuk-back-link">Back</a>
           <main role="main" id="govuk-width-container" className="govuk-width-container" lang="en">
 
           <p className="govuk-label--xl">Add Shift</p>
@@ -128,103 +127,7 @@ class CreateShift extends Component {
 
 
    <p className="govuk-label--m"> Staff details</p>
-   {/* <p className="govuk-label--s"> Border Force Higher Officers (BFHO)</p> */}
-
-
-{/* <p>
- <label className="govuk-label" for="ni-number">
- Number of officers
-  </label>
-  <input className="govuk-input govuk-input--width-5" id="ni-number" type="text" name="ni-number"/>
-
-<label className="govuk-label" for="ni-number">
-Total hours worked
-  </label>
-  <input className="govuk-input govuk-input--width-5" id="ni-number" type="text" name="ni-number"/>
-  </p> */}
-
-
-{/* <table class="govuk-table"> 
-
-  <tbody class="govuk-table__body">
-
-
-     <tr class="govuk-table__row govuk-grid-column-full">
-      <td class="govuk-table__cell govuk-grid-column-full">    
-      <p className="govuk-label--s">Border Force Higher Officers (BFHO)</p>
-      </td>
-     </tr>
-
-
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell">    
-      <label className="govuk-label" for="select-box">Number of officers</label>
-      </td>
-      <td class="govuk-table__cell">    
-      <label className="govuk-label" for="select-box">Total hours worked</label>
-      </td>
-     </tr>
-
-    <tr class="govuk-table__row">
-       <td class="govuk-table__cell">
-       <input className="govuk-input govuk-input--width-5" id="ni-number" type="text" name="ni-number"/>
-      </td>
-      <td class="govuk-table__cell">
-      <input className="govuk-input govuk-input--width-5" id="ni-number" type="text" name="ni-number"/>
-      </td>
-    </tr>
-
-    <tr class="govuk-table__row govuk-grid-column-full">
-      <td class="govuk-table__cell govuk-grid-column-full">    
-      <p className="govuk-label--s">Border Force Higher Officers (BFHO)</p>
-      </td>
-     </tr>
-
-
-     <tr class="govuk-table__row">
-      <td class="govuk-table__cell">    
-      <label className="govuk-label" for="select-box">Number of officers</label>
-      </td>
-      <td class="govuk-table__cell">    
-      <label className="govuk-label" for="select-box">Total hours worked</label>
-      </td>
-     </tr>
-    <tr class="govuk-table__row">
-       <td class="govuk-table__cell">
-       <input className="govuk-input govuk-input--width-5" id="ni-number" type="text" name="ni-number"/>
-      </td>
-      <td class="govuk-table__cell">
-      <input className="govuk-input govuk-input--width-5" id="ni-number" type="text" name="ni-number"/>
-      </td>
-    </tr>
-
-     <tr class="govuk-table__row govuk-grid-column-full">
-      <td class="govuk-table__cell govuk-grid-column-full">    
-      <p className="govuk-label--s">Border Force Higher Officers (BFHO)</p>
-      </td>
-     </tr>
-
-     <tr class="govuk-table__row">
-      <td class="govuk-table__cell">    
-      <label className="govuk-label" for="select-box">Number of officers</label>
-      </td>
-      <td class="govuk-table__cell">    
-      <label className="govuk-label" for="select-box">Total hours worked</label>
-      </td>
-     </tr>
-    <tr class="govuk-table__row">
-       <td class="govuk-table__cell">
-       <input className="govuk-input govuk-input--width-5" id="ni-number" type="text" name="ni-number"/>
-      </td>
-      <td class="govuk-table__cell">
-      <input className="govuk-input govuk-input--width-5" id="ni-number" type="text" name="ni-number"/>
-      </td>
-    </tr>
-
-  </tbody>
-
-</table> */}
-
+ 
 <label className="govuk-label--s govuk-!-padding-top-9" for="select-box">Border Force Higher Officers (BFHO)</label>
 <p>
 <div className="govuk-grid-row">
@@ -279,7 +182,9 @@ Total hours worked
 <p>
 <div className="govuk-grid-row govuk-!-margin-top-9">
 <div className="govuk-grid-column-one-quarter">
-<button className="govuk-button" type="submit">Save</button>
+<a href="http://localhost:4001/oarhome" role="button" draggable="false" className="govuk-button">
+ Save
+</a>
 
 </div>
 <div className="govuk-grid-column-one-quarter govuk-!-margin-top-2">
