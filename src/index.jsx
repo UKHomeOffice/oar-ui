@@ -6,11 +6,6 @@ import App from './App';
 import {BrowserRouter} from 'react-router-dom'
 import {Provider} from 'react-redux';
 import ScrollToTop from "./components/ScrollToTop";
-//const tabsjs = require('../public/styles/tabs.js');
-//import '../public/styles/tabs.js';
-
-{/* <script src='../public/styles/tabs.js'/> */}
-
 
   ReactDOM.render(
             <App/>

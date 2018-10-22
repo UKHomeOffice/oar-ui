@@ -11,7 +11,7 @@ import Activity_PCP from './components/Shift/Activity_PCP';
 //import ActivityIntTradeCheck from './components/Shift/ActivityIntTradeCheck';
 
 
-const Main = () => (
+const Main = () => ( 
     <main>
         <BrowserRouter>
         <Switch onUpdate={() => window.scrollTo(0, 0)}>

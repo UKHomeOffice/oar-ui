@@ -259,13 +259,13 @@ onChange(event) {
       </div>
  <div className="govuk-radios govuk-radios--conditional" data-module="radios">
       <div className="govuk-radios__item">
-      {/* <input className="govuk-radios__input" id="how-contacted-conditional-1" name="how-contacted" type="radio" value="email" data-aria-controls="other-agency" onClick={this.onClickFunc.bind(document.getElementById("other-agency"))}/> */}
-      <input className="govuk-radios__input" id="how-contacted-conditional-1" name="how-contacted" type="radio" value="email" data-aria-controls="other-agency" onclick="onClickFunc()"/>
+      {/* <input className="govuk-radios__input" id="how-contacted-conditional-1" name="how-contacted" type="radio" value="email" data-aria-controls="other-agency" onClick={this.onClickFunc.bind(this, "other-agency"))}/> */}
+      <input className="govuk-radios__input" id="how-contacted-conditional-1" name="how-contacted" type="radio" value="email" data-aria-controls="other-agency" onClick="onClickFunc()"/>
         <label className="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
           Other
         </label>
       </div>
-      <div className="govuk-radios__conditional govuk-radios__conditional--hidden hide-conditional" id="other-agency">
+      <div className="govuk-radios__conditional govuk-radios__conditional--hidden" id="other-agency">
         <div className="govuk-form-group">
           <label className="govuk-label" for="contact-by-email">
           Agency

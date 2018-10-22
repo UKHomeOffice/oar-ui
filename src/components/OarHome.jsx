@@ -57,7 +57,7 @@ return      <div className="App">
 
 <div className="govuk-label govuk-!-display-inline"> Signed in as</div>
 <div className="govuk-label--s govuk-!-display-inline"> Gillian Armstrong.</div>
-<div className="govuk-label govuk-!-margin-left-3 govuk-!-display-inline"><a href="#">Sign out</a> </div>
+<div className="govuk-label govuk-!-margin-left-3 govuk-!-display-inline"><a href="http://localhost:4001/startpage">Sign out</a> </div>
 
 
 <p className="govuk-label--m"><a href="http://localhost:4001/shiftdetails">Wednesday 20 October 2018</a></p>

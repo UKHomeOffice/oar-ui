@@ -111,7 +111,7 @@ class AgencyDetails extends Component {
 <p>
 <div className="govuk-grid-row govuk-!-margin-top-9">
 <div className="govuk-grid-column-one-quarter">
-<a href="#" role="button" draggable="false" className="govuk-button">
+<a href="http://localhost:4001/shiftdetails" role="button" draggable="false" className="govuk-button">
   Continue
 </a>
 
