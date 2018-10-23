@@ -4,8 +4,9 @@
   "description": "Centralised public UI for submissions",
   "author": "",
   "license": "",
+  
   "scripts": {
-    "dev": "webpack-dev-server --config webpack.config.js --watch --colors",
+    "dev": "webpack-dev-server --config webpack.config.js --watch --colors --host 0.0.0.0",
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.js"
   },
   "devDependencies": {
