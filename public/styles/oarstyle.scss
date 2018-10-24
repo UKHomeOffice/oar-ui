@@ -1,6 +1,8 @@
-.govuk-input--width-m {
-   width: 40ex; }
-  
+.govuk-input--width-s {
+  width: 10ex; }
+  .govuk-input--width-m {
+    width: 40ex; }
+   
 .footer-pos {
    position: absolute;
    bottom:0;
@@ -8,4 +10,36 @@
 .body-pos {
    padding-bottom:30px;
    position: relative;
+}
+
+.hide-conditional {
+  display: none; }
+
+
+.multiple-choice--hod [type=radio] + label::before {
+  width: 24px;
+  height: 24px;
+}
+
+.multiple-choice--hod [type=radio] + label::after {
+  border: 7px solid;
+  top: 7px;
+  left: 7px;
+}
+
+
+.multiple-choice--hod {
+  .multiple-choice {
+    padding-top: 1px;
+    padding-bottom: 2px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .multiple-choice--hod {
+    .multiple-choice {
+      margin-bottom: 15px;
+      padding-top: 4px;
+    }
+  }
 }

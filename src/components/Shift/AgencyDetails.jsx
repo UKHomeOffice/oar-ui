@@ -6,6 +6,7 @@ import { Tabs } from 'govuk-frontend';
 // GOVUKFrontend.initAll()
 // import { initAll } from 'govuk-frontend';
 // initAll()
+import '../../../public/styles/oarstyle.scss';
 
 class AgencyDetails extends Component {
   
@@ -16,6 +17,7 @@ class AgencyDetails extends Component {
     
 
       <div className="App">
+      
       <div className="govuk-width-container">
       <div className="govuk-grid-row">
 
@@ -31,7 +33,7 @@ class AgencyDetails extends Component {
       
 <div className="govuk-form-group">
 <fieldset className="govuk-fieldset" aria-describedby="dob-hint" role="group">
-<p>
+ <p>
 <label className="govuk-label" for="select-box"> Did DWP adopt the cash detection?
 </label>
 
@@ -105,12 +107,11 @@ class AgencyDetails extends Component {
 
       
 
-{/* OVERRIDES:_ govuk-\!-font-size-36 */}
 
 <p>
 <div className="govuk-grid-row govuk-!-margin-top-9">
 <div className="govuk-grid-column-one-quarter">
-<a href="#" role="button" draggable="false" className="govuk-button">
+<a href="http://localhost:4001/shiftdetails" role="button" draggable="false" className="govuk-button">
   Continue
 </a>
 
@@ -119,7 +120,7 @@ class AgencyDetails extends Component {
 <label className="govuk-label--s"><a href="#">Cancel</a></label>
 </div>
 </div>
-</p>
+</p> 
 
 </fieldset>
 
@@ -132,7 +133,7 @@ class AgencyDetails extends Component {
 
 </div>
 </div>
-<div className="govuk-form-group">
+{/* <div className="govuk-form-group">
   <fieldset className="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
     <legend className="govuk-fieldset__legend govuk-fieldset__legend--xl">
       <h1 className="govuk-fieldset__heading">
@@ -190,8 +191,53 @@ class AgencyDetails extends Component {
       </div>
     </div>
   </fieldset>
-</div>
+</div> */}
+{/* <div className="govuk-form-group">
+<fieldset className="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
+    <legend className="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      <h1 className="govuk-fieldset__heading">
+        How would you prefer to be contacted?
+      </h1>
+    </legend>
+    <span id="how-contacted-conditional-hint" className="govuk-hint">
+      Select one option.
+    </span>
+    <div className="govuk-radios govuk-radios--conditional" data-module="radios">
+      <div className="govuk-radios__item">
+        <input className="govuk-radios__input" id="how-contacted-conditional-1" name="how-contacted" type="radio" value="email" data-aria-controls="conditional-how-contacted-conditional-1"/>
+        <label className="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
+          Email
+        </label>
+      </div>
+      <div className="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-1">
+        <div className="govuk-form-group">
+          <label className="govuk-label" for="contact-by-email">
+            Email address
+          </label>
+          <input className="govuk-input govuk-!-width-one-third" id="contact-by-email" name="contact-by-email" type="email"/>
+        </div>
 
+      </div>
+      <div className="govuk-radios__item">
+        <input className="govuk-radios__input" id="how-contacted-conditional-2" name="how-contacted" type="radio" value="phone" aria-expanded="false" data-aria-controls="conditional-how-contacted-conditional-2"/>
+        <label className="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
+          Phone
+        </label>
+      </div>
+      <div className="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2">
+        <div className="govuk-form-group">
+          <label className="govuk-label" for="contact-by-phone">
+            Phone number1
+          </label>
+          <input className="govuk-input govuk-!-width-one-third" id="contact-by-phone" name="contact-by-phone" type="tel"/>
+        </div>
+
+      </div>
+     
+    </div>
+  </fieldset>
+
+    </div> */}
     </div>
   );
 }

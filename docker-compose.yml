@@ -4,29 +4,9 @@ networks:
 
 services:
   web:
-    #build: .
     image: quay.io/ukhomeofficedigital/oar-ui
-    build:
-      context: ./    
     ports:
     - "80:8080"
-    volumes:
-    - .:/usr/src/app/:rw
-    environment:
-    - NODE_ENV=dev
-#    command: 
-#      - npm install --dev
-#      - /usr/local/bin/node ./index.js
-#    command: >
-#      sh -c '
-#        if test -d node_modules; 
-#        then 
-#          echo node_modules_exists ; 
-#        else 
-#          cp -a /tmp/node_modules /usr/src/app/website; 
-#        fi ' && 
-#       npm install --dev && 
-#        /usr/local/bin/node ./index.js
     networks:
       - "ui"
   

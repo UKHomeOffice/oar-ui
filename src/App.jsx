@@ -8,12 +8,14 @@ const App = () => (
     <div>
         <Header/>
         <SubmissionBanner />
+            
         <div className="container" style={{paddingTop : '20px', height:'100vh'}}>
+        
 
             <Main/>
-        </div>
+        </div>   
 
-        <Footer/>
+        {/* <Footer/> */}
     </div>
 );
 
