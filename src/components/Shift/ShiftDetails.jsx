@@ -10,7 +10,7 @@ class ShiftDetails extends Component {
           <div className="govuk-width-container">
           <div className="govuk-grid-row">
 
-          <div className="govuk-grid-column-two-thirds">
+          <div className="govuk-grid-column-full">
           <a href="#" className="govuk-back-link">Back</a>
           
           <main role="main" id="govuk-width-container" className="govuk-width-container govuk-!-margin-top-5" lang="en">
@@ -30,120 +30,127 @@ class ShiftDetails extends Component {
               <Tab> <label className="govuk-label" for="select-box">Shift details</label> </Tab>
             </TabList>
               <TabPanel>
-              <h2 className="govuk-heading-l">Activities</h2>
-              <h1 className="govuk-heading-s">Primary Control Point (PCP)</h1>
-              <table className="govuk-table">
+              {/* <h2 className="govuk-heading-l">Activities</h2>
+              <h1 className="govuk-heading-s">Primary Control Point (PCP)</h1> */}
+              <table className="govuk-table table-border" >
               <tbody className="govuk-table__body">
                   <tr className="govuk-table__row">
-                    <td className="govuk-table__cell govuk-!-font-size-24 govuk-!-font-weight-bold" scope="col">General PCP</td>
-                    <td>&nbsp;</td><td>&nbsp;</td>
+                    <td className="tabs-table-td govuk-!-font-size-24 govuk-!-font-weight-bold" colSpan="3" scope="col">
+                    <h2 className="govuk-heading-l">Activities</h2>
+                    Primary Control Point (PCP)</td>
+                    {/* <td>&nbsp;</td><td>&nbsp;</td> */}
                   </tr>
                   <tr className="govuk-table__row">
-                    <td className="govuk-table__cell govuk-!-font-weight-bold" scope="col">Detention management</td>
-                    <td className="govuk-table__cell govuk-!-font-weight-regular" scope="col">0 hours</td>
-                    <td className="govuk-table__cell govuk-!-font-weight-regular" scope="col">
+                    <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">General PC</td>
+                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">0 hours</td>
+                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
                     <a href="http://localhost:4001/activity_pcp"> Edit </a>
                     </td>                  
                   </tr>
                   <tr className="govuk-table__row">
-                    <td className="govuk-table__cell govuk-!-font-weight-bold" scope="col">Immigration casework</td>
-                    <td className="govuk-table__cell govuk-!-font-weight-regular" scope="col">0 hours</td>
-                    <td className="govuk-table__cell govuk-!-font-weight-regular" scope="col">
+                    <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">Detention management</td>
+                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">0 hours</td>
+                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
+                    <a href="http://localhost:4001/activity_pcp"> Edit </a>
+                    </td>                  
+                  </tr>
+                  <tr className="govuk-table__row">
+                    <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">Immigration casework</td>
+                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">0 hours</td>
+                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
                       <a href=""> Edit </a>
                     </td>                  
                   </tr>
                   <tr className="govuk-table__row">
-                   <td className="govuk-table__cell govuk-!-font-weight-bold" scope="col">Other immigration</td>
-                   <td className="govuk-table__cell govuk-!-font-weight-regular" scope="col">0 hours</td>
-                   <td className="govuk-table__cell govuk-!-font-weight-regular" scope="col">
+                   <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">Other immigration</td>
+                   <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">0 hours</td>
+                   <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
                       <a href=""> Edit </a>
                    </td>
                   </tr>
                   <tr className="govuk-table__row">
-                    <td className="govuk-table__cell govuk-!-font-weight-bold" scope="col">CT referrals</td>
-                    <td className="govuk-table__cell govuk-!-font-weight-regular" scope="col">0 hours</td>
-                    <td className="govuk-table__cell govuk-!-font-weight-regular" scope="col">
+                    <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">CT referrals</td>
+                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">0 hours</td>
+                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
                       <a href=""> Edit </a>
                     </td>                  
                   </tr>
                   <tr className="govuk-table__row">
-                   <td className="govuk-table__cell govuk-!-font-weight-bold" scope="col">Safeguarding</td>
-                   <td className="govuk-table__cell govuk-!-font-weight-regular" scope="col">0 hours</td>
-                   <td className="govuk-table__cell govuk-!-font-weight-regular" scope="col">
+                   <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">Safeguarding</td>
+                   <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">0 hours</td>
+                   <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
                       <a href=""> Edit </a>
                    </td>
                   </tr>
                   <tr className="govuk-table__row">
-                    <td className="govuk-table__cell govuk-!-font-weight-bold" scope="col">Forgery</td>
-                    <td className="govuk-table__cell govuk-!-font-weight-regular" scope="col">0 hours</td>
-                    <td className="govuk-table__cell govuk-!-font-weight-regular" scope="col">
+                    <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">Forgery</td>
+                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">0 hours</td>
+                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
                       <a href=""> Edit </a>
                     </td>                  
                   </tr>
 
                   <tr className="govuk-table__row">
-                    <td className="govuk-table__cell govuk-!-font-size-24 govuk-!-font-weight-bold" scope="col">Customs</td>
-                    <td>&nbsp;</td><td>&nbsp;</td>
+                    <td className="tabs-table-td govuk-!-font-size-24 govuk-!-font-weight-bold" colSpan="3" scope="col">Customs</td>
                   </tr>
                   <tr className="govuk-table__row">
-                    <td className="govuk-table__cell govuk-!-font-weight-bold" scope="col">Red / Green channels</td>
-                    <td className="govuk-table__cell govuk-!-font-weight-regular" scope="col">0 hours</td>
-                    <td className="govuk-table__cell govuk-!-font-weight-regular" scope="col">
+                    <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">Red / Green channels</td>
+                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">0 hours</td>
+                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
                       <a href=""> Edit </a>
                     </td>                  
                   </tr>
                   <tr className="govuk-table__row">
-                    <td className="govuk-table__cell govuk-!-font-weight-bold" scope="col"> International Trade checks</td>
-                    <td className="govuk-table__cell govuk-!-font-weight-regular" scope="col">0 hours</td>
-                    <td className="govuk-table__cell govuk-!-font-weight-regular" scope="col">
+                    <td className="tabs-table-td govuk-!-font-weight-bold" scope="col"> International Trade checks</td>
+                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">0 hours</td>
+                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
                       <a href=""> Edit </a>
                     </td>                  
                   </tr>
 
 
                   <tr className="govuk-table__row">
-                    <td className="govuk-table__cell govuk-!-font-size-24 govuk-!-font-weight-bold" scope="col">Searches and examinations</td>
-                    <td>&nbsp;</td><td>&nbsp;</td>
+                    <td className="tabs-table-td govuk-!-font-size-24 govuk-!-font-weight-bold" colSpan="3" scope="col">Searches and examinations</td>
                   </tr>
                   <tr className="govuk-table__row">
-                    <td className="govuk-table__cell govuk-!-font-weight-bold" scope="col">Vehicles</td>
-                    <td className="govuk-table__cell govuk-!-font-weight-regular" scope="col">0 hours</td>
-                    <td className="govuk-table__cell govuk-!-font-weight-regular" scope="col">
+                    <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">Vehicles</td>
+                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">0 hours</td>
+                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
                       <a href=""> Edit </a>
                     </td>                  
                   </tr>
                   <tr className="govuk-table__row">
-                    <td className="govuk-table__cell govuk-!-font-weight-bold" scope="col"> People</td>
-                    <td className="govuk-table__cell govuk-!-font-weight-regular" scope="col">0 hours</td>
-                    <td className="govuk-table__cell govuk-!-font-weight-regular" scope="col">
+                    <td className="tabs-table-td govuk-!-font-weight-bold" scope="col"> People</td>
+                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">0 hours</td>
+                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
                       <a href=""> Edit </a>
                     </td>                  
                   </tr>
                   <tr className="govuk-table__row">
-                    <td className="govuk-table__cell govuk-!-font-weight-bold" scope="col">Freight</td>
-                    <td className="govuk-table__cell govuk-!-font-weight-regular" scope="col">0 hours</td>
-                    <td className="govuk-table__cell govuk-!-font-weight-regular" scope="col">
+                    <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">Freight</td>
+                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">0 hours</td>
+                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
                       <a href=""> Edit </a>
                     </td>                  
                   </tr>
                   <tr className="govuk-table__row">
-                    <td className="govuk-table__cell govuk-!-font-weight-bold" scope="col"> Aircraft</td>
-                    <td className="govuk-table__cell govuk-!-font-weight-regular" scope="col">0 hours</td>
-                    <td className="govuk-table__cell govuk-!-font-weight-regular" scope="col">
+                    <td className="tabs-table-td govuk-!-font-weight-bold" scope="col"> Aircraft</td>
+                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">0 hours</td>
+                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
                       <a href=""> Edit </a>
                     </td>                  
                   </tr>
                   <tr className="govuk-table__row">
-                    <td className="govuk-table__cell govuk-!-font-weight-bold" scope="col">Vessels</td>
-                    <td className="govuk-table__cell govuk-!-font-weight-regular" scope="col">0 hours</td>
-                    <td className="govuk-table__cell govuk-!-font-weight-regular" scope="col">
+                    <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">Vessels</td>
+                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">0 hours</td>
+                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
                       <a href=""> Edit </a>
                     </td>                  
                   </tr>
                   <tr className="govuk-table__row">
-                    <td className="govuk-table__cell govuk-!-font-weight-bold" scope="col"> Scans</td>
-                    <td className="govuk-table__cell govuk-!-font-weight-regular" scope="col">0 hours</td>
-                    <td className="govuk-table__cell govuk-!-font-weight-regular" scope="col">
+                    <td className="tabs-table-td govuk-!-font-weight-bold" scope="col"> Scans</td>
+                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">0 hours</td>
+                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
                       <a href=""> Edit </a>
                     </td>                  
                   </tr>
@@ -158,78 +165,85 @@ class ShiftDetails extends Component {
 
               </TabPanel>
               <TabPanel>
-              <h2 className="govuk-heading-l govuk-!-margin-top-5">Cash detections</h2>
+              {/* <h2 className="govuk-heading-l govuk-!-margin-top-5">Cash detections</h2> */}
               {/* <label className="govuk-label" for="select-box">
                         No cash detections added to this shift</label> */}
-              <a href="http://localhost:4001/cashdetections" role="button" draggable="false" className="govuk-button">
+              {/* <a href="http://localhost:4001/cashdetections" role="button" draggable="false" className="govuk-button">
               Add a cash detection
-              </a>
+              </a> */}
 
-              <table className="govuk-table">
+              <table className="govuk-table table-border">
               <tbody className="govuk-table__body">
                   <tr className="govuk-table__row">
-                    <td className="govuk-table__cell govuk-!-font-weight-bold" scope="col">Amount</td>
-                    <td className="govuk-table__cell govuk-!-font-weight-bold" scope="col">Details</td>
-                    <td className="govuk-table__cell govuk-!-font-weight-bold" scope="col">Location</td>
-                    <td className="govuk-table__cell govuk-!-font-weight-bold" scope="col">Date</td>
+                    <td className="tabs-table-td govuk-!-font-size-36 govuk-!-font-weight-bold" colSpan="4" scope="col">
+                    <h2 className="govuk-heading-l">Cash detections</h2>
+                    <a href="http://localhost:4001/cashdetections" role="button" draggable="false" className="govuk-button">
+                    Add a cash detection</a>
+                    </td>
+                   </tr>
+                  <tr className="govuk-table__row">
+                    <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">Amount</td>
+                    <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">Details</td>
+                    <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">Location</td>
+                    <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">Date</td>
                   </tr>
                   <tr className="govuk-table__row">
-                    <td className="govuk-table__cell" scope="col">
+                    <td className="tabs-table-td" scope="col">
                     <div className="govuk-!-font-weight-bold">£10,000</div>
                     <div>British Pound</div>
                     <div>Cash</div>
                     </td>
-                    <td className="govuk-table__cell govuk-!-font-weight-regular" scope="col">
+                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
                     <div className="govuk-!-font-weight-regular">5x5x5 referral</div>
                     <div>No dog indication</div>
                     <div>Seized</div>
                     <div>Referred to HMRC</div>
                      </td>
-                    <td className="govuk-table__cell govuk-!-font-weight-regular" scope="col">
+                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
                     <div>Dover</div>
                     <div>Terminal B</div>
                     </td>
-                    <td className="govuk-table__cell govuk-!-font-weight-regular" scope="col">20 October 2018</td>
+                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">20 October 2018</td>
                   </tr>
 
                   <tr className="govuk-table__row">
-                    <td className="govuk-table__cell" scope="col">
+                    <td className="tabs-table-td" scope="col">
                     <div className="govuk-!-font-weight-bold">€20,500  (£18,225)</div>
                     <div>British Pound</div>
                     <div>Cash</div>
                     </td>
-                    <td className="govuk-table__cell govuk-!-font-weight-regular" scope="col">
+                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
                     <div className="govuk-!-font-weight-regular">5x5x5 referral</div>
                     <div>No dog indication</div>
                     <div>Seized</div>
                     <div>No referral</div>
                      </td>
-                    <td className="govuk-table__cell govuk-!-font-weight-regular" scope="col">
+                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
                     <div>Dover</div>
                     <div>Terminal A</div>
                     </td>
-                    <td className="govuk-table__cell govuk-!-font-weight-regular" scope="col">20 October 2018</td>
+                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">20 October 2018</td>
                   </tr>
 
 
                   <tr className="govuk-table__row">
-                    <td className="govuk-table__cell" scope="col">
+                    <td className="tabs-table-td" scope="col">
                     <div className="govuk-!-font-weight-bold">£15,000</div>
                     <div>Euro</div>
                     <div>Cash</div>
                     </td>
-                    <td className="govuk-table__cell govuk-!-font-weight-regular" scope="col">
+                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
                     <div className="govuk-!-font-weight-regular">5x5x5 referral</div>
                     <div>No dog indication</div>
                     <div>Seized</div>
                     <div>Referred to NCA</div>
                     <div>Not adopted</div>
                      </td>
-                    <td className="govuk-table__cell govuk-!-font-weight-regular" scope="col">
+                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
                     <div>Dover</div>
                     <div>Terminal C</div>
                     </td>
-                    <td className="govuk-table__cell govuk-!-font-weight-regular" scope="col">20 October 2018</td>
+                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">20 October 2018</td>
                   </tr>
                                               
                 </tbody>
@@ -241,52 +255,61 @@ class ShiftDetails extends Component {
               
 
               <TabPanel>
-              <h2 className="govuk-heading-l">Shift details</h2>
-              <table className="govuk-table">
+              <table className="govuk-table table-border" >
               <tbody className="govuk-table__body">
                   <tr className="govuk-table__row">
-                    <td className="govuk-table__cell govuk-!-font-weight-bold" scope="col">Date</td>
-                    <td className="govuk-table__cell govuk-!-font-weight-regular" scope="col">20 October 2018</td>
+                    <td className="tabs-table-td govuk-!-font-size-36 govuk-!-font-weight-bold" colSpan="2" scope="col">Shift details</td>
+                  </tr>
+
+                  <tr className="govuk-table__row">
+                    <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">Vessels</td>
+                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">0 hours</td>              
+                  </tr>
+
+                  <tr className="govuk-table__row">
+
+                  <td className="tabs-table-td govuk-!-font-weight-bold" scope="col"> Date</td>
+                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">20 October 2018</td>
                   </tr>
                   <tr className="govuk-table__row">
-                    <td className="govuk-table__cell govuk-!-font-weight-bold" scope="col">Team ID</td>
-                    <td className="govuk-table__cell govuk-!-font-weight-regular" scope="col">DS02F1 - Dover</td>
+                    <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">Team ID</td>
+                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">DS02F1 - Dover</td>
                   </tr>
                   <tr className="govuk-table__row">
-                    <td className="govuk-table__cell govuk-!-font-weight-bold" scope="col">Region</td>
-                    <td className="govuk-table__cell govuk-!-font-weight-regular" scope="col">South East & Europe</td>
+                    <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">Region</td>
+                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">South East & Europe</td>
                   </tr>
                   <tr className="govuk-table__row">
-                    <td className="govuk-table__cell govuk-!-font-weight-bold" scope="col">Location</td>
-                    <td className="govuk-table__cell govuk-!-font-weight-regular" scope="col">Dovers</td>
+                    <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">Location</td>
+                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">Dovers</td>
                   </tr>
                   <tr className="govuk-table__row">
-                    <td className="govuk-table__cell govuk-!-font-weight-bold" scope="col">Cost centre code</td>
-                    <td className="govuk-table__cell govuk-!-font-weight-regular" scope="col">012345 - BF_Dover</td>
+                    <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">Cost centre code</td>
+                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">012345 - BF_Dover</td>
                   </tr> 
                  <tr className="govuk-table__row">
-                    <td className="govuk-table__cell govuk-!-font-weight-bold" scope="col">Border Force Higher Officers (BFHO)</td>
-                    <td className="govuk-table__cell govuk-!-font-weight-regular" scope="col">1 (8 hours)</td>
+                    <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">Border Force Higher Officers (BFHO)</td>
+                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">1 (8 hours)</td>
                   </tr>
                   <tr className="govuk-table__row">
-                    <td className="govuk-table__cell govuk-!-font-weight-bold" scope="col">Joint team region</td>
-                    <td className="govuk-table__cell govuk-!-font-weight-regular" scope="col">-</td>
+                    <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">Joint team region</td>
+                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">-</td>
                   </tr>
                   <tr className="govuk-table__row">
-                    <td className="govuk-table__cell govuk-!-font-weight-bold" scope="col">Joint team ID</td>
-                    <td className="govuk-table__cell govuk-!-font-weight-regular" scope="col">-</td>
+                    <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">Joint team ID</td>
+                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">-</td>
                   </tr>                                    
                   <tr className="govuk-table__row">
-                    <td className="govuk-table__cell govuk-!-font-weight-bold" scope="col">JBorder Force Officers (BFO)</td>
-                    <td className="govuk-table__cell govuk-!-font-weight-regular" scope="col">2 (16 hours)</td>
+                    <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">JBorder Force Officers (BFO)</td>
+                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">2 (16 hours)</td>
                   </tr>
                   <tr className="govuk-table__row">
-                    <td className="govuk-table__cell govuk-!-font-weight-bold" scope="col">Border Force Assistant Officers (BFAO)</td>
-                    <td className="govuk-table__cell govuk-!-font-weight-regular" scope="col">0</td>
+                    <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">Border Force Assistant Officers (BFAO)</td>
+                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">0</td>
                   </tr>     
                   <tr className="govuk-table__row">
-                    <td className="govuk-table__cell govuk-!-font-weight-bold" scope="col">Total shift hours</td>
-                    <td className="govuk-table__cell govuk-!-font-weight-regular" scope="col">24 Hours</td>
+                    <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">Total shift hours</td>
+                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">24 Hours</td>
                   </tr>                                                
                 </tbody>
               </table>
@@ -300,6 +323,7 @@ class ShiftDetails extends Component {
               </p>
 
               </TabPanel>
+
   </Tabs>
 
   </fieldset>

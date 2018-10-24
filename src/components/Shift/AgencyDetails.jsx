@@ -21,7 +21,7 @@ class AgencyDetails extends Component {
       <div className="govuk-width-container">
       <div className="govuk-grid-row">
 
-      <div className="govuk-grid-column-two-thirds">
+      <div className="govuk-grid-column-full">
       <a href="#" className="govuk-back-link">Back</a>
 
       <main role="main" id="govuk-width-container" className="govuk-width-container" lang="en">

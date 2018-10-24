@@ -15,31 +15,73 @@
 .hide-conditional {
   display: none; }
 
-
-.multiple-choice--hod [type=radio] + label::before {
-  width: 24px;
-  height: 24px;
-}
-
-.multiple-choice--hod [type=radio] + label::after {
-  border: 7px solid;
-  top: 7px;
-  left: 7px;
-}
-
-
-.multiple-choice--hod {
-  .multiple-choice {
-    padding-top: 1px;
-    padding-bottom: 2px;
+  .table-border {
+    padding: 0px 0px 0px 0px;
+    //margin: 40 40 40px;
+    //display: block;
+    border-bottom: 1px solid #aaa;
+    border-left: 1px solid #aaa;
+    border-right: 1px solid #aaa;
   }
-}
 
-@media screen and (max-width: 640px) {
-  .multiple-choice--hod {
-    .multiple-choice {
-      margin-bottom: 15px;
-      padding-top: 4px;
+  .tabs_border {
+    margin: 0 0 0px;
+    padding: 0;
+  }
+
+  .react-tabs__tab-list {
+    border-bottom: 1px solid #aaa;
+    margin: 0 0 0px;
+    padding: 30;
+  }
+
+  .table-colspan {
+    -webkit-column-span: all; /* Chrome, Safari, Opera */
+    column-span: 3;
     }
+
+   .tabs-table-td {
+    border-bottom: 1px solid #bfc1c3;
+    text-align: left;
+    color: #0b0c0c;
+    line-height: 1.1111111111 !important;
+    padding: 10px 10px 20px 20px;
+    } 
+    
+
+  .react-tabs__tab-panel--border {
+    padding: 70px 70px 70px 70px;
+    margin: 40 40 40px;
+    display: block;
+    border-bottom: 1px solid #aaa;;
+    border-left: 1px solid #aaa;;
+    border-right: 1px solid #aaa;;
   }
-}
+
+// .multiple-choice--hod [type=radio] + label::before {
+//   width: 24px;
+//   height: 24px;
+// }
+
+// .multiple-choice--hod [type=radio] + label::after {
+//   border: 7px solid;
+//   top: 7px;
+//   left: 7px;
+// }
+
+
+// .multiple-choice--hod {
+//   .multiple-choice {
+//     padding-top: 1px;
+//     padding-bottom: 2px;
+//   }
+// }
+
+// @media screen and (max-width: 640px) {
+//   .multiple-choice--hod {
+//     .multiple-choice {
+//       margin-bottom: 15px;
+//       padding-top: 4px;
+//     }
+//   }
+// }

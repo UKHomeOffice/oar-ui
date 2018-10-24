@@ -16,7 +16,7 @@ render() {
 return <div>
 
 
-<header className="govuk-header " role="banner" data-module="header">
+<header className="govuk-header" role="banner" data-module="header">
 
 
 

@@ -11,7 +11,7 @@ return      <div className="App">
 <div className="govuk-width-container">
 <div class="grid-row">
 
-<div className="govuk-grid-column-two-thirds govuk-section-break--xl">
+<div className="govuk-grid-column-full govuk-section-break--xl">
 <main role="main" id="govuk-width-container" className="govuk-width-container" lang="en">
 
 <p className="govuk-heading-l">Operational activity reporting</p>
