@@ -1,16 +1,38 @@
 workspace:
   base: /build
-  path: src/github.com/ukhomeoffice/borders-public-platform-ui
+  path: src/github.com/UKHomeOffice/oar-ui
 
 pipeline:
+  test:
+      image: node:8
+      commands:
+        - npm install
+        - npm run coverage
+      when:
+        event:
+        - push
+        - pull_request
+        - tag
+
+  sonar-scanner:
+    image: quay.io/ukhomeofficedigital/sonar-scanner:v3.0.1
+    when:
+      status:
+        - failure
+        - success
+      event:
+        - push
+        - pull_request
+        - tag
+
   build:
-    image: docker:17.09.1
+    image: docker:18.03.1
     environment:
       - DOCKER_HOST=tcp://172.17.0.1:2375
     secrets:
       - docker_name
     commands:
-      - docker build -t $${DOCKER_NAME} .
+      - docker build -t $${DOCKER_NAME} . --no-cache
     when:
       event:
         - push
@@ -18,7 +40,7 @@ pipeline:
         - tag
 
   image_to_artifactory:
-    image: docker:17.09.1
+    image: docker:18.03.1
     environment:
       - DOCKER_HOST=tcp://172.17.0.1:2375
     secrets:
@@ -29,14 +51,13 @@ pipeline:
       - docker_name
     commands:
     - docker login -u=$${DOCKER_USERNAME} -p=$${DOCKER_PASSWORD} $${DOCKER_SERVER}
-    - docker tag $${DOCKER_NAME} $${DOCKER_SERVER}/$${DOCKER_GROUP}/$${DOCKER_NAME}:latest
-    - docker push $${DOCKER_SERVER}/$${DOCKER_GROUP}/$${DOCKER_NAME}:latest
+    - docker tag $${DOCKER_NAME} $${DOCKER_SERVER}/$${DOCKER_GROUP}/$${DOCKER_NAME}:$${DRONE_COMMIT_BRANCH}
+    - docker push $${DOCKER_SERVER}/$${DOCKER_GROUP}/$${DOCKER_NAME}:$${DRONE_COMMIT_BRANCH}
     when:
-      branch: master
       event: push
 
   tag_image_to_artifactory:
-    image: docker:17.09.1
+    image: docker:18.03.1
     environment:
       - DOCKER_HOST=tcp://172.17.0.1:2375
     secrets:
@@ -51,4 +72,3 @@ pipeline:
     - docker push $${DOCKER_SERVER}/$${DOCKER_GROUP}/$${DOCKER_NAME}:$${DRONE_COMMIT_SHA}
     when:
       event: tag
-
