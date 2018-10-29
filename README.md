@@ -13,4 +13,5 @@ docker-compose up
 ## SPA home page
 ```
 http://localhost/startpage
+http://localhost/oarhome
 ```
