@@ -2,28 +2,28 @@ workspace:
   base: /build
   path: src/github.com/UKHomeOffice/oar-ui
 
-pipeline:
-  test:
-      image: node:8
-      commands:
-        - npm install
-        - npm run coverage
-      when:
-        event:
-        - push
-        - pull_request
-        - tag
-
-  sonar-scanner:
-    image: quay.io/ukhomeofficedigital/sonar-scanner:v3.0.1
-    when:
-      status:
-        - failure
-        - success
-      event:
-        - push
-        - pull_request
-        - tag
+#pipeline:
+#  test:
+#      image: node:8
+#      commands:
+#        - npm install
+#        - npm run coverage
+#      when:
+#        event:
+#        - push
+#        - pull_request
+#        - tag
+#
+#  sonar-scanner:
+#    image: quay.io/ukhomeofficedigital/sonar-scanner:v3.0.1
+#    when:
+#      status:
+#        - failure
+#        - success
+#      event:
+#        - push
+#        - pull_request
+#        - tag
 
   build:
     image: docker:18.03.1
