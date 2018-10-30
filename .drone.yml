@@ -2,7 +2,7 @@ workspace:
   base: /build
   path: src/github.com/UKHomeOffice/oar-ui
 
-#pipeline:
+pipeline:
 #  test:
 #      image: node:8
 #      commands:
