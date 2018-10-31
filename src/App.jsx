@@ -11,7 +11,7 @@ const App = () => (
         <Header/>
         <SubmissionBanner />
             
-        <div className="container" style={{paddingTop : '20px', height:'100vh'}}>
+        <div className="govuk-header__container--full-width" style={{paddingTop : '20px', height:'100vh'}}>
         
 
             <Main/>

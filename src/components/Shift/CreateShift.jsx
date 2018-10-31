@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import {bindActionCreators} from "redux";
 import {DocumentTitle} from 'react-document-title';
+import ActivityHoursMinutes from '../partials/ActivityHoursMinutes';
+import ActivityStaffAndHours from '../partials/ActivityStaffAndHours';
 
 
 class CreateShift extends Component {
@@ -14,7 +16,7 @@ class CreateShift extends Component {
   }
 
   componentDidMount(){
-    document.title = "TESTTEST  VENKATA 123"
+    document.title = "OAR - Add Shift"
   }
 
   populateDropdowns(arr) {
@@ -54,7 +56,8 @@ class CreateShift extends Component {
     this.setState({regionArr: this.getNextArr(event.target.value)});
    }
      render() {
-      <DocumentTitle title='TESTVenkata' />
+      document.title = "OAR - Add Shift"
+
       const teams = ['Select:', 'DS0201 - Team1', 'DS0202 - Team2', 'DS0203 - Team3',];
       const locations = ['Select:', 'Location1', 'Location2', 'Location3'];
       //const regions = ['North', 'Central', 'Heathrow', 'South', 'South East & Europe'];
@@ -152,82 +155,34 @@ class CreateShift extends Component {
  </p>
 
 
-   <p className="govuk-label--m"> Staff details</p>
+
+<p>
+<label className="govuk-label--m"> Staff details </label>
+</p>
 <p> 
-<label className="govuk-label--s govuk-!-padding-top-9" for="select-box">Border Force Higher Officers (BFHO)</label>
-<div className="govuk-grid-row">
-  <div className="govuk-grid-column-one-quarter">
-  <label className="govuk-label" for="select-box">Number of officers</label>
-  <input className="govuk-input govuk-input--width-5" id="shift-bfho" type="text" name="shift-bfho"/>
-</div>
-
-<div className="govuk-grid-column-one-quarter">
-  <label className="govuk-label" for="select-box">Number of hours</label>
-  <input className="govuk-input govuk-input--width-5" id="shift-bfho-hours" type="text" name="shift-bfho-hours"/>
-</div>
-</div>
+<label className="govuk-label--s" for="shift-bfho">Border Force Higher Officers (BFHO)</label>
+{/* SEND PARAMS ON WHAT THE BOX IS REFERED TO */}
+<ActivityStaffAndHours/> 
 </p>
 <p>
-<label className="govuk-label--s govuk-!-padding-top-9" for="select-box">Border Force Officers (BFO)</label>
-<div className="govuk-grid-row">
-  <div className="govuk-grid-column-one-quarter">
-  <label className="govuk-label" for="select-box">Number of officers</label>
-  <input className="govuk-input govuk-input--width-5" id="shift-bfo" type="text" name="shift-bfo"/>
-</div>
-
-<div className="govuk-grid-column-one-quarter">
-  <label className="govuk-label" for="select-box">Number of hours</label>
-  <input className="govuk-input govuk-input--width-5" id="shift-bfo-hours" type="text" name="shift-bfo-hours"/>
-</div>
-</div>
+<label className="govuk-label--s" for="shift-bfo">Border Force Officers (BFO)</label>
+<ActivityStaffAndHours/>
 </p>
 <p>
-<label className="govuk-label--s govuk-!-padding-top-9" for="select-box">Border Force Assistant Officers (BFAO)</label>
-<div className="govuk-grid-row">
-  <div className="govuk-grid-column-one-quarter">
-  <label className="govuk-label" for="select-box">Number of officers</label>
-  <input className="govuk-input govuk-input--width-5" id="shift-bfao" type="text" name="shift-bfao"/>
-</div>
-
-<div className="govuk-grid-column-one-quarter">
-  <label className="govuk-label" for="select-box">Number of hours</label>
-  <input className="govuk-input govuk-input--width-5" id="shift-bfao-hours" type="text" name="shift-bfao-hours"/>
-</div>
-</div>
+<label className="govuk-label--s" for="shift-bfao">Border Force Assistant Officers (BFAO)</label>
+<ActivityStaffAndHours/>
 </p>
 <p>
-<label className="govuk-label--s govuk-!-padding-top-9" for="select-box">Administrative assistant</label>
-<div className="govuk-grid-row">
-  <div className="govuk-grid-column-one-quarter">
-  <label className="govuk-label" for="select-box">Number of officers</label>
-  <input className="govuk-input govuk-input--width-5" id="shift-aa" type="text" name="shift-aa"/>
-</div>
-
-<div className="govuk-grid-column-one-quarter">
-  <label className="govuk-label" for="select-box">Number of hours</label>
-  <input className="govuk-input govuk-input--width-5" id="shift-aa-hours" type="text" name="shift-aa-hours"/>
-</div>
-</div>
+<label className="govuk-label--s" for="shift-adm-asst">Administrative assistant</label>
+<ActivityStaffAndHours/>
 </p>
 <p>
-<label className="govuk-label--s govuk-!-padding-top-9" for="select-box">Seasonal or temporary workers</label>
-<div className="govuk-grid-row">
-  <div className="govuk-grid-column-one-quarter">
-  <label className="govuk-label" for="select-box">Number of officers</label>
-  <input className="govuk-input govuk-input--width-5" id="shift-temp" type="text" name="shift-temp"/>
-</div>
-
-<div className="govuk-grid-column-one-quarter">
-  <label className="govuk-label" for="select-box">Number of hours</label>
-  <input className="govuk-input govuk-input--width-5" id="shift-temp-hours" type="text" name="shift-temp-hours"/>
-</div>
-</div>
+<label className="govuk-label--s" for="shift-temp-workers">Seasonal or temporary workers</label>
+<ActivityStaffAndHours/>
 </p>
-
 <p>
-<div className="govuk-label--s govuk-!-padding-top-4" id="total-hours"> Total time for this shift: 24 hours </div>
+<div className="govuk-label--s" id="shift-total-hours"> Total time for this shift: 24 hours </div>
 </p>
-{/* OVERRIDES:_ govuk-\!-font-size-36 */}
 
 <p>
 <div className="govuk-grid-row govuk-!-margin-top-9">

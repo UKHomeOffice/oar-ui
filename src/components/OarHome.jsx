@@ -9,10 +9,10 @@ import PubSub from "pubsub-js";
 
 class OarHome extends React.Component {
 
-        render() {
-        
-    return     
-    <div className="App">
+    render() {
+            document.title = "OAR - HOME"
+
+    return <div className="App">
             <div className="govuk-width-container">
             <div className="grid-row">
 

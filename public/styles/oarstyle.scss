@@ -17,7 +17,7 @@
 .hide-conditional {
   display: none; }
 
-  .table-border {
+.table-border {
     padding: 0px 0px 0px 0px;
     //margin: 40 40 40px;
     //display: block;
@@ -25,6 +25,10 @@
     border-left: 1px solid #aaa;
     border-right: 1px solid #aaa;
   }
+  .oartable-s {
+    width: 23%;
+  }
+  
 
   .tabs_border {
     margin: 0 0 0px;

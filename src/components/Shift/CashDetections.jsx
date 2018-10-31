@@ -69,6 +69,8 @@ onChange(event) {
    const othercurrency = ['Select:', 'Option 1', 'Option 2', 'Option 3'];
    const currency = ['Select:', 'British Pound', 'Euro', 'USD'];
   
+   document.title = "OAR - Cash detections"
+
    return (
 
     

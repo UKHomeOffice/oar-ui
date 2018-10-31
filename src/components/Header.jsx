@@ -6,6 +6,9 @@ import ResponsiveMenu from 'react-responsive-navbar';
 import * as errorActionTypes from '../error/actionTypes';
 import {bindActionCreators} from "redux";
 import PubSub from "pubsub-js";
+const hosturl = "http://"+window.location.hostname + ":"+ window.location.port;
+const backturl = hosturl + "/oarhome";
+
 
 class Header extends React.Component {
 
@@ -14,6 +17,7 @@ render() {
 return <div>
   
 <header className="govuk-header" role="banner" data-module="header">
+
 
 
   <div className="govuk-header__container govuk-width-container">
@@ -35,7 +39,7 @@ return <div>
     </div>
     <div className="govuk-header__content">
 
-      <a href="#" className="govuk-header__link govuk-header__link--service-name">
+      <a href={backturl} className="govuk-header__link govuk-header__link--service-name">
       Operational activity reporting
       </a>
 
@@ -43,7 +47,7 @@ return <div>
       <nav>
         <ul id="navigation" className="govuk-header__navigation " aria-label="Top Level Navigation">
           <li className="govuk-header__navigation-item govuk-header__navigation-item--active">
-            <a className="govuk-header__link" href="#1">
+            <a className="govuk-header__link" href={backturl}>
               Activities
             </a>
           </li>

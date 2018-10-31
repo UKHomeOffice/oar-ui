@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 
 class EditShift extends Component {
 
-  componentDidMount(){
-    document.title = "OAR - Edit Shift"
-  }
+  // componentDidMount(){
+  //   document.title = "OAR - Edit Shift"
+  // }
 
     render() {
+      document.title = "OAR - Edit Shift"
       console.log('====== in Shift component')
       return (
         <div className="App">
