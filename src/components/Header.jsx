@@ -6,18 +6,14 @@ import ResponsiveMenu from 'react-responsive-navbar';
 import * as errorActionTypes from '../error/actionTypes';
 import {bindActionCreators} from "redux";
 import PubSub from "pubsub-js";
-import '../../public/styles/oarstyle.scss';
-import 'govuk-frontend/all.scss';
 
 class Header extends React.Component {
 
 render() {
 
 return <div>
-
-
+  
 <header className="govuk-header" role="banner" data-module="header">
-
 
 
   <div className="govuk-header__container govuk-width-container">

@@ -3,7 +3,10 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
 
 class ShiftDetails extends Component {
+  
     render() {
+      document.title = "OAR - Shift details";
+
       console.log('====== in Shift component')
       return (
         <div>
@@ -25,9 +28,9 @@ class ShiftDetails extends Component {
 
           <Tabs>
             <TabList>
-              <Tab> <label className="govuk-label" for="select-box">Activities</label> </Tab>
-              <Tab> <label className="govuk-label" for="select-box">Cash detections</label> </Tab>
-              <Tab> <label className="govuk-label" for="select-box">Shift details</label> </Tab>
+              <Tab> <label className="govuk-label" htmlFor="select-box">Activities</label> </Tab>
+              <Tab> <label className="govuk-label" htmlFor="select-box">Cash detections</label> </Tab>
+              <Tab> <label className="govuk-label" htmlFor="select-box">Shift details</label> </Tab>
             </TabList>
               <TabPanel>
               {/* <h2 className="govuk-heading-l">Activities</h2>
@@ -35,7 +38,7 @@ class ShiftDetails extends Component {
               <table className="govuk-table table-border" >
               <tbody className="govuk-table__body">
                   <tr className="govuk-table__row">
-                    <td className="tabs-table-td govuk-!-font-size-24 govuk-!-font-weight-bold" colSpan="3" scope="col">
+                    <td className="tabs-table-td govuk-!-font-size-27 govuk-!-font-weight-bold" colSpan="3" scope="col">
                     <h2 className="govuk-heading-l">Activities</h2>
                     Primary Control Point (PCP)</td>
                     {/* <td>&nbsp;</td><td>&nbsp;</td> */}
@@ -44,114 +47,167 @@ class ShiftDetails extends Component {
                     <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">General PC</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">0 hours</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
-                    <a href="http://localhost:4001/activity_pcp"> Edit </a>
+                    <a href="http://localhost:4001/activity?activity=pcp1&block=pcp"> Edit </a>
                     </td>                  
                   </tr>
                   <tr className="govuk-table__row">
                     <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">Detention management</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">0 hours</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
-                    <a href="http://localhost:4001/activity_pcp"> Edit </a>
+                    <a href="http://localhost:4001/activity?activity=pcp2&block=pcp"> Edit </a>
                     </td>                  
                   </tr>
                   <tr className="govuk-table__row">
                     <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">Immigration casework</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">0 hours</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
-                      <a href=""> Edit </a>
-                    </td>                  
+                    <a href="http://localhost:4001/activity?activity=pcp3&block=pcp"> Edit </a>                    </td>                  
                   </tr>
                   <tr className="govuk-table__row">
                    <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">Other immigration</td>
                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">0 hours</td>
                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
-                      <a href=""> Edit </a>
+                   <a href="http://localhost:4001/activity?activity=pcp4&block=pcp"> Edit </a>
                    </td>
                   </tr>
                   <tr className="govuk-table__row">
                     <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">CT referrals</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">0 hours</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
-                      <a href=""> Edit </a>
+                    <a href="http://localhost:4001/activity?activity=pcp5&block=pcp"> Edit </a>
                     </td>                  
                   </tr>
                   <tr className="govuk-table__row">
                    <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">Safeguarding</td>
                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">0 hours</td>
                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
-                      <a href=""> Edit </a>
+                   <a href="http://localhost:4001/activity?activity=pcp6&block=pcp"> Edit </a>
                    </td>
                   </tr>
                   <tr className="govuk-table__row">
                     <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">Forgery</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">0 hours</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
-                      <a href=""> Edit </a>
+                    <a href="http://localhost:4001/activity?activity=pcp7&block=pcp"> Edit </a>
                     </td>                  
                   </tr>
 
                   <tr className="govuk-table__row">
-                    <td className="tabs-table-td govuk-!-font-size-24 govuk-!-font-weight-bold" colSpan="3" scope="col">Customs</td>
+                    <td className="tabs-table-td govuk-!-font-size-27 govuk-!-font-weight-bold" colSpan="3" scope="col">Customs</td>
                   </tr>
                   <tr className="govuk-table__row">
                     <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">Red / Green channels</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">0 hours</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
-                      <a href=""> Edit </a>
+                    <a href="http://localhost:4001/activity?activity=cst1&block=cst"> Edit </a>
                     </td>                  
                   </tr>
                   <tr className="govuk-table__row">
                     <td className="tabs-table-td govuk-!-font-weight-bold" scope="col"> International Trade checks</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">0 hours</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
-                      <a href=""> Edit </a>
+                    <a href="http://localhost:4001/activity?activity=cst2&block=cst"> Edit </a>
                     </td>                  
                   </tr>
 
 
                   <tr className="govuk-table__row">
-                    <td className="tabs-table-td govuk-!-font-size-24 govuk-!-font-weight-bold" colSpan="3" scope="col">Searches and examinations</td>
+                    <td className="tabs-table-td govuk-!-font-size-27 govuk-!-font-weight-bold" colSpan="3" scope="col">Searches and examinations</td>
                   </tr>
                   <tr className="govuk-table__row">
                     <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">Vehicles</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">0 hours</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
-                      <a href=""> Edit </a>
+                    <a href="http://localhost:4001/activity?activity=sae1&block=sae"> Edit </a>
                     </td>                  
                   </tr>
                   <tr className="govuk-table__row">
                     <td className="tabs-table-td govuk-!-font-weight-bold" scope="col"> People</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">0 hours</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
-                      <a href=""> Edit </a>
+                    <a href="http://localhost:4001/activity?activity=sae2&block=sae"> Edit </a>
                     </td>                  
                   </tr>
                   <tr className="govuk-table__row">
                     <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">Freight</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">0 hours</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
-                      <a href=""> Edit </a>
+                    <a href="http://localhost:4001/activity?activity=sae3&block=sae"> Edit </a>
                     </td>                  
                   </tr>
                   <tr className="govuk-table__row">
                     <td className="tabs-table-td govuk-!-font-weight-bold" scope="col"> Aircraft</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">0 hours</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
-                      <a href=""> Edit </a>
+                    <a href="http://localhost:4001/activity?activity=sae4&block=sae"> Edit </a>
                     </td>                  
                   </tr>
                   <tr className="govuk-table__row">
                     <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">Vessels</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">0 hours</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
-                      <a href=""> Edit </a>
+                    <a href="http://localhost:4001/activity?activity=sae5&block=sae"> Edit </a>
                     </td>                  
                   </tr>
                   <tr className="govuk-table__row">
                     <td className="tabs-table-td govuk-!-font-weight-bold" scope="col"> Scans</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">0 hours</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
-                      <a href=""> Edit </a>
+                    <a href="http://localhost:4001/activity?activity=sae6&block=sae"> Edit </a>
+                    </td>                  
+                  </tr>
+                  <tr className="govuk-table__row">
+                    <td className="tabs-table-td govuk-!-font-size-27 govuk-!-font-weight-bold" colSpan="3" scope="col">
+                    Other
+                    </td>
+                  </tr>
+                  <tr className="govuk-table__row">
+                    <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">Cyclamen</td>
+                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">0 hours</td>
+                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
+                    <a href="http://localhost:4001/activity?activity=oth1&block=oth"> Edit </a>
+                    </td>                  
+                  </tr>
+                  <tr className="govuk-table__row">
+                    <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">Management meetings</td>
+                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">0 hours</td>
+                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
+                    <a href="http://localhost:4001/activity?activity=oth2&block=oth"> Edit </a>
+                    </td>                  
+                  </tr>
+                  <tr className="govuk-table__row">
+                    <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">Training</td>
+                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">0 hours</td>
+                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
+                    <a href="http://localhost:4001/activity?activity=oth3&block=oth"> Edit </a>
+                    </td>                  
+                  </tr>
+                  <tr className="govuk-table__row">
+                    <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">Travel</td>
+                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">0 hours</td>
+                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
+                    <a href="http://localhost:4001/activity?activity=oth4&block=oth"> Edit </a>
+                    </td>                  
+                  </tr>
+                  <tr className="govuk-table__row">
+                    <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">General PC</td>
+                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">0 hours</td>
+                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
+                    <a href="http://localhost:4001/activity?activity=oth5&block=oth"> Edit </a>
+                    </td>                  
+                  </tr>
+                  <tr className="govuk-table__row">
+                    <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">Intelligence collection and reporting</td>
+                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">0 hours</td>
+                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
+                    <a href="http://localhost:4001/activity?activity=oth6&block=oth"> Edit </a>
+                    </td>                  
+                  </tr>
+                  <tr className="govuk-table__row">
+                    <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">Other operational activity</td>
+                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">0 hours</td>
+                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
+                    <a href="http://localhost:4001/activity?activity=oth7&block=oth"> Edit </a>
                     </td>                  
                   </tr>
 
@@ -166,7 +222,7 @@ class ShiftDetails extends Component {
               </TabPanel>
               <TabPanel>
               {/* <h2 className="govuk-heading-l govuk-!-margin-top-5">Cash detections</h2> */}
-              {/* <label className="govuk-label" for="select-box">
+              {/* <label className="govuk-label" htmlFor="select-box">
                         No cash detections added to this shift</label> */}
               {/* <a href="http://localhost:4001/cashdetections" role="button" draggable="false" className="govuk-button">
               Add a cash detection
@@ -323,7 +379,6 @@ class ShiftDetails extends Component {
               </p>
 
               </TabPanel>
-
   </Tabs>
 
   </fieldset>

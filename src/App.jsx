@@ -3,6 +3,8 @@ import Footer from './components/Footer'
 import Main from './Main'
 import Header from "./components/Header";
 import SubmissionBanner from "./components/SubmissionBanner";
+// = require_tree ./govuk
+//const showhidecontent = require('govuk_frontend_toolkit/javascripts/govuk/show-hide-content')
 
 const App = () => (
     <div>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {bindActionCreators} from "redux";
+import {DocumentTitle} from 'react-document-title';
 
 
 class CreateShift extends Component {
@@ -11,6 +12,11 @@ class CreateShift extends Component {
         regionArr: ['Select:']
     }
   }
+
+  componentDidMount(){
+    document.title = "TESTTEST  VENKATA 123"
+  }
+
   populateDropdowns(arr) {
     console.log("dddddd===populateDropdowns:-" + arr);
 
@@ -48,6 +54,7 @@ class CreateShift extends Component {
     this.setState({regionArr: this.getNextArr(event.target.value)});
    }
      render() {
+      <DocumentTitle title='TESTVenkata' />
       const teams = ['Select:', 'DS0201 - Team1', 'DS0202 - Team2', 'DS0203 - Team3',];
       const locations = ['Select:', 'Location1', 'Location2', 'Location3'];
       //const regions = ['North', 'Central', 'Heathrow', 'South', 'South East & Europe'];
@@ -75,7 +82,7 @@ class CreateShift extends Component {
           <label className="govuk-label govuk-date-input__label" for="dob-day">
             Day
           </label>
-          <input className="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="dob-day" type="number" pattern="[0-9]*"/>
+          <input className="govuk-input govuk-date-input__input govuk-input--width-2" id="shift-day" name="dob-day" type="number" pattern="[0-9]*"/>
         </div>
       </div>
       <div className="govuk-date-input__item">
@@ -83,7 +90,7 @@ class CreateShift extends Component {
           <label className="govuk-label govuk-date-input__label" for="dob-month">
             Month
           </label>
-          <input className="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month" name="dob-month" type="number" pattern="[0-9]*"/>
+          <input className="govuk-input govuk-date-input__input govuk-input--width-2" id="shift-month" name="dob-month" type="number" pattern="[0-9]*"/>
         </div>
       </div>
       <div className="govuk-date-input__item">
@@ -91,36 +98,28 @@ class CreateShift extends Component {
           <label className="govuk-label govuk-date-input__label" for="dob-year">
             Year
           </label>
-          <input className="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob-year" type="number" pattern="[0-9]*"/>
+          <input className="govuk-input govuk-date-input__input govuk-input--width-4" id="shift-year" name="dob-year" type="number" pattern="[0-9]*"/>
         </div>
       </div>
     </div>
 
     <p>
     <label className="govuk-label" for="select-box">TeamID</label>
-    </p>
-    <p>
-    <br/>
-    <select className="govuk-select govuk-input--width-m" id="select-box" name="select-box" width="100%" >
+    <select className="govuk-select govuk-input--width-m" id="shift-teamid" name="select-box" width="100%" >
     {this.populateDropdowns(teams)}
     </select>
-    <br/>
     </p>
 
    <p>
     <label className="govuk-label" for="select-box">Region</label>
-    </p>
-    <p>
-    <select className="govuk-select govuk-input--width-m" id="select-box" name="select-box" width="100%" onChange={this.onChange.bind(this)} >
+    <select className="govuk-select govuk-input--width-m" id="shift-region" name="select-box" width="100%" onChange={this.onChange.bind(this)} >
     {this.populateDropdowns(locations)}
     </select>
    </p>
 
    <p>
     <label className="govuk-label" for="select-box">Location</label>
-    </p>
-    <p>
-    <select className="govuk-select govuk-input--width-m" id="select-box" name="select-box" width="100%">
+    <select className="govuk-select govuk-input--width-m" id="shift-location" name="select-box" width="100%">
     {this.populateDropdowns(this.state.regionArr)}
     </select>
    </p>
@@ -132,19 +131,19 @@ class CreateShift extends Component {
 <label className="govuk-label" for="select-box"> Shift type </label>
  <div className="govuk-radios govuk-radios--inline">
       <div className="govuk-radios__item">
-        <input className="govuk-radios__input" id="changed-name-1" name="changed-name" type="radio" value="yes"/>
+        <input className="govuk-radios__input" id="shift-type" name="changed-name" type="radio" value="yes"/>
         <label className="govuk-label govuk-radios__label" for="changed-name-1">
         Early
         </label>
       </div>
       <div className="govuk-radios__item">
-        <input className="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no"/>
+        <input className="govuk-radios__input" id="shift-type" name="changed-name" type="radio" value="no"/>
         <label className="govuk-label govuk-radios__label" for="changed-name-2">
           Late
         </label>
       </div>
       <div className="govuk-radios__item">
-        <input className="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no"/>
+        <input className="govuk-radios__input" id="shift-type" name="changed-name" type="radio" value="no"/>
         <label className="govuk-label govuk-radios__label" for="changed-name-2">
           Night
         </label>
@@ -154,68 +153,92 @@ class CreateShift extends Component {
 
 
    <p className="govuk-label--m"> Staff details</p>
- 
+<p> 
 <label className="govuk-label--s govuk-!-padding-top-9" for="select-box">Border Force Higher Officers (BFHO)</label>
-<p>
 <div className="govuk-grid-row">
   <div className="govuk-grid-column-one-quarter">
   <label className="govuk-label" for="select-box">Number of officers</label>
-  <input className="govuk-input govuk-input--width-5" id="ni-number" type="text" name="ni-number"/>
+  <input className="govuk-input govuk-input--width-5" id="shift-bfho" type="text" name="shift-bfho"/>
 </div>
 
 <div className="govuk-grid-column-one-quarter">
   <label className="govuk-label" for="select-box">Number of hours</label>
-  <input className="govuk-input govuk-input--width-5" id="ni-number" type="text" name="ni-number"/>
+  <input className="govuk-input govuk-input--width-5" id="shift-bfho-hours" type="text" name="shift-bfho-hours"/>
 </div>
 </div>
 </p>
-
-
-
+<p>
 <label className="govuk-label--s govuk-!-padding-top-9" for="select-box">Border Force Officers (BFO)</label>
-<p>
 <div className="govuk-grid-row">
   <div className="govuk-grid-column-one-quarter">
   <label className="govuk-label" for="select-box">Number of officers</label>
-  <input className="govuk-input govuk-input--width-5" id="ni-number" type="text" name="ni-number"/>
+  <input className="govuk-input govuk-input--width-5" id="shift-bfo" type="text" name="shift-bfo"/>
 </div>
 
 <div className="govuk-grid-column-one-quarter">
   <label className="govuk-label" for="select-box">Number of hours</label>
-  <input className="govuk-input govuk-input--width-5" id="ni-number" type="text" name="ni-number"/>
+  <input className="govuk-input govuk-input--width-5" id="shift-bfo-hours" type="text" name="shift-bfo-hours"/>
 </div>
 </div>
 </p>
-
-
-
+<p>
 <label className="govuk-label--s govuk-!-padding-top-9" for="select-box">Border Force Assistant Officers (BFAO)</label>
-<p>
 <div className="govuk-grid-row">
   <div className="govuk-grid-column-one-quarter">
   <label className="govuk-label" for="select-box">Number of officers</label>
-  <input className="govuk-input govuk-input--width-5" id="ni-number" type="text" name="ni-number"/>
+  <input className="govuk-input govuk-input--width-5" id="shift-bfao" type="text" name="shift-bfao"/>
 </div>
 
 <div className="govuk-grid-column-one-quarter">
   <label className="govuk-label" for="select-box">Number of hours</label>
-  <input className="govuk-input govuk-input--width-5" id="ni-number" type="text" name="ni-number"/>
+  <input className="govuk-input govuk-input--width-5" id="shift-bfao-hours" type="text" name="shift-bfao-hours"/>
+</div>
+</div>
+</p>
+<p>
+<label className="govuk-label--s govuk-!-padding-top-9" for="select-box">Administrative assistant</label>
+<div className="govuk-grid-row">
+  <div className="govuk-grid-column-one-quarter">
+  <label className="govuk-label" for="select-box">Number of officers</label>
+  <input className="govuk-input govuk-input--width-5" id="shift-aa" type="text" name="shift-aa"/>
+</div>
+
+<div className="govuk-grid-column-one-quarter">
+  <label className="govuk-label" for="select-box">Number of hours</label>
+  <input className="govuk-input govuk-input--width-5" id="shift-aa-hours" type="text" name="shift-aa-hours"/>
+</div>
+</div>
+</p>
+<p>
+<label className="govuk-label--s govuk-!-padding-top-9" for="select-box">Seasonal or temporary workers</label>
+<div className="govuk-grid-row">
+  <div className="govuk-grid-column-one-quarter">
+  <label className="govuk-label" for="select-box">Number of officers</label>
+  <input className="govuk-input govuk-input--width-5" id="shift-temp" type="text" name="shift-temp"/>
+</div>
+
+<div className="govuk-grid-column-one-quarter">
+  <label className="govuk-label" for="select-box">Number of hours</label>
+  <input className="govuk-input govuk-input--width-5" id="shift-temp-hours" type="text" name="shift-temp-hours"/>
 </div>
 </div>
 </p>
 
+<p>
+<div className="govuk-label--s govuk-!-padding-top-4" id="total-hours"> Total time for this shift: 24 hours </div>
+</p>
 {/* OVERRIDES:_ govuk-\!-font-size-36 */}
 
 <p>
 <div className="govuk-grid-row govuk-!-margin-top-9">
 <div className="govuk-grid-column-one-quarter">
-<a href="http://localhost:4001/oarhome" role="button" draggable="false" className="govuk-button">
+<a href="http://localhost:4001/oarhome" role="button" id="shift-submit" draggable="false" className="govuk-button">
  Save
 </a>
 
 </div>
 <div className="govuk-grid-column-one-quarter govuk-!-margin-top-2">
-<label className="govuk-label--s"><a href="#">Cancel</a></label>
+<label className="govuk-label--s"><a href="#" id="shift-submit-cancel">Cancel</a></label>
 </div>
 </div>
 </p>

@@ -1,2 +1,2 @@
 # oar-ui
-borders platform ui
+borders oar UI

@@ -1,13 +1,5 @@
 import React, { Component } from 'react';
 import 'react-tabs/style/react-tabs.css';
-import 'govuk-frontend/all.scss';
-import '../../../public/styles/oarstyle.scss';
-
-import { Tabs } from 'govuk-frontend';
-// const GOVUKFrontend = require('govuk-frontend')
-// GOVUKFrontend.initAll()
-// import { initAll } from 'govuk-frontend';
-// initAll()
 
 class ShiftHome extends Component {
   constructor() {
@@ -15,6 +7,8 @@ class ShiftHome extends Component {
     this.state = { tabIndex: 0 };
   }
   render() {
+    document.title = "OAR - Shift home";
+
     return (
       <div >
       <div className="govuk-tabs" data-module="tabs">
