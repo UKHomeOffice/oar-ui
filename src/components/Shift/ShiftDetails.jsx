@@ -318,11 +318,6 @@ class ShiftDetails extends Component {
                   </tr>
 
                   <tr className="govuk-table__row">
-                    <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">Vessels</td>
-                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">0 hours</td>              
-                  </tr>
-
-                  <tr className="govuk-table__row">
 
                   <td className="tabs-table-td govuk-!-font-weight-bold" scope="col"> Date</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">20 October 2018</td>

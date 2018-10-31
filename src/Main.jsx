@@ -43,7 +43,7 @@ const Main = () => (
                 <ActivityIntTradeCheck />
             )}/>    */}
 
-            <Redirect to="/home"/>
+            <Redirect to="/oarhome"/>
         </Switch>
         </BrowserRouter>
 
