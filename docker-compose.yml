@@ -9,7 +9,8 @@ services:
       - "80:8080"
     networks:
       - "ui"
-  pg-dev:
+  #pg-dev:
+  postgres-db:
     image: postgres
     restart: always
     environment:
@@ -32,4 +33,11 @@ services:
       - "8080:80"
     networks:
       - "ui"
+  flyway-migrator:
+    image: gsengun/flyway-postgres
+    volumes:
+      - ./sql:/flyway/sql
+    depends_on:
+      - postgres-db
+    command: postgres-db 5432 postgres secret postgres public
   
