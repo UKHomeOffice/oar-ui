@@ -6,7 +6,30 @@ services:
   web:
     image: quay.io/ukhomeofficedigital/oar-ui
     ports:
-    - "80:8080"
+      - "80:8080"
+    networks:
+      - "ui"
+  pg-dev:
+    image: postgres
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - "./data:/var/lib/postgresql/data"
+    networks:
+      - "ui"
+  pg-admin:
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      - "PGADMIN_DEFAULT_EMAIL=iamhero@heroes.com"
+      - "PGADMIN_DEFAULT_PASSWORD=password"
+    ports:
+      - "8080:80"
     networks:
       - "ui"
   
