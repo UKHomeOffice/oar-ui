@@ -30,7 +30,7 @@ services:
       - "PGADMIN_DEFAULT_EMAIL=iamhero@heroes.com"
       - "PGADMIN_DEFAULT_PASSWORD=password"
     ports:
-      - "8080:80"
+      - "8081:80"
     networks:
       - "ui"
   flyway-migrator:
