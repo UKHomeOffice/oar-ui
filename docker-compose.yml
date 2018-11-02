@@ -9,7 +9,6 @@ services:
       - "80:8080"
     networks:
       - "ui"
-  #pg-dev:
   postgres-db:
     image: postgres
     restart: always
@@ -27,7 +26,7 @@ services:
     image: dpage/pgadmin4
     restart: always
     environment:
-      - "PGADMIN_DEFAULT_EMAIL=iamhero@heroes.com"
+      - "PGADMIN_DEFAULT_EMAIL=oar@homeoffice.gov.uk.com"
       - "PGADMIN_DEFAULT_PASSWORD=password"
     ports:
       - "8081:80"
@@ -39,5 +38,8 @@ services:
       - ./sql:/flyway/sql
     depends_on:
       - postgres-db
-    command: postgres-db 5432 postgres secret postgres public
+    command: postgres-db 5432 postgres password
+    #command: postgres-db 5432 postgres secret postgres public
+    networks:
+      - "ui"
   
