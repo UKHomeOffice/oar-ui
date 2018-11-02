@@ -60,7 +60,8 @@ services:
   flyway-migrator:
     image: gsengun/flyway-postgres
     volumes:
-      - ./sql:/flyway/sql
+      - flyway-data:/flyway/sql
+      #- ./sql:/flyway/sql
     depends_on:
       - postgres-db
     command: postgres-db 5432 postgres password postgres oardb
@@ -69,4 +70,5 @@ services:
       - "oar"
 volumes:
   postgres-data: {}      
+  flyway-data: {}      
   
