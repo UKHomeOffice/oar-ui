@@ -9,6 +9,26 @@ import PubSub from "pubsub-js";
 
 class OarHome extends React.Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {location: 'Default - Dover'};
+    }
+
+    //Code to fetch the code from Postgrest
+    // componentDidMount(){
+    //     fetch("http://localhost:2000/shift").
+    //     then(results => {
+    //     //console.log("==11result===="+ results.json());
+    //     return results.json()
+    //     }).then(data => {
+    //         console.log("==22result===="+ data.results);
+    //         data.map(shift => {
+    //             console.log("==44result===="+ shift.teamid + "==" + shift.region + "==" + shift.location );
+    //             this.setState({location: shift.location})
+    //          })
+    //     })
+    // }
+
     render() {
             document.title = "OAR - HOME"
 
@@ -29,11 +49,11 @@ class OarHome extends React.Component {
                 <hr/>
 
                 <p className="govuk-label--m"><a href="http://localhost:4001/shiftdetails">Wednesday 20 October 2018</a></p>
-                <p className="govuk-label"> DS02F1 - Dover</p>
+                <p className="govuk-label"> DS02F1 - {this.state.location}</p>
 
                 <hr/>
 
-                <a href="http://localhost:4001/createshift" role="button" draggable="false" className="govuk-button">
+                <a href="http://localhost:4001/createshift" role="button" id="addshift-button" draggable="false" className="govuk-button">
                 Add shift
                 </a>
             </main>

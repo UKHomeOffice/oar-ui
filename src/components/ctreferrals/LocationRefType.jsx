@@ -3,9 +3,12 @@ import {bindActionCreators} from "redux";
 import {DocumentTitle} from 'react-document-title';
 import ActivityHoursMinutes from '../partials/ActivityHoursMinutes';
 import ActivityStaffAndHours from '../partials/ActivityStaffAndHours';
+const hosturl = "http://"+window.location.hostname + ":"+ window.location.port;
+const backturl = hosturl + "/referraldetails";
+const nextturl = hosturl + "/referraldetails";
 
 
-class CreateShift extends Component {
+class LocationRefType extends Component {
 
   componentWillMount() {
        this.state = {
@@ -58,22 +61,26 @@ class CreateShift extends Component {
      render() {
       document.title = "OAR - Add Shift"
 
-      const teams = ['Select:', 'DS0201 - Team1', 'DS0202 - Team2', 'DS0203 - Team3',];
+      const regions = ['North', 'Central', 'Heathrow', 'South', 'South East & Europe'];
       const locations = ['Select:', 'Location1', 'Location2', 'Location3'];
-      //const regions = ['North', 'Central', 'Heathrow', 'South', 'South East & Europe'];
-        
+      const area = ['Select:', 'area1', 'area2', 'area3' , 'area4'];
+      const referraltype = ['Select:', 'Air passenger', 'Fast parcels and post', 
+           'General aviation commodity' , 'General maritime commodity', 'General maritime passenger', 
+           'Maritime container', 'Maritime passenger', ' Rail passenger', 'RoRo freight',
+           'RoRo passenger', 'Air freight'];
+
       return (
         <div className="App">
           <div className="govuk-width-container">
           <div className="govuk-grid-row">
 
           <div className="govuk-grid-column-full">
-          <a href="#" className="govuk-back-link">Back</a>
+          <a href={backturl} className="govuk-back-link">Back</a>
           <main role="main" id="govuk-width-container" className="govuk-width-container" lang="en">
 
-          <p className="govuk-label--xl">Add Shift</p>
-          <p className="govuk-label--m"> Shift details</p>
-          <label className="govuk-label" for="select-box">Start date</label>
+          <p className="govuk-caption-xl"> CT referral </p>
+          <span className="govuk-label--xl">Add a referral</span>
+          <label className="govuk-label" for="select-box">Date of referral </label>
 
   <div className="govuk-form-group">
   <fieldset className="govuk-fieldset" aria-describedby="dob-hint" role="group">
@@ -108,100 +115,44 @@ class CreateShift extends Component {
     </div>
 
     <p>
-    <label className="govuk-label" for="select-box">TeamID</label>
+    <label className="govuk-label" for="select-box">Region of detection </label>
     <select className="govuk-select govuk-input--width-m" id="shift-teamid" name="select-box" width="100%" >
-    {this.populateDropdowns(teams)}
+    {this.populateDropdowns(regions)}
     </select>
     </p>
 
    <p>
-    <label className="govuk-label" for="select-box">Region</label>
+    <label className="govuk-label" for="select-box">Location of detection </label>
     <select className="govuk-select govuk-input--width-m" id="shift-region" name="select-box" width="100%" onChange={this.onChange.bind(this)} >
     {this.populateDropdowns(locations)}
     </select>
    </p>
 
    <p>
-    <label className="govuk-label" for="select-box">Location</label>
+    <label className="govuk-label" for="select-box">Area of detection </label>
     <select className="govuk-select govuk-input--width-m" id="shift-location" name="select-box" width="100%">
-    {this.populateDropdowns(this.state.regionArr)}
+    {this.populateDropdowns(area)}
     </select>
    </p>
 
-   <p>
-    <label className="govuk-label" for="select-box">Location</label>
+  <p>
+    <label className="govuk-label" for="select-box">Referral type </label>
     <select className="govuk-select govuk-input--width-m" id="shift-location" name="select-box" width="100%">
-    {this.populateDropdowns(this.state.regionArr)}
+    {this.populateDropdowns(referraltype)}
     </select>
    </p>
 
-
 <p>
-<label className="govuk-label" for="select-box"> Shift type </label>
- <div className="govuk-radios govuk-radios--inline">
-      <div className="govuk-radios__item">
-        <input className="govuk-radios__input" id="shift-type" name="changed-name" type="radio" value="yes"/>
-        <label className="govuk-label govuk-radios__label" for="changed-name-1">
-        Early
-        </label>
-      </div>
-      <div className="govuk-radios__item">
-        <input className="govuk-radios__input" id="shift-type" name="changed-name" type="radio" value="no"/>
-        <label className="govuk-label govuk-radios__label" for="changed-name-2">
-          Late
-        </label>
-      </div>
-      <div className="govuk-radios__item">
-        <input className="govuk-radios__input" id="shift-type" name="changed-name" type="radio" value="no"/>
-        <label className="govuk-label govuk-radios__label" for="changed-name-2">
-          Night
-        </label>
-      </div>
- </div>
- </p>
-
-
-
-<p>
-<label className="govuk-label--m"> Staff details </label>
-</p>
-<p> 
-<label className="govuk-label--s" for="shift-bfho">Border Force Higher Officers (BFHO)</label>
-{/* SEND PARAMS ON WHAT THE BOX IS REFERED TO */}
-<ActivityStaffAndHours/> 
-</p>
-<p>
-<label className="govuk-label--s" for="shift-bfo">Border Force Officers (BFO)</label>
-<ActivityStaffAndHours/>
-</p>
-<p>
-<label className="govuk-label--s" for="shift-bfao">Border Force Assistant Officers (BFAO)</label>
-<ActivityStaffAndHours/>
-</p>
-<p>
-<label className="govuk-label--s" for="shift-adm-asst">Administrative assistant</label>
-<ActivityStaffAndHours/>
-</p>
-<p>
-<label className="govuk-label--s" for="shift-temp-workers">Seasonal or temporary workers</label>
-<ActivityStaffAndHours/>
-</p>
-<p>
-<div className="govuk-label--s" id="shift-total-hours"> Total time for this shift: 24 hours </div>
-</p>
-
-<p>
-<div className="govuk-grid-row govuk-!-margin-top-9">
-<div className="govuk-grid-column-one-quarter">
-<a href="http://localhost:4001/oarhome" role="button" id="shift-submit" draggable="false" className="govuk-button">
- Save
-</a>
-
-</div>
-<div className="govuk-grid-column-one-quarter govuk-!-margin-top-2">
-<label className="govuk-label--s"><a href="#" id="shift-submit-cancel">Cancel</a></label>
-</div>
-</div>
+   <table>
+      <td className="govuk-!-padding-right-5 govuk-!-padding-top-4"> 
+            <a href={nextturl} role="button"  id="ctreferral-location-type-button" draggable="false" className="govuk-button">
+            Continue
+            </a>
+      </td>
+      <td className="table_td_text"> 
+            <div className="govuk-label--s"><a href="http://localhost:4001/shiftdetails"  id="ctreferral-location-type-cancel">Cancel</a></div>
+      </td>
+   </table>
 </p>
 
  </fieldset>
@@ -221,4 +172,4 @@ class CreateShift extends Component {
     }
   }
   
-  export default CreateShift
+  export default LocationRefType

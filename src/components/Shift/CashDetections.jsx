@@ -316,13 +316,13 @@ onChange(event) {
 <p>
 <div className="govuk-grid-row govuk-!-margin-top-9">
 <div className="govuk-grid-column-one-quarter">
-<a href="http://localhost:4001/agencydetails" id="cash-detect-continue" role="button" draggable="false" className="govuk-button">
+<a href="http://localhost:4001/agencydetails" id="cash-detection-continue" role="button" draggable="false" className="govuk-button">
   Continue
 </a>
 
 </div>
 <div className="govuk-grid-column-one-quarter govuk-!-margin-top-2">
-<label className="govuk-label--s"><a href="#" id="cash-detect-cancel">Cancel</a></label>
+<label className="govuk-label--s"><a href="#" id="cash-detection-cancel">Cancel</a></label>
 </div>
 </div>
 </p>

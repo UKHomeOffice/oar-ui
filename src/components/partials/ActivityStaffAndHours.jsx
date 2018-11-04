@@ -14,7 +14,7 @@ class ActivityStaffAndHours extends  React.Component {
                 <td><label className="govuk-label" htmlFor="total-hours">Total hours worked</label> </td>
               </tr>
               <tr>
-                <td> <input className="govuk-input govuk-input--width-4" id="number-of-offices-TBD" type="text" name="number-of-offices-TBD"/> </td>
+                <td> <input className="govuk-input govuk-input--width-4" id="number-of-officers-TBD" type="text" name="number-of-officers-TBD"/> </td>
                 <td> 
                 <td> <input className="govuk-input govuk-input--width-4" id="total-hours-TBD" type="text" name="total-hours-TBD"/> </td>
                 </td>

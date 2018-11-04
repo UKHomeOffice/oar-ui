@@ -214,7 +214,7 @@ class ShiftDetails extends Component {
                 </tbody>
               </table>
               <p>
-              <a href="http://localhost:4001/oarhome" role="button" draggable="false" className="govuk-button">
+              <a href="http://localhost:4001/oarhome" role="button" id="submit-for-reporting-button" draggable="false" className="govuk-button">
               Submit shift for reporting
               </a>
               </p>
@@ -233,7 +233,7 @@ class ShiftDetails extends Component {
                   <tr className="govuk-table__row">
                     <td className="tabs-table-td govuk-!-font-size-36 govuk-!-font-weight-bold" colSpan="4" scope="col">
                     <h2 className="govuk-heading-l">Cash detections</h2>
-                    <a href="http://localhost:4001/cashdetections" role="button" draggable="false" className="govuk-button">
+                    <a href="http://localhost:4001/cashdetections" role="button" draggable="false" id="Add-a-cash-detection-button" className="govuk-button">
                     Add a cash detection</a>
                     </td>
                    </tr>
@@ -304,7 +304,7 @@ class ShiftDetails extends Component {
                                               
                 </tbody>
               </table>
-              <a href="http://localhost:4001/oarhome" role="button" draggable="false" className="govuk-button">
+              <a href="http://localhost:4001/oarhome" role="button" id="submit-for-reporting-button" draggable="false" className="govuk-button">
               Submit shift for reporting
               </a>
               </TabPanel>
@@ -368,7 +368,7 @@ class ShiftDetails extends Component {
               <label className="govuk-label"><a href="#">Edit Shift</a></label>
 
               <p>
-              <a href="http://localhost:4001/oarhome" role="button" draggable="false" className="govuk-button">
+              <a href="http://localhost:4001/oarhome" role="button" id="submit-for-reporting-button" draggable="false" className="govuk-button">
               Submit shift for reporting
               </a>
               </p>

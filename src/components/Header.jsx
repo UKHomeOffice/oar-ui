@@ -7,8 +7,9 @@ import * as errorActionTypes from '../error/actionTypes';
 import {bindActionCreators} from "redux";
 import PubSub from "pubsub-js";
 const hosturl = "http://"+window.location.hostname + ":"+ window.location.port;
-const backturl = hosturl + "/oarhome";
-
+export const oarhomeurl = hosturl + "/oarhome";
+export const ctreferralsurl = hosturl + "/ctreferrals";
+export const reportsturl = hosturl + "/reports";
 
 class Header extends React.Component {
 
@@ -17,8 +18,6 @@ render() {
 return <div>
   
 <header className="govuk-header" role="banner" data-module="header">
-
-
 
   <div className="govuk-header__container govuk-width-container">
 
@@ -39,7 +38,7 @@ return <div>
     </div>
     <div className="govuk-header__content">
 
-      <a href={backturl} className="govuk-header__link govuk-header__link--service-name">
+      <a href={oarhomeurl} className="govuk-header__link govuk-header__link--service-name">
       Operational activity reporting
       </a>
 
@@ -47,17 +46,17 @@ return <div>
       <nav>
         <ul id="navigation" className="govuk-header__navigation " aria-label="Top Level Navigation">
           <li className="govuk-header__navigation-item govuk-header__navigation-item--active">
-            <a className="govuk-header__link" href={backturl}>
+            <a className="govuk-header__link" href={oarhomeurl}>
               Activities
             </a>
           </li>
           <li className="govuk-header__navigation-item">
-            <a className="govuk-header__link" href="#2">
+            <a className="govuk-header__link" href={ctreferralsurl}>
             CT referrals
             </a>
           </li>
           <li className="govuk-header__navigation-item">
-            <a className="govuk-header__link" href="#3">
+            <a className="govuk-header__link" href={reportsturl}>
             Reports
             </a>
           </li>
