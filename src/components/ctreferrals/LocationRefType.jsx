@@ -79,7 +79,7 @@ class LocationRefType extends Component {
           <main role="main" id="govuk-width-container" className="govuk-width-container" lang="en">
 
           <p className="govuk-caption-xl"> CT referral </p>
-          <span className="govuk-label--xl">Add a referral</span>
+          <span className="govuk-label--xl">Location and referral type</span>
           <label className="govuk-label" for="select-box">Date of referral </label>
 
   <div className="govuk-form-group">

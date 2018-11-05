@@ -114,6 +114,10 @@ class ReferralDetails extends Component {
     </select>
    </p>
 
+   <div class="govuk-label govuk-!-margin-left-3 govuk-!-display-inline"><a href="http://localhost:4001/startpage">
+            + Add an additional indicator</a></div>
+
+
     <p>
         <label className="govuk-label" htmlFor="int-trade-check-nch-abandon">Additional notes </label>
         <textarea className="govuk-input textarea-height govuk-input--width-20" id="int-trade-check-nch-abandon" type="textarea" name="int-trade-check-nch-abandon">
