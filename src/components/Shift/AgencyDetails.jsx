@@ -31,7 +31,7 @@ class AgencyDetails extends Component {
     <div className="govuk-radios govuk-radios--conditional" data-module="radios">
         <div className="govuk-radios govuk-radios--conditional" data-module="radios">
           <div className="govuk-radios__item">
-            <input className="govuk-radios__input" id="cashdet-agency-adoption-1-y" name="cashdet-agency-adoption-1-y" type="radio" value="yes" data-aria-controls="conditional-cashdet-agency-adoption-1-y"/>
+            <input className="govuk-radios__input" id="cashdet-agency-adoption-1-y" name="cashdet-agency-adoption-1" type="radio" value="yes" data-aria-controls="conditional-cashdet-agency-adoption-1-y"/>
             <label className="govuk-label govuk-radios__label" for="cashdet-agency-adoption-1-y">
               Yes
             </label>
@@ -45,7 +45,7 @@ class AgencyDetails extends Component {
             </div>
           </div>
           <div className="govuk-radios__item">
-            <input className="govuk-radios__input" id="cashdet-agency-adoption-1-n" name="cashdet-agency-adoption-1-n" type="radio" value="no" data-aria-controls="conditional-cashdet-agency-adoption-1-n"/>
+            <input className="govuk-radios__input" id="cashdet-agency-adoption-1-n" name="cashdet-agency-adoption-1" type="radio" value="no" data-aria-controls="conditional-cashdet-agency-adoption-1-n"/>
             <label className="govuk-label govuk-radios__label" for="cashdet-agency-adoption-1-n">
             No
             </label>
@@ -61,7 +61,7 @@ class AgencyDetails extends Component {
     <div className="govuk-radios govuk-radios--conditional" data-module="radios">
         <div className="govuk-radios govuk-radios--conditional" data-module="radios">
           <div className="govuk-radios__item">
-            <input className="govuk-radios__input" id="cashdet-agency-adoption-2-y" name="cashdet-agency-adoption-2-y" type="radio" value="yes" data-aria-controls="conditional-cashdet-agency-adoption-2-y"/>
+            <input className="govuk-radios__input" id="cashdet-agency-adoption-2-y" name="cashdet-agency-adoption-2" type="radio" value="yes" data-aria-controls="conditional-cashdet-agency-adoption-2-y"/>
             <label className="govuk-label govuk-radios__label" for="cashdet-agency-adoption-2-y">
               Yes
             </label>
@@ -75,7 +75,7 @@ class AgencyDetails extends Component {
             </div>
           </div>
           <div className="govuk-radios__item">
-            <input className="govuk-radios__input" id="cashdet-agency-adoption-2-n" name="cashdet-agency-adoption-2-n" type="radio" value="no" data-aria-controls="conditional-cashdet-agency-adoption-2-n"/>
+            <input className="govuk-radios__input" id="cashdet-agency-adoption-2-n" name="cashdet-agency-adoption-2" type="radio" value="no" data-aria-controls="conditional-cashdet-agency-adoption-2-n"/>
             <label className="govuk-label govuk-radios__label" for="cashdet-agency-adoption-2-n">
             No
             </label>
