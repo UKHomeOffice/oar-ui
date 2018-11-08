@@ -59,7 +59,7 @@ class LocationRefType extends Component {
     this.setState({regionArr: this.getNextArr(event.target.value)});
    }
      render() {
-      document.title = "OAR - Add Shift"
+      document.title = "OAR - Location and referral type"
 
       const regions = ['North', 'Central', 'Heathrow', 'South', 'South East & Europe'];
       const locations = ['Select:', 'Location1', 'Location2', 'Location3'];
@@ -90,54 +90,54 @@ class LocationRefType extends Component {
     <div className="govuk-date-input" id="dob">
       <div className="govuk-date-input__item">
         <div className="govuk-form-group">
-          <label className="govuk-label govuk-date-input__label" for="dob-day">
+          <label className="govuk-label govuk-date-input__label" for="ctref-day-of-ref">
             Day
           </label>
-          <input className="govuk-input govuk-date-input__input govuk-input--width-2" id="shift-day" name="dob-day" type="number" pattern="[0-9]*"/>
+          <input className="govuk-input govuk-date-input__input govuk-input--width-2" id="ctref-day-of-ref" name="ctref-day-of-ref" type="number" pattern="[0-9]*"/>
         </div>
       </div>
       <div className="govuk-date-input__item">
         <div className="govuk-form-group">
-          <label className="govuk-label govuk-date-input__label" for="dob-month">
+          <label className="govuk-label govuk-date-input__label" for="ctref-month-of-ref">
             Month
           </label>
-          <input className="govuk-input govuk-date-input__input govuk-input--width-2" id="shift-month" name="dob-month" type="number" pattern="[0-9]*"/>
+          <input className="govuk-input govuk-date-input__input govuk-input--width-2" id="ctref-month-of-ref" name="ctref-month-of-ref" type="number" pattern="[0-9]*"/>
         </div>
       </div>
       <div className="govuk-date-input__item">
         <div className="govuk-form-group">
-          <label className="govuk-label govuk-date-input__label" for="dob-year">
+          <label className="govuk-label govuk-date-input__label" for="ctref-year-of-ref">
             Year
           </label>
-          <input className="govuk-input govuk-date-input__input govuk-input--width-4" id="shift-year" name="dob-year" type="number" pattern="[0-9]*"/>
+          <input className="govuk-input govuk-date-input__input govuk-input--width-4" id="ctref-year-of-ref" name="ctref-year-of-ref" type="number" pattern="[0-9]*"/>
         </div>
       </div>
     </div>
 
     <p>
     <label className="govuk-label" for="select-box">Region of detection </label>
-    <select className="govuk-select govuk-input--width-m" id="shift-teamid" name="select-box" width="100%" >
+    <select className="govuk-select govuk-input--width-m" id="ctref-det-region" name="ctref-det-region" width="100%" >
     {this.populateDropdowns(regions)}
     </select>
     </p>
 
    <p>
     <label className="govuk-label" for="select-box">Location of detection </label>
-    <select className="govuk-select govuk-input--width-m" id="shift-region" name="select-box" width="100%" onChange={this.onChange.bind(this)} >
+    <select className="govuk-select govuk-input--width-m" id="ctref-det-location" name="ctref-det-location" width="100%" onChange={this.onChange.bind(this)} >
     {this.populateDropdowns(locations)}
     </select>
    </p>
 
    <p>
     <label className="govuk-label" for="select-box">Area of detection </label>
-    <select className="govuk-select govuk-input--width-m" id="shift-location" name="select-box" width="100%">
+    <select className="govuk-select govuk-input--width-m" id="ctref-det-area" name="ctref-det-area" width="100%">
     {this.populateDropdowns(area)}
     </select>
    </p>
 
   <p>
     <label className="govuk-label" for="select-box">Referral type </label>
-    <select className="govuk-select govuk-input--width-m" id="shift-location" name="select-box" width="100%">
+    <select className="govuk-select govuk-input--width-m" id="ctref-ref-type" name="ctref-ref-type" width="100%">
     {this.populateDropdowns(referraltype)}
     </select>
    </p>
@@ -145,12 +145,12 @@ class LocationRefType extends Component {
 <p>
    <table>
       <td className="govuk-!-padding-right-5 govuk-!-padding-top-4"> 
-            <a href={nextturl} role="button"  id="ctreferral-location-type-button" draggable="false" className="govuk-button">
+            <a href={nextturl} role="button"  id="ctref-location-type-continue" draggable="false" className="govuk-button">
             Continue
             </a>
       </td>
       <td className="table_td_text"> 
-            <div className="govuk-label--s"><a href="http://localhost:4001/shiftdetails"  id="ctreferral-location-type-cancel">Cancel</a></div>
+            <div className="govuk-label--s"><a href="http://localhost:4001/shiftdetails"  id="ctref-location-type-cancel">Cancel</a></div>
       </td>
    </table>
 </p>

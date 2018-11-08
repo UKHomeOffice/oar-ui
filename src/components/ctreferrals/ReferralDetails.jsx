@@ -13,7 +13,7 @@ class Addlindicator extends React.Component {
           <div>
               <p>
                 <label className="govuk-label" for="select-box">Additional indicator </label>
-                <select className="govuk-select govuk-input--width-m" id="shift-location" name="select-box" width="100%">
+                <select className="govuk-select govuk-input--width-m" id="ctref-additional-indicator1" name="select-box" width="100%">
                 {this.props.populateDropdowns(this.props.indicators)}
                 </select>
               </p>           
@@ -111,7 +111,7 @@ class ReferralDetails extends React.Component {
    );
       
       
-   document.title = "OAR - Add Shift"
+   document.title = "OAR - Referral details"
 
       const indicators = ['Select:', '1 - Forged / Counterfeit documents', '2 - Fraudulently Obtained Genuine documents',
             '3 - Travel History' , '4 - Circuitous Routing', '5 - Length of time outside the UK', 
@@ -144,19 +144,19 @@ class ReferralDetails extends React.Component {
 
     <p>
         <label className="govuk-label" htmlFor="int-trade-check-nch-abandon">Referral officer name </label>
-        <input className="govuk-input govuk-input--width-20" id="int-trade-check-nch-abandon" type="text" name="int-trade-check-nch-abandon"/>
+        <input className="govuk-input govuk-input--width-20" id="ctref-refofficer-name" type="text" name="int-trade-check-nch-abandon"/>
     </p>
 
    <p>
     <label className="govuk-label" for="select-box">Primary indicator </label>
-    <select className="govuk-select govuk-input--width-m" id="shift-region" name="select-box" width="100%" onChange={this.onChange.bind(this)} >
+    <select className="govuk-select govuk-input--width-m" id="ctref-primary-indicator" name="select-box" width="100%" onChange={this.onChange.bind(this)} >
     {this.populateDropdowns(indicators)}
     </select>
    </p>
 
    <p>
     <label className="govuk-label" for="select-box">Additional indicator </label>
-    <select className="govuk-select govuk-input--width-m" id="shift-location" name="select-box" width="100%">
+    <select className="govuk-select govuk-input--width-m" id="ctref-additional-indicator" name="select-box" width="100%">
     {this.populateDropdowns(indicators)}
     </select>
    </p>
@@ -171,7 +171,7 @@ class ReferralDetails extends React.Component {
    </div>
    <p>
         <label className="govuk-label" htmlFor="int-trade-check-nch-abandon">Additional notes </label>
-        <textarea className="govuk-input textarea-height govuk-input--width-20" id="int-trade-check-nch-abandon" type="textarea" name="int-trade-check-nch-abandon">
+        <textarea className="govuk-input textarea-height govuk-input--width-20" id="ctref-additional-notes" type="textarea" name="int-trade-check-nch-abandon">
         </textarea>
    </p>
 
@@ -179,13 +179,13 @@ class ReferralDetails extends React.Component {
  <label className="govuk-label" for="select-box"> Result of behavioural indicators training </label>
  <div className="govuk-radios govuk-radios--inline">
       <div className="govuk-radios__item">
-        <input className="govuk-radios__input" id="shift-type" name="changed-name" type="radio" value="yes"/>
+        <input className="govuk-radios__input" id="ctref-beh-indicator" name="changed-name" type="radio" value="yes"/>
         <label className="govuk-label govuk-radios__label" for="changed-name-1">
         Yes
         </label>
       </div>
       <div className="govuk-radios__item">
-        <input className="govuk-radios__input" id="shift-type" name="changed-name" type="radio" value="no"/>
+        <input className="govuk-radios__input" id="ctref-beh-indicator" name="changed-name" type="radio" value="no"/>
         <label className="govuk-label govuk-radios__label" for="changed-name-2">
           No
         </label>
@@ -197,7 +197,7 @@ class ReferralDetails extends React.Component {
 <p>
    <table>
       <td className="govuk-!-padding-right-5 govuk-!-padding-top-4"> 
-            <a href="http://localhost:4001/locationreftype" role="button"  id="ctreferral-referral-detail-button" draggable="false" className="govuk-button">
+            <a href="http://localhost:4001/locationreftype" role="button"  id="ctreferral-referral-detail-continue" draggable="false" className="govuk-button">
             Continue
             </a>
       </td>
