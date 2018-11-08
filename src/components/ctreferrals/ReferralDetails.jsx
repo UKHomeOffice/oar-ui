@@ -123,7 +123,7 @@ class ReferralDetails extends React.Component {
             '13 - Previous military training', '14 - Claims of involvement or in support of violent extremist groups / terrorists',
             '15 - Last minute / cash paid ticketing', '16 - Firearms / firearms components / Offensive weapons',
             '17 - Suspect consignment including suspect IED / IED parts', '18 - Unaccompanied passports / identity cards',
-            '19 - Military surplus (weapon scope, combat gear, first aid kits, camping equipment etc)', 'area4', 'area4', 'area4', 
+            '19 - Military surplus (weapon scope, combat gear, first aid kits, camping equipment etc)', 
             '20 - Credit / Debit cards / any other monetary"', '21 - Passports / ID cards / other identity/legal documents',
             '22 - Undocumented / Clandestine arrival', '23 - Other', '24 - CT (SB) WICU hit'];
                         
