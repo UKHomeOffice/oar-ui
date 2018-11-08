@@ -10,9 +10,7 @@ const port = process.env.PORT || 4001;
 const hosturl = "http://"+window.location.hostname + ":"+ window.location.port;
 const backturl = hosturl + "/shiftdetails";
 class Activity extends  React.Component {
-  // constructor(props) {
-  //   super(props);
-  // }
+ 
   componentWillMount() {
     //this.changeRoute = this.changeRoute.bind(this);
     //const path = this.props.location.pathname;
@@ -44,7 +42,7 @@ const activityId = qryObj.activity
 console.log("activityId=======" + activityId)
 
 const activities = { 
-  "pcp1" : "General PC",
+  "pcp1" : "General PCP",
   "pcp2" : "Detention management",
   "pcp3" : "Immigration casework", 
   "pcp4" : "Other immigration", 

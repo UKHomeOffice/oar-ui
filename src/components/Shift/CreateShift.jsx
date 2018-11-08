@@ -3,7 +3,8 @@ import {bindActionCreators} from "redux";
 import {DocumentTitle} from 'react-document-title';
 import ActivityHoursMinutes from '../partials/ActivityHoursMinutes';
 import ActivityStaffAndHours from '../partials/ActivityStaffAndHours';
-
+const hosturl = "http://"+window.location.hostname + ":"+ window.location.port;
+const backturl = hosturl + "/shiftdetails";
 
 class CreateShift extends Component {
 
@@ -68,7 +69,7 @@ class CreateShift extends Component {
           <div className="govuk-grid-row">
 
           <div className="govuk-grid-column-full">
-          <a href="#" className="govuk-back-link">Back</a>
+          <a href={backturl} className="govuk-back-link">Back</a>
           <main role="main" id="govuk-width-container" className="govuk-width-container" lang="en">
 
           <p className="govuk-label--xl">Add Shift</p>

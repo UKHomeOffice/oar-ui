@@ -44,7 +44,7 @@ class ShiftDetails extends Component {
                     {/* <td>&nbsp;</td><td>&nbsp;</td> */}
                   </tr>
                   <tr className="govuk-table__row">
-                    <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">General PC</td>
+                    <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">General PCP</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">0 hours</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
                     <a href="http://localhost:4001/activity?activity=pcp1&block=pcp"> Edit </a>
@@ -189,13 +189,13 @@ class ShiftDetails extends Component {
                     <a href="http://localhost:4001/activity?activity=oth4&block=oth"> Edit </a>
                     </td>                  
                   </tr>
-                  <tr className="govuk-table__row">
-                    <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">General PC</td>
+                  {/* <tr className="govuk-table__row">
+                    <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">General PCP</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">0 hours</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
                     <a href="http://localhost:4001/activity?activity=oth5&block=oth"> Edit </a>
                     </td>                  
-                  </tr>
+                  </tr> */}
                   <tr className="govuk-table__row">
                     <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">Intelligence collection and reporting</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">0 hours</td>
