@@ -4,14 +4,39 @@ import {DocumentTitle} from 'react-document-title';
 import ActivityHoursMinutes from '../partials/ActivityHoursMinutes';
 import ActivityStaffAndHours from '../partials/ActivityStaffAndHours';
 
+class Addlindicator extends React.Component {
+        constructor(props) {
+          super(props);
+        }
+        render() {
+          return (
+          <div>
+              <p>
+                <label className="govuk-label" for="select-box">Additional indicator </label>
+                <select className="govuk-select govuk-input--width-m" id="shift-location" name="select-box" width="100%">
+                {this.props.populateDropdowns(this.props.indicators)}
+                </select>
+              </p>           
+          </div>
+          );
+        }
+}
 
-class ReferralDetails extends Component {
+class ReferralDetails extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+    isaddlindicator: false,
+    };
+
+  }
+  
   componentWillMount() {
        this.state = {
-        routerPath: '',
-        typed: '',
-        regionArr: ['Select:']
+        regionArr: ['Select:'],
+        isaddlindicator: false,
+
     }
   }
 
@@ -19,11 +44,11 @@ class ReferralDetails extends Component {
     document.title = "OAR - Add Shift"
   }
 
-  populateDropdowns(arr) {
-    console.log("dddddd===populateDropdowns:-" + arr);
+  populateDropdowns(indicators) {
+    console.log("dddddd===populateDropdowns:-" + indicators);
 
     const items = [];
-    arr.forEach(function(item, index, array) {
+    indicators.forEach(function(item, index, array) {
       items.push(<option key={index} value={index}>{item}</option>);
     });
     return items;
@@ -41,30 +66,52 @@ class ReferralDetails extends Component {
   }
 
   getInitialState() {
+    this.render = this.render.bind(this)
+
     this.setState({
-      typed: '',
-      regionArr: ['Select:']
+      regionArr: ['Select:'],
+      isaddlindicator: false,
+
     });
     return {
-      typed: '',
-      regionArr: ['Select:']
+      regionArr: ['Select:'],
+      isaddlindicator: false,
     };
   }
+  
+  appendRow(e)
+  {
+    this.setState({
+      isaddlindicator: true,
+    });
+  }
+
 
   onChange(event) {
-    this.setState({typed: event.target.value});
     this.setState({regionArr: this.getNextArr(event.target.value)});
    }
-     render() {
-      document.title = "OAR - Add Shift"
 
-      const regions = ['North', 'Central', 'Heathrow', 'South', 'South East & Europe'];
-      const locations = ['Select:', 'Location1', 'Location2', 'Location3'];
-      const area = ['Select:', 'area1', 'area2', 'area3' , 'area4'];
-      const referraltype = ['Select:', 'Air passenger', 'Fast parcels and post', 
-           'General aviation commodity' , 'General maritime commodity', 'General maritime passenger', 
-           'Maritime container', 'Maritime passenger', ' Rail passenger', 'RoRo freight',
-           'RoRo passenger', 'Air freight'];
+
+  render() {
+      const addlindicator1 = React.createElement(
+        "P",
+        React.createElement(
+          "label",  
+          { className : "govuk-label" },
+          "Additional indicator"
+        ),
+        React.createElement(
+            "select",
+            {className : "govuk-select govuk-input--width-m"},
+            {id : "shift-location"},
+            {name : "select-box"},
+            {width : "100%"},
+            "{this.populateDropdowns(indicators)}"
+        ),
+   );
+      
+      
+   document.title = "OAR - Add Shift"
 
       const indicators = ['Select:', '1 - Forged / Counterfeit documents', '2 - Fraudulently Obtained Genuine documents',
             '3 - Travel History' , '4 - Circuitous Routing', '5 - Length of time outside the UK', 
@@ -79,7 +126,7 @@ class ReferralDetails extends Component {
             '19 - Military surplus (weapon scope, combat gear, first aid kits, camping equipment etc)', 'area4', 'area4', 'area4', 
             '20 - Credit / Debit cards / any other monetary"', '21 - Passports / ID cards / other identity/legal documents',
             '22 - Undocumented / Clandestine arrival', '23 - Other', '24 - CT (SB) WICU hit'];
-
+                        
       return (
         <div className="App">
           <div className="govuk-width-container">
@@ -114,18 +161,22 @@ class ReferralDetails extends Component {
     </select>
    </p>
 
-   <div class="govuk-label govuk-!-margin-left-3 govuk-!-display-inline"><a href="http://localhost:4001/startpage">
-            + Add an additional indicator</a></div>
+    {this.state.isaddlindicator ? 
+    <Addlindicator populateDropdowns={this.populateDropdowns} indicators={indicators} />
+    :  null }
 
-
-    <p>
+   <div class="govuk-label govuk-!-margin-left-3 govuk-!-display-inline" id="ctref-add-addl-indicators">
+    <a href="#" className="govuk-label" onClick ={this.appendRow.bind(this)}> 
+                + Add an additional indicator</a>
+   </div>
+   <p>
         <label className="govuk-label" htmlFor="int-trade-check-nch-abandon">Additional notes </label>
         <textarea className="govuk-input textarea-height govuk-input--width-20" id="int-trade-check-nch-abandon" type="textarea" name="int-trade-check-nch-abandon">
         </textarea>
-    </p>
+   </p>
 
-<p>
-<label className="govuk-label" for="select-box"> Result of behavioural indicators training </label>
+ <p>
+ <label className="govuk-label" for="select-box"> Result of behavioural indicators training </label>
  <div className="govuk-radios govuk-radios--inline">
       <div className="govuk-radios__item">
         <input className="govuk-radios__input" id="shift-type" name="changed-name" type="radio" value="yes"/>

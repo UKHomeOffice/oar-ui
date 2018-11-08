@@ -145,7 +145,7 @@ class AddReferral extends Component {
 <p>
    <table>
       <td className="govuk-!-padding-right-5 govuk-!-padding-top-4"> 
-            <a href="http://localhost:4001/locationreftype" role="button" id="add-referral-continue-button" draggable="false" className="govuk-button">
+            <a href={backturl} role="button" id="add-referral-continue-button" draggable="false" className="govuk-button">
             Continue
             </a>
       </td>
