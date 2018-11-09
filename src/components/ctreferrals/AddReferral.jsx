@@ -18,7 +18,7 @@ class AddReferral extends Component {
   }
 
   componentDidMount(){
-    document.title = "OAR - Add Shift"
+    document.title = "OAR - CT referral - Add Referral"
   }
 
   populateDropdowns(arr) {

@@ -8,7 +8,7 @@ const nextturl = hosturl + "/locationreftype";
 class CTReferrals extends Component {
   
     render() {
-      document.title = "OAR - CT Referral";
+      document.title = "OAR - CT Referrals";
 
       console.log('====== in Shift component')
       return (
@@ -28,30 +28,30 @@ class CTReferrals extends Component {
                     Add a CT referral</a>
           </div>
 
-          <div className="govuk-form-group">
+          <div className="govuk-form-group govuk-!-padding-top-6">
           <fieldset className="govuk-fieldset" role="group">
           <table className="govuk-table">
               <tbody className="govuk-table__body">
                   <tr className="govuk-table__row">
-                    <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">Type</td>
-                    <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">Details</td>
-                    <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">Detected items</td>
+                    <td className="table-td-left-align govuk-!-font-weight-bold" scope="col">Type</td>
+                    <td className="table-td-left-align govuk-!-font-weight-bold" scope="col">Details</td>
+                    <td className="table-td-left-align govuk-!-font-weight-bold" scope="col">Detected items</td>
                   </tr>
 
                   <tr className="govuk-table__row">
-                    <td className="tabs-table-td" scope="col">
+                    <td className="table-td-left-align" scope="col">
                     <div className="govuk-!-font-weight-bold">GM passenger</div>
                     <div>20 October 2018</div>
                     <div>Dover</div>
                     <div>Dock 11</div>
                     </td>
-                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
+                    <td className="table-td-left-align govuk-!-font-weight-regular" scope="col">
                     <div className="govuk-!-font-weight-regular">Harold Burgess</div>
                     <div>United Kingdom</div>
                     <div>Male</div>
                     <div>Age 37</div>
                      </td>
-                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
+                    <td className="table-td-left-align govuk-!-font-weight-regular" scope="col">
                     <div>Forged or counterfeit documents</div>
                     <div>Cash</div>
                     <div>Firearms and firearm components</div>
@@ -60,18 +60,18 @@ class CTReferrals extends Component {
 
 
                   <tr className="govuk-table__row">
-                    <td className="tabs-table-td" scope="col">
+                    <td className="table-td-left-align" scope="col">
                     <div className="govuk-!-font-weight-bold">Maritime container</div>
                     <div>19 October 2018</div>
                     <div>Folkestone</div>
                     <div>Dock 8</div>
                     </td>
-                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
+                    <td className="table-td-left-align govuk-!-font-weight-regular" scope="col">
                     <div>Maesk</div>
                     <div>SBS028</div>
                     <div>China</div>
                     </td>
-                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
+                    <td className="table-td-left-align govuk-!-font-weight-regular" scope="col">
                     <div>Firearms and firearm components</div>
                     <div>Evidence of fundraising</div>
                     <div>Hostile reconnaissance material</div>

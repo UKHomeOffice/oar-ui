@@ -10,10 +10,57 @@ const hosturl = "http://"+window.location.hostname + ":"+ window.location.port;
 export const oarhomeurl = hosturl + "/oarhome";
 export const ctreferralsurl = hosturl + "/ctreferrals";
 export const reportsturl = hosturl + "/reports";
+const queryString = require('query-string');
 
 class Header extends React.Component {
+  
+menuitems(){
+  // var $headermenu = document.querySelectorAll('[data-module="header-menu"]');
+  // var $toggleheaders = document.querySelectorAll('.js-header-item-toggle');
+  // alert("==444" + $toggleheaders);
+  // for (var i = 0; i < $toggleheaders.length; i++) {
+  //   $toggleheaders[i].addEventListener('click', this.toggleHeaderClass.bind(this));
+  // }
+
+  // $("#header-crref-link").click(function(){
+  //   $("#header-crref-link").toggleClass("govuk-header__navigation-item govuk-header__navigation-item--active");
+  // });
+
+/* TODO:- need to check the token from Keycloak is valid after login or not,
+          token is valid show the Menu items */
+const qryObj = queryString.parse(location.search); //if check for query string Token
+const isTokenValid = true;
+    if(isTokenValid){
+      return(
+        <div data-module="header-menu">
+        <button type="button" role="button" className="govuk-header__menu-button js-header-toggle" aria-controls="navigation" aria-label="Show or hide Top Level Navigation">Menu</button>
+        <nav>
+          <ul id="navigation" className="govuk-header__navigation " aria-label="Top Level Navigation">
+            <li className="govuk-header__navigation-item govuk-header__navigation-item--active">
+              <a className="govuk-header__link js-header-item-toggle"  id="header-activities-link" href={oarhomeurl}>
+                Activities
+              </a>
+            </li>
+            <li className="govuk-header__navigation-item">
+              <a className="govuk-header__link js-header-item-toggle" id="header-crref-link" href={ctreferralsurl}>
+              CT referrals
+              </a>
+            </li>
+            <li className="govuk-header__navigation-item">
+              <a className="govuk-header__link js-header-item-toggle"  id="header-reports-link" href={reportsturl}>
+              Reports
+              </a>
+            </li>
+          </ul>
+        </nav>
+        </div>
+      );
+    }
+}
+
 
 render() {
+  
 
 return <div>
   
@@ -41,27 +88,8 @@ return <div>
       <a href={oarhomeurl} className="govuk-header__link govuk-header__link--service-name">
       Operational activity reporting
       </a>
-
-      <button type="button" role="button" className="govuk-header__menu-button js-header-toggle" aria-controls="navigation" aria-label="Show or hide Top Level Navigation">Menu</button>
-      <nav>
-        <ul id="navigation" className="govuk-header__navigation " aria-label="Top Level Navigation">
-          <li className="govuk-header__navigation-item govuk-header__navigation-item--active">
-            <a className="govuk-header__link" href={oarhomeurl}>
-              Activities
-            </a>
-          </li>
-          <li className="govuk-header__navigation-item">
-            <a className="govuk-header__link" href={ctreferralsurl}>
-            CT referrals
-            </a>
-          </li>
-          <li className="govuk-header__navigation-item">
-            <a className="govuk-header__link" href={reportsturl}>
-            Reports
-            </a>
-          </li>
-        </ul>
-      </nav>
+     {this.menuitems()}
+      
     </div>
   </div>
 </header>  

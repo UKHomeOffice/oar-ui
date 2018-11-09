@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
+const hosturl = "http://"+window.location.hostname + ":"+ window.location.port;
+const activityturl = hosturl + "/activity";
 
 class ShiftDetails extends Component {
-  
+  makelink(section, row){
+       return activityturl + '?activity=' + row + '&block=' + section;
+  }
     render() {
+     
       document.title = "OAR - Shift details";
 
-      console.log('====== in Shift component')
       return (
         <div>
           <div className="govuk-width-container">
@@ -35,11 +39,19 @@ class ShiftDetails extends Component {
               <TabPanel>
               {/* <h2 className="govuk-heading-l">Activities</h2>
               <h1 className="govuk-heading-s">Primary Control Point (PCP)</h1> */}
+
               <table className="govuk-table table-border" >
               <tbody className="govuk-table__body">
                   <tr className="govuk-table__row">
                     <td className="tabs-table-td govuk-!-font-size-27 govuk-!-font-weight-bold" colSpan="3" scope="col">
                     <h2 className="govuk-heading-l">Activities</h2>
+
+                    <div className="warning-message" aria-labelledby="warning-message-title" role="alert" tabindex="-1" data-module="warning-message">
+                      <label className="govuk-label govuk-!-font-weight-bold">
+                      0 hours to allocate (0 hours total in this shift)
+                      </label>
+                    </div>
+
                     Primary Control Point (PCP)</td>
                     {/* <td>&nbsp;</td><td>&nbsp;</td> */}
                   </tr>
@@ -47,48 +59,49 @@ class ShiftDetails extends Component {
                     <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">General PCP</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">0 hours</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
-                    <a href="http://localhost:4001/activity?activity=pcp1&block=pcp"> Edit </a>
+                    <a href={this.makelink('pcp', 'pcp1')} id="activity-pcp1" > Edit </a>
                     </td>                  
                   </tr>
                   <tr className="govuk-table__row">
                     <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">Detention management</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">0 hours</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
-                    <a href="http://localhost:4001/activity?activity=pcp2&block=pcp"> Edit </a>
+                    <a href={this.makelink('pcp', 'pcp2')} id="activity-pcp2" > Edit </a>
                     </td>                  
                   </tr>
                   <tr className="govuk-table__row">
                     <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">Immigration casework</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">0 hours</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
-                    <a href="http://localhost:4001/activity?activity=pcp3&block=pcp"> Edit </a>                    </td>                  
+                    <a href={this.makelink('pcp', 'pcp3')} id="activity-pcp3" > Edit </a>
+                    </td>                  
                   </tr>
                   <tr className="govuk-table__row">
                    <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">Other immigration</td>
                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">0 hours</td>
                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
-                   <a href="http://localhost:4001/activity?activity=pcp4&block=pcp"> Edit </a>
+                   <a href={this.makelink('pcp', 'pcp5')} id="activity-pcp4" > Edit </a>
                    </td>
                   </tr>
                   <tr className="govuk-table__row">
                     <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">CT referrals</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">0 hours</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
-                    <a href="http://localhost:4001/activity?activity=pcp5&block=pcp"> Edit </a>
+                    <a href={this.makelink('pcp', 'pcp5')} id="activity-pcp5" > Edit </a>
                     </td>                  
                   </tr>
                   <tr className="govuk-table__row">
                    <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">Safeguarding</td>
                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">0 hours</td>
                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
-                   <a href="http://localhost:4001/activity?activity=pcp6&block=pcp"> Edit </a>
+                   <a href={this.makelink('pcp', 'pcp6')} id="activity-pcp6" > Edit </a>
                    </td>
                   </tr>
                   <tr className="govuk-table__row">
                     <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">Forgery</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">0 hours</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
-                    <a href="http://localhost:4001/activity?activity=pcp7&block=pcp"> Edit </a>
+                    <a href={this.makelink('pcp', 'pcp7')} id="activity-pcp7" > Edit </a>
                     </td>                  
                   </tr>
 
@@ -99,14 +112,14 @@ class ShiftDetails extends Component {
                     <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">Red / Green channels</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">0 hours</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
-                    <a href="http://localhost:4001/activity?activity=cst1&block=cst"> Edit </a>
+                    <a href={this.makelink('cst', 'cst1')} id="activity-cst1" > Edit </a>
                     </td>                  
                   </tr>
                   <tr className="govuk-table__row">
                     <td className="tabs-table-td govuk-!-font-weight-bold" scope="col"> International Trade checks</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">0 hours</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
-                    <a href="http://localhost:4001/activity?activity=cst2&block=cst"> Edit </a>
+                    <a href={this.makelink('cst', 'cst2')} id="activity-cst2" > Edit </a>
                     </td>                  
                   </tr>
 
@@ -118,42 +131,42 @@ class ShiftDetails extends Component {
                     <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">Vehicles</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">0 hours</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
-                    <a href="http://localhost:4001/activity?activity=sae1&block=sae"> Edit </a>
+                    <a href={this.makelink('sae', 'sae1')} id="activity-sae1" > Edit </a>
                     </td>                  
                   </tr>
                   <tr className="govuk-table__row">
                     <td className="tabs-table-td govuk-!-font-weight-bold" scope="col"> People</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">0 hours</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
-                    <a href="http://localhost:4001/activity?activity=sae2&block=sae"> Edit </a>
+                    <a href={this.makelink('sae', 'sae2')} id="activity-sae2" > Edit </a>
                     </td>                  
                   </tr>
                   <tr className="govuk-table__row">
                     <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">Freight</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">0 hours</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
-                    <a href="http://localhost:4001/activity?activity=sae3&block=sae"> Edit </a>
+                    <a href={this.makelink('sae', 'sae3')} id="activity-sae3" > Edit </a>
                     </td>                  
                   </tr>
                   <tr className="govuk-table__row">
                     <td className="tabs-table-td govuk-!-font-weight-bold" scope="col"> Aircraft</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">0 hours</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
-                    <a href="http://localhost:4001/activity?activity=sae4&block=sae"> Edit </a>
+                    <a href={this.makelink('sae', 'sae4')} id="activity-sae4" > Edit </a>
                     </td>                  
                   </tr>
                   <tr className="govuk-table__row">
                     <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">Vessels</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">0 hours</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
-                    <a href="http://localhost:4001/activity?activity=sae5&block=sae"> Edit </a>
+                    <a href={this.makelink('sae', 'sae5')} id="activity-sae5" > Edit </a>
                     </td>                  
                   </tr>
                   <tr className="govuk-table__row">
                     <td className="tabs-table-td govuk-!-font-weight-bold" scope="col"> Scans</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">0 hours</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
-                    <a href="http://localhost:4001/activity?activity=sae6&block=sae"> Edit </a>
+                    <a href={this.makelink('sae', 'sae6')} id="activity-sae6" > Edit </a>
                     </td>                  
                   </tr>
                   <tr className="govuk-table__row">
@@ -165,28 +178,28 @@ class ShiftDetails extends Component {
                     <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">Cyclamen</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">0 hours</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
-                    <a href="http://localhost:4001/activity?activity=oth1&block=oth"> Edit </a>
+                    <a href={this.makelink('oth', 'oth1')} id="activity-oth1" > Edit </a>
                     </td>                  
                   </tr>
                   <tr className="govuk-table__row">
                     <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">Management meetings</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">0 hours</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
-                    <a href="http://localhost:4001/activity?activity=oth2&block=oth"> Edit </a>
+                    <a href={this.makelink('oth', 'oth2')} id="activity-oth2" > Edit </a>
                     </td>                  
                   </tr>
                   <tr className="govuk-table__row">
                     <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">Training</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">0 hours</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
-                    <a href="http://localhost:4001/activity?activity=oth3&block=oth"> Edit </a>
+                    <a href={this.makelink('oth', 'oth3')} id="activity-oth3" > Edit </a>
                     </td>                  
                   </tr>
                   <tr className="govuk-table__row">
                     <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">Travel</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">0 hours</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
-                    <a href="http://localhost:4001/activity?activity=oth4&block=oth"> Edit </a>
+                    <a href={this.makelink('oth', 'oth4')} id="activity-oth4" > Edit </a>
                     </td>                  
                   </tr>
                   {/* <tr className="govuk-table__row">
@@ -200,16 +213,23 @@ class ShiftDetails extends Component {
                     <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">Intelligence collection and reporting</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">0 hours</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
-                    <a href="http://localhost:4001/activity?activity=oth6&block=oth"> Edit </a>
+                    <a href={this.makelink('oth', 'oth5')} id="activity-oth5" > Edit </a>
                     </td>                  
                   </tr>
                   <tr className="govuk-table__row">
                     <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">Other operational activity</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">0 hours</td>
                     <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
-                    <a href="http://localhost:4001/activity?activity=oth7&block=oth"> Edit </a>
+                    <a href={this.makelink('oth', 'oth6')} id="activity-oth6" > Edit </a>
                     </td>                  
                   </tr>
+                  <tr className="govuk-table__row">
+                    <td className="tabs-table-td govuk-!-font-weight-bold" scope="col">Other non-operational activity</td>
+                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">0 hours</td>
+                    <td className="tabs-table-td govuk-!-font-weight-regular" scope="col">
+                    <a href={this.makelink('oth', 'oth7')} id="activity-oth7" > Edit </a>
+                    </td>                  
+                  </tr>                  
 
                 </tbody>
               </table>

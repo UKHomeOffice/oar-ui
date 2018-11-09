@@ -59,7 +59,7 @@ class LocationRefType extends Component {
     this.setState({regionArr: this.getNextArr(event.target.value)});
    }
      render() {
-      document.title = "OAR - Location and referral type"
+      document.title = "OAR - CT referral - Location and referral type"
 
       const regions = ['North', 'Central', 'Heathrow', 'South', 'South East & Europe'];
       const locations = ['Select:', 'Location1', 'Location2', 'Location3'];
@@ -80,10 +80,10 @@ class LocationRefType extends Component {
 
           <p className="govuk-caption-xl"> CT referral </p>
           <span className="govuk-label--xl">Location and referral type</span>
-          <label className="govuk-label" for="select-box">Date of referral </label>
 
-  <div className="govuk-form-group">
+  <div className="govuk-form-group govuk-!-padding-top-6">
   <fieldset className="govuk-fieldset" aria-describedby="dob-hint" role="group">
+  <label className="govuk-label" for="select-box">Date of referral </label>
     <span id="dob-hint" className="govuk-hint">
       For example, 31 3 1980
     </span>

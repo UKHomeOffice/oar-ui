@@ -108,19 +108,19 @@ class CreateShift extends Component {
       </div>
     </div>
 
-    <p>
-    <label className="govuk-label" for="select-box">TeamID</label>
-    <select className="govuk-select govuk-input--width-m" id="shift-teamid" name="select-box" width="100%" >
-    {this.populateDropdowns(teams)}
-    </select>
-    </p>
-
    <p>
     <label className="govuk-label" for="select-box">Region</label>
     <select className="govuk-select govuk-input--width-m" id="shift-region" name="select-box" width="100%" onChange={this.onChange.bind(this)} >
     {this.populateDropdowns(locations)}
     </select>
    </p>
+
+ <p>
+    <label className="govuk-label" for="select-box">Team ID</label>
+    <select className="govuk-select govuk-input--width-m" id="shift-teamid" name="select-box" width="100%" >
+    {this.populateDropdowns(teams)}
+    </select>
+</p>
 
    <p>
     <label className="govuk-label" for="select-box">Location</label>
@@ -141,26 +141,42 @@ class CreateShift extends Component {
 <label className="govuk-label" for="select-box"> Shift type </label>
  <div className="govuk-radios govuk-radios--inline">
       <div className="govuk-radios__item">
-        <input className="govuk-radios__input" id="shift-type" name="changed-name" type="radio" value="yes"/>
+        <input className="govuk-radios__input" id="shift-type" name="changed-name" type="radio" value="early"/>
         <label className="govuk-label govuk-radios__label" for="changed-name-1">
         Early
         </label>
       </div>
       <div className="govuk-radios__item">
-        <input className="govuk-radios__input" id="shift-type" name="changed-name" type="radio" value="no"/>
+        <input className="govuk-radios__input" id="shift-type" name="changed-name" type="radio" value="late"/>
         <label className="govuk-label govuk-radios__label" for="changed-name-2">
           Late
         </label>
       </div>
       <div className="govuk-radios__item">
-        <input className="govuk-radios__input" id="shift-type" name="changed-name" type="radio" value="no"/>
+        <input className="govuk-radios__input" id="shift-type" name="changed-name" type="radio" value="night"/>
         <label className="govuk-label govuk-radios__label" for="changed-name-2">
           Night
+        </label>
+      </div>
+      <div className="govuk-radios__item">
+        <input className="govuk-radios__input" id="shift-type" name="changed-name" type="radio" value="allday"/>
+        <label className="govuk-label govuk-radios__label" for="changed-name-2">
+        All day
         </label>
       </div>
  </div>
  </p>
 
+
+<p>
+<label className="govuk-label--m"> Joint team details </label>
+</p>
+<p>
+    <label className="govuk-label" for="select-box">Team ID</label>
+    <select className="govuk-select govuk-input--width-m" id="shift-teamid" name="select-box" width="100%" >
+    {this.populateDropdowns(teams)}
+    </select>
+</p>
 
 
 <p>

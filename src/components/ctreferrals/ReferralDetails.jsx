@@ -4,6 +4,10 @@ import {DocumentTitle} from 'react-document-title';
 import ActivityHoursMinutes from '../partials/ActivityHoursMinutes';
 import ActivityStaffAndHours from '../partials/ActivityStaffAndHours';
 
+const hosturl = "http://"+window.location.hostname + ":"+ window.location.port;
+const nextturl = hosturl + "/passengerdetails";
+
+
 class Addlindicator extends React.Component {
         constructor(props) {
           super(props);
@@ -111,7 +115,7 @@ class ReferralDetails extends React.Component {
    );
       
       
-   document.title = "OAR - Referral details"
+   document.title = "OAR - CT referral - Referral details"
 
       const indicators = ['Select:', '1 - Forged / Counterfeit documents', '2 - Fraudulently Obtained Genuine documents',
             '3 - Travel History' , '4 - Circuitous Routing', '5 - Length of time outside the UK', 
@@ -139,7 +143,7 @@ class ReferralDetails extends React.Component {
           <p className="govuk-caption-xl"> CT referral </p>
           <span className="govuk-label--xl">Referral details</span>
 
-  <div className="govuk-form-group">
+  <div className="govuk-form-group govuk-!-padding-top-6">
   <fieldset className="govuk-fieldset" aria-describedby="dob-hint" role="group">
 
     <p>
@@ -197,7 +201,7 @@ class ReferralDetails extends React.Component {
 <p>
    <table>
       <td className="govuk-!-padding-right-5 govuk-!-padding-top-4"> 
-            <a href="http://localhost:4001/locationreftype" role="button"  id="ctreferral-referral-detail-continue" draggable="false" className="govuk-button">
+            <a href={nextturl} role="button"  id="ctreferral-referral-detail-continue" draggable="false" className="govuk-button">
             Continue
             </a>
       </td>
