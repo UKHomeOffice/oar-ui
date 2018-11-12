@@ -79,7 +79,8 @@ class CreateShift extends Component {
   <div className="govuk-form-group">
   <fieldset className="govuk-fieldset" aria-describedby="" role="group">
     <span id="shift-hint" className="govuk-hint">
-      For example, 31 3 1980
+      For example, 31 3 1980 
+      
     </span>
     <div className="govuk-date-input">
       <div className="govuk-date-input__item">
