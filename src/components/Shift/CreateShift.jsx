@@ -186,23 +186,23 @@ class CreateShift extends Component {
 <p> 
 <label className="govuk-label--s" for="shift-bfho">Border Force Higher Officers (BFHO)</label>
 {/* SEND PARAMS ON WHAT THE BOX IS REFERED TO */}
-<ActivityStaffAndHours/> 
+<ActivityStaffAndHours staff="bfho"/> 
 </p>
 <p>
 <label className="govuk-label--s" for="shift-bfo">Border Force Officers (BFO)</label>
-<ActivityStaffAndHours/>
+<ActivityStaffAndHours staff="bfo"/> 
 </p>
 <p>
 <label className="govuk-label--s" for="shift-bfao">Border Force Assistant Officers (BFAO)</label>
-<ActivityStaffAndHours/>
+<ActivityStaffAndHours staff="bfao"/> 
 </p>
 <p>
 <label className="govuk-label--s" for="shift-adm-asst">Administrative assistant</label>
-<ActivityStaffAndHours/>
+<ActivityStaffAndHours staff="aa"/> 
 </p>
 <p>
 <label className="govuk-label--s" for="shift-temp-workers">Seasonal or temporary workers</label>
-<ActivityStaffAndHours/>
+<ActivityStaffAndHours staff="temp"/> 
 </p>
 <p>
 <div className="govuk-label--s" id="shift-total-hours"> Total time for this shift: 24 hours </div>

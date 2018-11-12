@@ -4,6 +4,10 @@ import 'react-tabs/style/react-tabs.css';
 class ActivityStaffAndHours extends  React.Component {
 
   render() {
+    
+    const noofofficersref = 'number-of-officers-' + this.props.staff;
+    const noofhoursref = 'number-of-hours-' + this.props.staff;
+
     return (
 
         <div>
@@ -14,9 +18,9 @@ class ActivityStaffAndHours extends  React.Component {
                 <td><label className="govuk-label" htmlFor="total-hours">Total hours worked</label> </td>
               </tr>
               <tr>
-                <td> <input className="govuk-input govuk-input--width-4" id="number-of-officers-TBD" type="text" name="number-of-officers-TBD"/> </td>
+                <td> <input className="govuk-input govuk-input--width-4" id= {noofofficersref} type="text" name={noofofficersref}/> </td>
                 <td> 
-                <td> <input className="govuk-input govuk-input--width-4" id="total-hours-TBD" type="text" name="total-hours-TBD"/> </td>
+                <td> <input className="govuk-input govuk-input--width-4" id={noofhoursref} type="text" name={noofhoursref}/> </td>
                 </td>
               </tr>
             </tbody>
