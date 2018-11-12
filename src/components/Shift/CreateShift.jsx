@@ -77,33 +77,33 @@ class CreateShift extends Component {
           <label className="govuk-label" for="select-box">Start date</label>
 
   <div className="govuk-form-group">
-  <fieldset className="govuk-fieldset" aria-describedby="dob-hint" role="group">
-    <span id="dob-hint" className="govuk-hint">
+  <fieldset className="govuk-fieldset" aria-describedby="" role="group">
+    <span id="shift-hint" className="govuk-hint">
       For example, 31 3 1980
     </span>
-    <div className="govuk-date-input" id="dob">
+    <div className="govuk-date-input">
       <div className="govuk-date-input__item">
         <div className="govuk-form-group">
-          <label className="govuk-label govuk-date-input__label" for="dob-day">
+          <label className="govuk-label govuk-date-input__label" for="shift-day">
             Day
           </label>
-          <input className="govuk-input govuk-date-input__input govuk-input--width-2" id="shift-day" name="dob-day" type="number" pattern="[0-9]*"/>
+          <input className="govuk-input govuk-date-input__input govuk-input--width-2" id="shift-day" name="shift-day" type="number" pattern="[0-9]*"/>
         </div>
       </div>
       <div className="govuk-date-input__item">
         <div className="govuk-form-group">
-          <label className="govuk-label govuk-date-input__label" for="dob-month">
+          <label className="govuk-label govuk-date-input__label" for="shift-month">
             Month
           </label>
-          <input className="govuk-input govuk-date-input__input govuk-input--width-2" id="shift-month" name="dob-month" type="number" pattern="[0-9]*"/>
+          <input className="govuk-input govuk-date-input__input govuk-input--width-2" id="shift-month" name="shift-month" type="number" pattern="[0-9]*"/>
         </div>
       </div>
       <div className="govuk-date-input__item">
         <div className="govuk-form-group">
-          <label className="govuk-label govuk-date-input__label" for="dob-year">
+          <label className="govuk-label govuk-date-input__label" for="shift-year">
             Year
           </label>
-          <input className="govuk-input govuk-date-input__input govuk-input--width-4" id="shift-year" name="dob-year" type="number" pattern="[0-9]*"/>
+          <input className="govuk-input govuk-date-input__input govuk-input--width-4" id="shift-year" name="shift-year" type="number" pattern="[0-9]*"/>
         </div>
       </div>
     </div>
