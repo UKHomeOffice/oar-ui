@@ -42,7 +42,7 @@ const isTokenValid = true;
               </a>
             </li>
             <li className="govuk-header__navigation-item">
-              <a className="govuk-header__link js-header-item-toggle" id="header-crref-link" href={ctreferralsurl}>
+              <a className="govuk-header__link js-header-item-toggle" id="header-ctref-link" href={ctreferralsurl}>
               CT referrals
               </a>
             </li>

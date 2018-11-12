@@ -131,8 +131,8 @@ class CreateShift extends Component {
    </p>
 
    <p>
-    <label className="govuk-label" for="select-box">Location</label>
-    <select className="govuk-select govuk-input--width-m" id="shift-location" name="select-box" width="100%">
+    <label className="govuk-label" for="select-box">Cost centre code </label>
+    <select className="govuk-select govuk-input--width-m" id="shift-cost-centre-code" name="shift-cost-centre-code" width="100%">
     {this.populateDropdowns(this.state.regionArr)}
     </select>
    </p>
@@ -142,25 +142,25 @@ class CreateShift extends Component {
 <label className="govuk-label" for="select-box"> Shift type </label>
  <div className="govuk-radios govuk-radios--inline">
       <div className="govuk-radios__item">
-        <input className="govuk-radios__input" id="shift-type" name="changed-name" type="radio" value="early"/>
+        <input className="govuk-radios__input" id="shift-type-early" name="changed-name" type="radio" value="early"/>
         <label className="govuk-label govuk-radios__label" for="changed-name-1">
         Early
         </label>
       </div>
       <div className="govuk-radios__item">
-        <input className="govuk-radios__input" id="shift-type" name="changed-name" type="radio" value="late"/>
+        <input className="govuk-radios__input" id="shift-type-late" name="changed-name" type="radio" value="late"/>
         <label className="govuk-label govuk-radios__label" for="changed-name-2">
           Late
         </label>
       </div>
       <div className="govuk-radios__item">
-        <input className="govuk-radios__input" id="shift-type" name="changed-name" type="radio" value="night"/>
+        <input className="govuk-radios__input" id="shift-type-night" name="changed-name" type="radio" value="night"/>
         <label className="govuk-label govuk-radios__label" for="changed-name-2">
           Night
         </label>
       </div>
       <div className="govuk-radios__item">
-        <input className="govuk-radios__input" id="shift-type" name="changed-name" type="radio" value="allday"/>
+        <input className="govuk-radios__input" id="shift-type-allday" name="changed-name" type="radio" value="allday"/>
         <label className="govuk-label govuk-radios__label" for="changed-name-2">
         All day
         </label>
