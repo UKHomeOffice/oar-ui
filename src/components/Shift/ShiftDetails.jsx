@@ -234,7 +234,7 @@ class ShiftDetails extends Component {
                 </tbody>
               </table>
               <p>
-              <a href="http://localhost:4001/oarhome" role="button" id="submit-for-reporting-button" draggable="false" className="govuk-button">
+              <a href="http://localhost:4001/submitconfirm" role="button" id="submit-for-reporting-button" draggable="false" className="govuk-button button-grey">
               Submit shift for reporting
               </a>
               </p>

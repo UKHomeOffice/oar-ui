@@ -10,7 +10,7 @@ class ActivityStaffAndHours extends  React.Component {
           <table className="govuk-table oartable-s">
             <tbody>
               <tr>
-                <td><label className="govuk-label govuk-!-padding-right-9" htmlFor="number-of-offices">Number of officer</label> </td>
+                <td><label className="govuk-label govuk-!-padding-right-9" htmlFor="number-of-offices">Number of officers</label> </td>
                 <td><label className="govuk-label" htmlFor="total-hours">Total hours worked</label> </td>
               </tr>
               <tr>

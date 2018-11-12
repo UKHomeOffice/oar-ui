@@ -86,6 +86,18 @@
     border: 4px solid #FFBF47; 
   }
 
+  .button-grey, .button-grey:visited {
+    //font-family: "nta", Arial, sans-serif;
+    color: #000000; 
+    background-color: rgb(220, 219, 219);
+  }
+
+  .button-grey:link, .button-grey:active, .button-grey:hover {
+    color: #000000;
+    background-color: rgb(172, 171, 171);
+  }
+  
+
 .multiple-choice--hod [type=radio] + label::before {
   width: 24px;
   height: 24px;

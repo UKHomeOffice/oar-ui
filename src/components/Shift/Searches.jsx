@@ -44,17 +44,17 @@ class Searches extends Component {
             </div>
 
             <div className="govuk-checkboxes__item">
-              <input className="govuk-checkboxes__input" id="search-target" name="citizen" type="checkbox" value="phone" data-aria-controls="conditional-search-target"/>
-              <label className="govuk-label govuk-checkboxes__label" for="search-target">
-              Target and selection
+              <input className="govuk-checkboxes__input" id="search-target-cat-a" name="citizen" type="checkbox" value="phone" data-aria-controls="conditional-search-target-cat-a"/>
+              <label className="govuk-label govuk-checkboxes__label" for="search-target-cat-a">
+              Target and selection category A
               </label>
             </div>
-            <div className="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-search-target">
+            <div className="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-search-target-cat-a">
             {/* <div className="govuk-checkboxes__conditional govuk-checkboxes__conditional" id="conditional-search-target"> */}
               <div className="govuk-form-group">
                 {/* Todo:- Send params of id and name to this component */}
                 <SearchesExamTypes/> 
-                  <p>
+                  {/* <p>
                   <label className="govuk-label" for="search-target-category"> Category </label>
                   <div className="govuk-radios govuk-radios--inline">
                         <div className="govuk-radios__item">
@@ -76,10 +76,38 @@ class Searches extends Component {
                           </label>
                         </div>
                   </div>
-                  </p>
+                  </p> */}
 
               </div>
             </div>                        
+
+
+            <div className="govuk-checkboxes__item">
+              <input className="govuk-checkboxes__input" id="search-target-cat-b" name="citizen" type="checkbox" value="phone" data-aria-controls="conditional-search-target-cat-b"/>
+              <label className="govuk-label govuk-checkboxes__label" for="search-target-cat-b">
+              Target and selection category B
+              </label>
+            </div>
+            <div className="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-search-target-cat-b">
+              <div className="govuk-form-group">
+                {/* Todo:- Send params of id and name to this component */}
+                <SearchesExamTypes/> 
+              </div>
+            </div> 
+
+            <div className="govuk-checkboxes__item">
+              <input className="govuk-checkboxes__input" id="search-target-cat-c" name="citizen" type="checkbox" value="phone" data-aria-controls="conditional-search-target-cat-c"/>
+              <label className="govuk-label govuk-checkboxes__label" for="search-target-cat-c">
+              Target and selection category C
+              </label>
+            </div>
+            <div className="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-search-target-cat-c">
+              <div className="govuk-form-group">
+                {/* Todo:- Send params of id and name to this component */}
+                <SearchesExamTypes/> 
+              </div>
+            </div> 
+
 
              <div className="govuk-checkboxes__item">
               <input className="govuk-checkboxes__input" id="search-intelli" name="search-intelli" type="checkbox" value="search-intelli" data-aria-controls="conditional-search-intelli"/>

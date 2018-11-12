@@ -36,9 +36,9 @@ class OarHome extends React.Component {
             <div className="govuk-width-container">
             <div className="grid-row">
 
-            <div className="govuk-grid-column-two-thirds govuk-section-break--xl">
+            <div className="govuk-grid-column-full govuk-section-break--xl">
             <main role="main" id="govuk-width-container" className="govuk-width-container" lang="en">
-                <p className="govuk-heading-l">Operational activity reporting</p>
+                <p className="govuk-heading-xl">Operational activity reporting</p>
 
                 <div className="govuk-label govuk-!-display-inline"> Signed in as</div>
                 <div className="govuk-label--s govuk-!-display-inline"> Gillian Armstrong.</div>

@@ -11,6 +11,21 @@ class SearchesExamTypes extends  React.Component {
         <table>
         <tbody>
           <tr>
+              <td><label className="govuk-label govuk-!-padding-right-9" htmlFor="hours">Hours</label> </td>
+              <td><label className="govuk-label" htmlFor="minutes">Minutes</label> </td>
+            </tr>
+          <tr>
+              <td> <input className="govuk-input govuk-input--width-4" id="hours-TBD" type="text" name="hours-TBD"/> </td>
+              <td> 
+                <select className="govuk-select govuk-input--width-s" id="minutes-TBD" name="minutes-TBD" width="100%" >
+                <option>0</option>    
+                <option>15</option>    
+                <option>30</option>    
+                <option>45</option>    
+                </select>
+              </td>
+          </tr>
+          <tr>
             <td><label className="govuk-label govuk-!-padding-right-9" for="searches_TBD_ecpositive">EC positive</label> </td>
             <td><label className="govuk-label" for="searches_TBD_ecnegative">EC negative</label> </td>
           </tr>

@@ -111,8 +111,8 @@ document.title = "OAR - Add Shift - " + activities[activityId];
                       <div className="app-content__header govuk-!-margin-top-5">
                       <h1 className="govuk-heading-xl"> {activities[activityId]} </h1>
                       </div>
-                      <label className="govuk-label" htmlFor="select-box">Time spent</label>
-                      <ActivityHoursMinutes/>
+                      {/* <label className="govuk-label" htmlFor="select-box">Time spent</label>
+                      <ActivityHoursMinutes/> */}
                       <ActivityButtons/>
                     </main>
                   </div>
@@ -133,8 +133,8 @@ document.title = "OAR - Add Shift - " + activities[activityId];
                     <div className="app-content__header govuk-!-margin-top-5">
                     <h1 className="govuk-heading-xl"> {activities[activityId]} </h1>
                     </div>
-                    <label className="govuk-label" htmlFor="select-box">Time spent</label>
-                    <ActivityHoursMinutes/>
+                    {/* <label className="govuk-label" htmlFor="select-box">Time spent</label>
+                    <ActivityHoursMinutes/> */}
                     <Searches/>
                     <ActivityButtons/>
                   </main>
@@ -157,7 +157,7 @@ document.title = "OAR - Add Shift - " + activities[activityId];
                     <div className="app-content__header govuk-!-margin-top-5">
                     <h1 className="govuk-heading-xl"> {activities[activityId]} </h1>
                     </div>
-                    <ActivityHoursMinutes/>
+                    {/* <ActivityHoursMinutes/> */}
                     {/* if({activityId} == "cst2" ) ToDO:- Some how its not working*/} 
                     {/* <IntTradeCheck/> */}
                     <ActivityButtons/>
@@ -181,7 +181,7 @@ document.title = "OAR - Add Shift - " + activities[activityId];
                     <div className="app-content__header govuk-!-margin-top-5">
                     <h1 className="govuk-heading-xl"> {activities[activityId]} </h1>
                     </div>
-                    <ActivityHoursMinutes/>
+                    {/* <ActivityHoursMinutes/> */}
                     {/* if({activityId} == "cst2" ) */}
                     <IntTradeCheck/>
                     <ActivityButtons/>
@@ -205,7 +205,7 @@ document.title = "OAR - Add Shift - " + activities[activityId];
                     <div className="app-content__header govuk-!-margin-top-5">
                     <h1 className="govuk-heading-xl"> {activities[activityId]} </h1>
                     </div>
-                    <ActivityHoursMinutes/>
+                    {/* <ActivityHoursMinutes/> */}
                     <ActivityButtons/>
                   </main>
                 </div>

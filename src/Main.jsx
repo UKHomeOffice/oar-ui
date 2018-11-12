@@ -12,6 +12,11 @@ import CTReferrals from './components/ctreferrals/CTReferrals';
 import AddReferral from './components/ctreferrals/AddReferral';
 import LocationRefType from './components/ctreferrals/LocationRefType';
 import ReferralDetails from './components/ctreferrals/ReferralDetails';
+//import PassengerDetails from './components/ctreferrals/PassengerDetails';
+import SubmitConfirm from './components/Shift/SubmitConfirm';
+
+
+
 
 
 //import ActivityIntTradeCheck from './components/Shift/ActivityIntTradeCheck';
@@ -59,7 +64,19 @@ const Main = () => (
             )}/>
              <Route name="referraldetails" exact path="/referraldetails" render={() => (
                 <ReferralDetails/>
+            )}/>
+             <Route name="passengerdetails" exact path="/passengerdetails" render={() => (
+                <PassengerDetails/>
             )}/>              
+            {/* <Route name="passengerdetails" exact path="/passengerdetails" render={() => (
+                <PassengerDetails/>
+            )}/>               */}
+            <Route name="submitconfirm" exact path="/submitconfirm" render={() => (
+                <SubmitConfirm/>
+            )}/>              
+
+
+            
             <Redirect to="/oarhome"/>
         </Switch>
         </BrowserRouter>
