@@ -7,7 +7,7 @@ class SearchesExamTypes extends  React.Component {
     return (
 
         <div>
-
+      <label className="govuk-label" for="select-box">Time spent</label>
         <table>
         <tbody>
           <tr>

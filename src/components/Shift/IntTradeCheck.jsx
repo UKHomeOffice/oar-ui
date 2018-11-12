@@ -8,14 +8,19 @@ class IntTradeCheck extends Component {
     
     return (
       <div className="govuk-!-margin-top-4">
-          <label className="govuk-label" htmlFor="select-box">Examination types </label>
+          {/* <label className="govuk-label" htmlFor="select-box">Examination types </label> */}
   
       <div className="govuk-form-group">
         <fieldset className="govuk-fieldset" aria-describedby="int-trade-check">
         <p>
-        <label className="govuk-label" htmlFor="int-trade-check-chief-self-gen">Number of hours</label>
+        <label className="govuk-label" htmlFor="int-trade-check-chief-self-gen">Chief self-generated </label>
         <input className="govuk-input govuk-input--width-5" id="int-trade-check-chief-self-gen" type="text" name="int-trade-check-chief-self-gen"/>
         </p>
+
+        {/* <p>
+        <label className="govuk-label" htmlFor="int-trade-check-chief-self-gen">Number of hours</label>
+        <input className="govuk-input govuk-input--width-5" id="int-trade-check-chief-self-gen" type="text" name="int-trade-check-chief-self-gen"/>
+        </p> */}
 
        <p>
         <label className="govuk-label" htmlFor="int-trade-check-nch-abandon">NCH abandoned </label>

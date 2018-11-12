@@ -12,34 +12,16 @@ const backturl = hosturl + "/shiftdetails";
 class Activity extends  React.Component {
  
   componentWillMount() {
-    //this.changeRoute = this.changeRoute.bind(this);
-    //const path = this.props.location.pathname;
-    //console.log("-----------"+ this.props.location)
-    //const parsed = queryString.parse(this.props.location.search);
     const qryObj1 = queryString.parse(location.search);
     console.log("=======" +  window.location.hostname);
-    console.log("=======" +hosturl);
-    //To be populated from RefData call
-   
-
-    console.log("2=======" + qryObj1.activity)
-    
-    //const qry = this.props.location.query.activity
-    //console.log('11111======'+ path);
-    //console.log('22222======'+ qry);
-    //window.addEventListener('resize', this.handleWindowSizeChange);
+    console.log("=======" +hosturl);    
     this.state = {
-       // routerPath: path
     }
 }
 
-// componentDidMount(){
-//     document.title = "OAR - Add Shift" + "oo"
-//   }
   render() {
     const qryObj = queryString.parse(location.search);
 const activityId = qryObj.activity
-console.log("activityId=======" + activityId)
 
 const activities = { 
   "pcp1" : "General PCP",
@@ -94,9 +76,6 @@ document.title = "OAR - Add Shift - " + activities[activityId];
     )
   );
 
-// console.log("1=======" + activities[activityId])
-// console.log("1=======" + qryObj.block)
-
 
     if(qryObj.block == "pcp"){
         return (
@@ -111,8 +90,8 @@ document.title = "OAR - Add Shift - " + activities[activityId];
                       <div className="app-content__header govuk-!-margin-top-5">
                       <h1 className="govuk-heading-xl"> {activities[activityId]} </h1>
                       </div>
-                      {/* <label className="govuk-label" htmlFor="select-box">Time spent</label>
-                      <ActivityHoursMinutes/> */}
+                      {/* <label className="govuk-label" htmlFor="select-box">Time spent</label> */}
+                      <ActivityHoursMinutes/>
                       <ActivityButtons/>
                     </main>
                   </div>
@@ -145,7 +124,7 @@ document.title = "OAR - Add Shift - " + activities[activityId];
         );
       }
 
-      else if(qryObj.block == "cst" && activityId == "cst1"){
+      else if(qryObj.block == "cst"){
         return (
           <div>
             <div className="govuk-width-container">
@@ -157,33 +136,12 @@ document.title = "OAR - Add Shift - " + activities[activityId];
                     <div className="app-content__header govuk-!-margin-top-5">
                     <h1 className="govuk-heading-xl"> {activities[activityId]} </h1>
                     </div>
-                    {/* <ActivityHoursMinutes/> */}
-                    {/* if({activityId} == "cst2" ) ToDO:- Some how its not working*/} 
-                    {/* <IntTradeCheck/> */}
-                    <ActivityButtons/>
-                  </main>
-                </div>
-              </div>
-            </div>
-          </div>
-        );
-      }
-
-      else if(qryObj.block == "cst" && activityId == "cst2"){
-        return (
-          <div>
-            <div className="govuk-width-container">
-              <div className="govuk-grid-row">
-                <div className="govuk-grid-column-full">
-                <a href={backturl} className="govuk-back-link">Back </a>
-
-                  <main role="main" id="govuk-width-container" className="govuk-width-container" lang="en">
-                    <div className="app-content__header govuk-!-margin-top-5">
-                    <h1 className="govuk-heading-xl"> {activities[activityId]} </h1>
-                    </div>
-                    {/* <ActivityHoursMinutes/> */}
-                    {/* if({activityId} == "cst2" ) */}
-                    <IntTradeCheck/>
+                    <ActivityHoursMinutes/>
+                    
+                    {activityId == "cst2" && 
+                     <IntTradeCheck/>
+                    }
+                
                     <ActivityButtons/>
                   </main>
                 </div>
@@ -205,7 +163,7 @@ document.title = "OAR - Add Shift - " + activities[activityId];
                     <div className="app-content__header govuk-!-margin-top-5">
                     <h1 className="govuk-heading-xl"> {activities[activityId]} </h1>
                     </div>
-                    {/* <ActivityHoursMinutes/> */}
+                    <ActivityHoursMinutes/>
                     <ActivityButtons/>
                   </main>
                 </div>
