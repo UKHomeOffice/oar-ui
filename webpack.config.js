@@ -37,6 +37,10 @@ devServer: {
   port: `${port}`,
   historyApiFallback: true,
 },
+// node: {
+//     fs: 'empty',
+//     net: 'empty',
+//   },
 plugins: [
   new webpack.NamedModulesPlugin(),
   new HtmlWebpackPlugin({
