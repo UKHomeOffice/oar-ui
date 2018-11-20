@@ -82,12 +82,12 @@ class PassengerDetails extends Component {
 
   <p>
     <label className="govuk-label" for="select-box">Surname</label>
-    <input className="govuk-input govuk-input--width-20" id="cash-detect-amount" type="text" name="cash-detect-amount"/>
+    <input className="govuk-input govuk-input--width-20" id="ctref-passenger-surname" type="text" name="ctref-passenger-surname"/>
   </p>
     
   <p>
     <label className="govuk-label" for="select-box">Forename</label>
-    <input className="govuk-input govuk-input--width-20" id="cash-detect-amount" type="text" name="cash-detect-amount"/>
+    <input className="govuk-input govuk-input--width-20" id="ctref-passenger-forename" type="text" name="ctref-passenger-forename"/>
   </p>
 
 
