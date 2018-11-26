@@ -94,6 +94,19 @@ class FastParcels extends Component {
     <input className="govuk-input govuk-input--width-20" id="ctref-fpp-csnr-telnumber" type="text" name="ctref-fpp-csnr-telnumber"/>
   </p>
 
+  <p>
+    <table>
+        <td className="govuk-!-padding-right-5 govuk-!-padding-top-4"> 
+              <a href={nextturl} role="button"  id="ctref-fpp-continue" draggable="false" className="govuk-button">
+              Continue
+              </a>
+        </td>
+        <td className="table_td_text"> 
+              <div className="govuk-label--s"><a href="http://localhost:4001/shiftdetails"  id="ctref-fpp-cancel">Cancel</a></div>
+        </td>
+    </table>
+  </p>
+
  </fieldset>
    
 </div>
