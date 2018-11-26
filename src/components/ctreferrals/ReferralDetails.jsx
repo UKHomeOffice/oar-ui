@@ -33,7 +33,6 @@ class ReferralDetails extends React.Component {
     this.state = {
     isaddlindicator: false,
     };
-
   }
   
   componentWillMount() {
@@ -49,8 +48,6 @@ class ReferralDetails extends React.Component {
   }
 
   populateDropdowns(indicators) {
-    console.log("dddddd===populateDropdowns:-" + indicators);
-
     const items = [];
     indicators.forEach(function(item, index, array) {
       items.push(<option key={index} value={index}>{item}</option>);
@@ -97,22 +94,22 @@ class ReferralDetails extends React.Component {
 
 
   render() {
-      const addlindicator1 = React.createElement(
-        "P",
-        React.createElement(
-          "label",  
-          { className : "govuk-label" },
-          "Additional indicator"
-        ),
-        React.createElement(
-            "select",
-            {className : "govuk-select govuk-input--width-m"},
-            {id : "shift-location"},
-            {name : "select-box"},
-            {width : "100%"},
-            "{this.populateDropdowns(indicators)}"
-        ),
-   );
+  //     const addlindicator1 = React.createElement(
+  //       "P",
+  //       React.createElement(
+  //         "label",  
+  //         { className : "govuk-label" },
+  //         "Additional indicator"
+  //       ),
+  //       React.createElement(
+  //           "select",
+  //           {className : "govuk-select govuk-input--width-m"},
+  //           {id : "shift-location"},
+  //           {name : "select-box"},
+  //           {width : "100%"},
+  //           "{this.populateDropdowns(indicators)}"
+  //       ),
+  //  );
       
       
    document.title = "OAR - CT referral - Referral details"

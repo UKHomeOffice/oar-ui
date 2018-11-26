@@ -82,7 +82,7 @@ class LocationRefType extends Component {
           <span className="govuk-label--xl">Location and referral type</span>
 
   <div className="govuk-form-group govuk-!-padding-top-6">
-  <fieldset className="govuk-fieldset" aria-describedby="dob-hint" role="group">
+  <fieldset className="govuk-fieldset" aria-describedby="" role="group">
   <label className="govuk-label" for="select-box">Date of referral </label>
     <span id="dob-hint" className="govuk-hint">
       For example, 31 3 1980
