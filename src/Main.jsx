@@ -15,6 +15,8 @@ import ReferralDetails from './components/ctreferrals/ReferralDetails';
 import PassengerDetails from './components/ctreferrals/PassengerDetails';
 import SubmitConfirm from './components/Shift/SubmitConfirm';
 import TravelDetails from './components/ctreferrals/TravelDetails';
+import FastParcels from './components/ctreferrals/FastParcels';
+import MaritimeContainer from './components/ctreferrals/MaritimeContainer';
 
 
 //import ActivityIntTradeCheck from './components/Shift/ActivityIntTradeCheck';
@@ -70,15 +72,16 @@ const Main = () => (
             )}/>  
             <Route name="traveldetails" exact path="/traveldetails" render={() => (
                 <TravelDetails/>
-            )}/>                         
+            )}/>    
+            <Route name="fastparcels" exact path="/fastparcels" render={() => (
+                <FastParcels/>
+            )}/>  
+            <Route name="maritimecontainer" exact path="/maritimecontainer" render={() => (
+                <MaritimeContainer/>
+            )}/>                                              
             <Route name="submitconfirm" exact path="/submitconfirm" render={() => (
                 <SubmitConfirm/>
-            )}/>          
-
-
-import TravelDetails from './components/ctreferrals/TravelDetails';
-
-            
+            )}/>                    
             <Redirect to="/oarhome"/>
         </Switch>
         </BrowserRouter>
