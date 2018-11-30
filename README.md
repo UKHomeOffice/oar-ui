@@ -1,2 +1,22 @@
 # oar-ui
-borders platform ui
+<<<<<<< HEAD
+borders oar UI
+=======
+
+## borders platform ui
+
+## Build Dockerfile image 
+```
+docker build -t quay.io/ukhomeofficedigital/oar-ui  .
+```
+## Stand up local environment
+```
+docker-compose up
+```
+## SPA home page
+```
+http://localhost/startpage
+
+http://localhost/oarhome
+```
+>>>>>>> feature/EOSR-197
