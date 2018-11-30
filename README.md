@@ -1,5 +1,4 @@
 # oar-ui
-<<<<<<< HEAD
 borders oar UI
 =======
 
@@ -19,4 +18,3 @@ http://localhost/startpage
 
 http://localhost/oarhome
 ```
->>>>>>> feature/EOSR-197
