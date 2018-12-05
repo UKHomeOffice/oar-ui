@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
 
 class EditShift extends Component {
+
+  // componentDidMount(){
+  //   document.title = "OAR - Edit Shift"
+  // }
+
     render() {
+      document.title = "OAR - Edit Shift"
       console.log('====== in Shift component')
       return (
         <div className="App">
@@ -9,7 +15,7 @@ class EditShift extends Component {
 <div class="govuk-width-container">
          <div class="grid-row">
 
-        <div class="govuk-grid-column-two-thirds govuk-section-break--xl">
+        <div class="govuk-grid-column-full govuk-section-break--xl">
         <main role="main" id="govuk-width-container" class="govuk-width-container" lang="en">
 
         <p class="govuk-heading-l">Operational activity reporting</p>

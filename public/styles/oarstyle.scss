@@ -1,3 +1,5 @@
+//$govuk-global-styles: true;
+
 .govuk-input--width-s {
   width: 10ex; }
   .govuk-input--width-m {
@@ -15,6 +17,86 @@
 .hide-conditional {
   display: none; }
 
+.table-border {
+    padding: 0px 0px 0px 0px;
+    //margin: 40 40 40px;
+    //display: block;
+    border-bottom: 1px solid #aaa;
+    border-left: 1px solid #aaa;
+    border-right: 1px solid #aaa;
+  }
+  .oartable-s {
+    width: 23%;
+  }
+  
+
+  .tabs_border {
+    margin: 0 0 0px;
+    padding: 0;
+  }
+
+  .react-tabs__tab-list {
+    border-bottom: 1px solid #aaa;
+    margin: 0 0 0px;
+    padding: 30;
+  }
+
+  .table-colspan {
+    -webkit-column-span: all; /* Chrome, Safari, Opera */
+    column-span: 3;
+    }
+
+   .tabs-table-td {
+    border-bottom: 1px solid #bfc1c3;
+    text-align: left;
+    color: #0b0c0c;
+    line-height: 1.1111111111 !important;
+    padding: 10px 10px 20px 20px;
+    } 
+  
+  .table-td-left-align {
+    border-bottom: 1px solid #bfc1c3;
+    text-align: left;
+    color: #0b0c0c;
+    line-height: 1.1111111111 !important;
+    padding: 10px 10px 20px 0px;
+  }  
+
+  .react-tabs__tab-panel--border {
+    padding: 70px 70px 70px 70px;
+    margin: 40 40 40px;
+    display: block;
+    border-bottom: 1px solid #aaa;;
+    border-left: 1px solid #aaa;;
+    border-right: 1px solid #aaa;;
+  }
+
+  .table_td_text {
+    vertical-align: middle;
+  }
+
+  .textarea-height {
+    min-height: 140px;
+  }
+  
+  .warning-message {
+    color: #0b0c0c;
+    padding: 15px;
+    margin-bottom: 30px;
+    border: 4px solid #FFBF47; 
+  }
+
+  .button-grey, .button-grey:visited {
+    //font-family: "nta", Arial, sans-serif;
+    color: #000000; 
+    background-color: rgb(220, 219, 219);
+  }
+
+  .button-grey:link, .button-grey:active, .button-grey:hover {
+    color: #000000;
+    background-color: rgb(172, 171, 171);
+  }
+  
 
 .multiple-choice--hod [type=radio] + label::before {
   width: 24px;
@@ -43,3 +125,44 @@
     }
   }
 }
+
+////
+
+.panel {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  clear: both;
+  border-left-style: solid;
+  border-color: #bfc1c3;
+  padding: 0.78947em;
+  margin-bottom: 0.78947em; }
+  .panel :first-child {
+    margin-top: 0; }
+  .panel :only-child,
+  .panel :last-child {
+    margin-bottom: 0; }
+
+.panel-border-wide {
+  border-left-width: 10px; }
+
+.panel-border-narrow {
+  border-left-width: 5px; }
+
+.form-group .panel-border-narrow {
+  float: left;
+  width: 100%;
+  padding-bottom: 0; }
+
+.form-group .panel-border-narrow:first-child {
+  margin-top: 10px; }
+
+.form-group .panel-border-narrow:last-child {
+  margin-top: 0;
+  margin-bottom: 0; }
+
+.inline .panel-border-narrow,
+.inline .panel-border-narrow:last-child {
+  margin-top: 10px;
+  margin-bottom: 0; }
+

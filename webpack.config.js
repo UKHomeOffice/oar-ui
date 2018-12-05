@@ -3,11 +3,12 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const path = require('path');
 const sourcePath = path.join(__dirname, './src');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
-    mode: 'development',
 
     entry: './src/index.jsx',
+
     output: {
       path: path.resolve(__dirname, './dist'),
       filename: 'index.js',
@@ -17,11 +18,10 @@ module.exports = {
         extensions: ['.json', '.js', '.jsx'],
         modules: [path.resolve(__dirname), 'node_modules', sourcePath],
     },
-
     devServer: {
-          contentBase: 'public/',
-          historyApiFallback: true,
-        },
+        contentBase: 'public/',
+        historyApiFallback: true,
+    },
 
     module: {
         rules: [
@@ -96,6 +96,7 @@ module.exports = {
             template: "./src/index.html",
             filename: "./index.html"
         }),
+        new webpack.HotModuleReplacementPlugin(),
         new ExtractTextPlugin('styles.css'),
     ]
 };

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {withRouter} from 'react-router';
-import $ from 'jquery'
+//import $ from 'jquery'
 
 class ScrollToTop extends Component {
 

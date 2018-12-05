@@ -6,19 +6,131 @@ import ResponsiveMenu from 'react-responsive-navbar';
 import * as errorActionTypes from '../error/actionTypes';
 import {bindActionCreators} from "redux";
 import PubSub from "pubsub-js";
-import '../../public/styles/oarstyle.scss';
-import 'govuk-frontend/all.scss';
+import { trackHeaderMenuChanges } from '../actions/headerActions';
+import PropTypes from 'prop-types';
+import  { Redirect } from 'react-router-dom'
+
+const hosturl = "http://"+window.location.hostname + ":"+ window.location.port;
+export const oarhomeurl = hosturl + "/oarhome";
+export const ctreferralsurl = hosturl + "/ctreferrals";
+export const reportsturl = hosturl + "/reports";
+const queryString = require('query-string');
 
 class Header extends React.Component {
 
+  // componentWillMount() {
+  //   this.props.trackHeaderMenuChanges();
+  // }
+
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      headerMenuSelected: '',
+    };
+    this.onClick = this.onClick.bind(this);
+  }  
+
+
+  
+onClick(e){
+  //alert("==="+ e.target.href);
+  //e.preventDefault();
+  // const post = {
+  //   title: this.state.title,
+  //   body: this.state.body
+  // };
+  this.props.trackHeaderMenuChanges(e.target.id);
+
+  //this.props.history.push(e.target.href);
+  //this.context.router.history.push(e.target.href);
+
+//this.context.router.history.push(e.target.href);
+//this.props.push(e.target.href);
+//return <Redirect to='http://localhost:4001/ctreferral' />
+}
+
+
+menuitems(){
+  const itemactive = 'govuk-header__navigation-item govuk-header__navigation-item--active';
+
+/* TODO:- need to check the token from Keycloak is valid after login or not,
+          token is valid show the Menu items */
+  const qryObj = queryString.parse(location.search); //if check for query string Token
+  const qryObj1 = queryString.parse(location.search);
+  console.log("11=======" +  window.location);
+  const loc = window.location.toString();
+if(loc.indexOf("/oarhomes") !=-1){
+console.log("====ccccc===" +  window.location.hostname);
+}
+
+  console.log("=======" +  window.location.hostname);
+  console.log("=======" +hosturl);  
+  const isTokenValid = true;
+    if(isTokenValid){
+      return(
+        
+        <div data-module="header-menu">
+        <button type="button" role="button" className="govuk-header__menu-button js-header-toggle" aria-controls="navigation" aria-label="Show or hide Top Level Navigation">Menu</button>
+        <nav>
+          <ul id="navigation" className="govuk-header__navigation " aria-label="Top Level Navigation">
+
+            {this.props.menuselected == 'header-activities-link' ? 
+              <li className="govuk-header__navigation-item govuk-header__navigation-item--active">
+                <a className="govuk-header__link js-header-item-toggle" id="header-activities-link" href={oarhomeurl} value="activities" onClick={this.onClick.bind(this)}>
+                  Activities
+                </a>
+              </li>
+            :   
+              <li className="govuk-header__navigation-item">
+                <a className="govuk-header__link js-header-item-toggle" id="header-activities-link" href={oarhomeurl} value="activities" onClick={this.onClick.bind(this)}>
+                  Activities
+                </a>
+              </li>
+            }
+
+            {this.props.menuselected == 'header-ctref-link' ? 
+              <li className="govuk-header__navigation-item govuk-header__navigation-item--active">
+                <a className="govuk-header__link js-header-item-toggle" id="header-ctref-link" href={ctreferralsurl} value="ctreferrals" onClick={this.onClick.bind(this)}>
+                    CT referrals
+                </a>
+              </li>
+            :   
+              <li className="govuk-header__navigation-item">
+                <a className="govuk-header__link js-header-item-toggle" id="header-ctref-link" href={ctreferralsurl} value="ctreferrals" onClick={this.onClick.bind(this)}>
+                  CT referrals
+                </a>
+              </li>
+            }
+
+            {this.props.menuselected == 'header-reports-link' ? 
+              <li className="govuk-header__navigation-item govuk-header__navigation-item--active">
+                <a className="govuk-header__link js-header-item-toggle" id="header-reports-link" href={reportsturl} value="reports" onClick={this.onClick.bind(this)}>
+                  Reports
+                </a>
+              </li>
+            :   
+              <li className="govuk-header__navigation-item">
+                <a className="govuk-header__link js-header-item-toggle" id="header-reports-link" href={reportsturl} value="reports" onClick={this.onClick.bind(this)}>
+                  Reports
+                </a>
+              </li>
+            }
+
+          </ul>
+        </nav>
+        </div>
+      );
+    }
+}
+
+
 render() {
+  
 
 return <div>
 
-
-<header className="govuk-header " role="banner" data-module="header">
-
-
+<header className="govuk-header" role="banner" data-module="header">
 
   <div className="govuk-header__container govuk-width-container">
 
@@ -39,30 +151,11 @@ return <div>
     </div>
     <div className="govuk-header__content">
 
-      <a href="#" className="govuk-header__link govuk-header__link--service-name">
+      <a href={oarhomeurl} className="govuk-header__link govuk-header__link--service-name">
       Operational activity reporting
       </a>
-
-      <button type="button" role="button" className="govuk-header__menu-button js-header-toggle" aria-controls="navigation" aria-label="Show or hide Top Level Navigation">Menu</button>
-      <nav>
-        <ul id="navigation" className="govuk-header__navigation " aria-label="Top Level Navigation">
-          <li className="govuk-header__navigation-item govuk-header__navigation-item--active">
-            <a className="govuk-header__link" href="#1">
-              Activities
-            </a>
-          </li>
-          <li className="govuk-header__navigation-item">
-            <a className="govuk-header__link" href="#2">
-            CT referrals
-            </a>
-          </li>
-          <li className="govuk-header__navigation-item">
-            <a className="govuk-header__link" href="#3">
-            Reports
-            </a>
-          </li>
-        </ul>
-      </nav>
+     {this.menuitems()}
+      
     </div>
   </div>
 </header>  
@@ -71,4 +164,13 @@ return <div>
 }
 }
 
-export default Header
+Header.propTypes = {
+  trackHeaderMenuChanges: PropTypes.func.isRequired,
+  menuselected: PropTypes.object
+};
+
+const mapStateToProps = state => ({
+  menuselected: state.headerMenu.menuItem
+});
+
+export default connect(mapStateToProps, { trackHeaderMenuChanges })(Header);
