@@ -19,19 +19,23 @@ RUN groupadd --system --gid ${OAR_GID} "${OAR_GROUP}" && \
     install --verbose --owner=${OAR_UID} --group=${OAR_GID} --mode=755 --directory "${OAR_UI_HOME}"
 
 # Create a directory where our app will be placed
-RUN mkdir -p "{OAR_UI_HOME}"
+#RUN mkdir -p "{OAR_UI_HOME}"
+RUN mkdir -p /usr/src/app
 
 # Change directory so that our commands run inside this new directory
-WORKDIR "{OAR_UI_HOME}"
+#WORKDIR "{OAR_UI_HOME}"
+WORKDIR /usr/src/app
 
 # Copy dependency definitions
-COPY package.json "{OAR_UI_HOME}"/
+#COPY package.json "{OAR_UI_HOME}"/
+COPY package.json /usr/src/app/
 
 # Install dependecies
 RUN npm install
 
 # Get all the code needed to run the app
-COPY . "{OAR_UI_HOME}"/
+#COPY . "{OAR_UI_HOME}"/
+COPY . /usr/src/app/
 RUN ls -la "{OAR_UI_HOME}"
 
 COPY ./scripts/entrypoint.sh /usr/local/bin/entrypoint.sh
