@@ -10,7 +10,7 @@ pipeline:
       - DOCKER_HOST=tcp://172.17.0.1:2375
       - IMAGE_NAME=oar-ui
     commands:
-      - printf '%s\n' "$${DOCKER_QUAY_PASSWORD}" | docker login --username "oar_robot" --password-stdin quay.io/ukhomeofficedigital
+#      - printf '%s\n' "$${DOCKER_QUAY_PASSWORD}" | docker login --username "oar_robot" --password-stdin quay.io/ukhomeofficedigital
       - docker build 
         --build-arg OAR_UI_BUILD_COMMIT_SHA="$${DRONE_COMMIT_SHA}"
         --build-arg OAR_UI_BUILD_CREATED="$${DRONE_BUILD_CREATED}"
@@ -18,7 +18,7 @@ pipeline:
         --tag quay.io/ukhomeofficedigital/"$${IMAGE_NAME}":$${DRONE_COMMIT_SHA} 
         --tag quay.io/ukhomeofficedigital/"$${IMAGE_NAME}":latest 
         ./
-      - docker push quay.io/ukhomeofficedigital/"$${IMAGE_NAME}":$${DRONE_COMMIT_SHA}
-      - docker push quay.io/ukhomeofficedigital/"$${IMAGE_NAME}":latest
+#      - docker push quay.io/ukhomeofficedigital/"$${IMAGE_NAME}":$${DRONE_COMMIT_SHA}
+#      - docker push quay.io/ukhomeofficedigital/"$${IMAGE_NAME}":latest
     when:
       branch: feature/*
