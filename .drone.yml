@@ -5,14 +5,16 @@ pipeline:
   develop_docker_build_and_push:
     image: docker:17.09.0-ce
     secrets:
-      - docker_quay_password
+      - docker_password
     environment:
       - DOCKER_HOST=tcp://172.17.0.1:2375
       - IMAGE_NAME=oar-ui
+      - DOCKER_USERNAME=ukhomeofficedigital+oar-dev-robot
+      #- DOCKER_USERNAME=ukhomeofficedigital+<your_robot_username>
     commands:
-#      - printf '%s\n' "$${DOCKER_QUAY_PASSWORD}" | docker login --username "oar_robot" --password-stdin quay.io/ukhomeofficedigital
+      - printf '%s\n' "$${DOCKER_PASSWORD}" | docker login --username "$${DOCKER_USERNAME}" --password-stdin quay.io/ukhomeofficedigital
       - docker build 
-        --build-arg OAR_UI_BUILD_COMMIT_SHA="$${DRONE_COMMIT_SHA}"
+        --build-arg OAR_UIBUILD_COMMIT_SHA="$${DRONE_COMMIT_SHA}"
         --build-arg OAR_UI_BUILD_CREATED="$${DRONE_BUILD_CREATED}"
         --build-arg OAR_UI_BUILD_NUMBER="$${DRONE_BUILD_NUMBER}"
         --tag quay.io/ukhomeofficedigital/"$${IMAGE_NAME}":$${DRONE_COMMIT_SHA} 
@@ -23,10 +25,10 @@ pipeline:
     when:
       branch: feature/*
 
-##### Run SonarQube scan on pull / merge requests #####
-
-  pr_sonarqube_scan:
-    image: quay.io/ukhomeofficedigital/sonar-scanner:v3.0.1
-    when:
-      branch: feature/*
-      #event: pull_request
+###### Run SonarQube scan on pull / merge requests #####
+#
+#  pr_sonarqube_scan:
+#    image: quay.io/ukhomeofficedigital/sonar-scanner:v3.0.1
+#    when:
+#      branch: feature/*
+#      #event: pull_request
