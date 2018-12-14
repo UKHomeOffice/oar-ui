@@ -1,16 +1,22 @@
 # Create image based on the official Node 6 image from dockerhub
 FROM quay.io/ukhomeofficedigital/nodejs-base:v8.11.1
 
+# Change to privilidged user
+USER root
+
+EXPOSE 80
+
+# Execute entrypoint script to set env variables an serve the app
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
+
 ENV OAR_UI_HOME="/opt/ui" \
     OAR_USER=oar \
     OAR_UID=1171 \
     OAR_GROUP=oar \
     OAR_GID=1171
 
-EXPOSE 80
-
-# Change to privilidged user
-USER root
+# Change directory so that our commands run inside this new directory
+WORKDIR "${OAR_UI_HOME}"
 
 # Create directories and permissions
 RUN groupadd --system --gid ${OAR_GID} "${OAR_GROUP}" && \
@@ -19,17 +25,14 @@ RUN groupadd --system --gid ${OAR_GID} "${OAR_GROUP}" && \
     # Create a directory where our app will be placed
     mkdir -p "${OAR_UI_HOME}"
 
-# Change directory so that our commands run inside this new directory
-WORKDIR "${OAR_UI_HOME}"
-
 # Copy dependency definitions
 COPY ./package.json "${OAR_UI_HOME}"/
 
-# Install dependecies
-RUN npm install
-
 # Get all the code needed to run the app
 COPY . "${OAR_UI_HOME}"/
+
+# Install dependecies
+RUN npm install
 
 # Get entrypoint script to set env vars and run the app
 COPY ./scripts/entrypoint.sh /usr/local/bin/entrypoint.sh
@@ -49,6 +52,3 @@ ARG OAR_UI_BUILD_NUMBER="Not Specified"
 ENV OAR_UI_BUILD_COMMIT_SHA="${UI_BUILD_COMMIT_SHA}" \
     OAR_UI_BUILD_CREATED="${UI_BUILD_CREATED}" \
     OAR_UI_BUILD_NUMBER="${UI_BUILD_NUMBER}"
-
-# Execute entrypoint script to set env variables an serve the app
-ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
