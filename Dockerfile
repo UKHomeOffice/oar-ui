@@ -4,7 +4,7 @@ FROM quay.io/ukhomeofficedigital/nodejs-base:v8.11.1
 # Change to privilidged user
 USER root
 
-EXPOSE 80
+EXPOSE 8080
 
 # Execute entrypoint script to set env variables an serve the app
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
