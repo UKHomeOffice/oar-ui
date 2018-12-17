@@ -22,8 +22,11 @@ WORKDIR "${OAR_UI_HOME}"
 RUN groupadd --system --gid ${OAR_GID} "${OAR_GROUP}" && \
     useradd --system --home-dir "${OAR_UI_HOME}" --no-create-home --no-user-group --gid ${OAR_GID} --uid ${OAR_UID} "${OAR_USER}" && \
     install --verbose --owner=${OAR_UID} --group=${OAR_GID} --mode=550 --directory "${OAR_UI_HOME}" && \
-    # Create a directory where our app will be placed
     mkdir -p "${OAR_UI_HOME}"
+
+# Install packages
+RUN yum -y net-tools  && \
+    yum clean all    
 
 # Copy dependency definitions
 COPY ./package.json "${OAR_UI_HOME}"/
@@ -37,6 +40,7 @@ RUN npm install
 # Get entrypoint script to set env vars and run the app
 COPY ./scripts/entrypoint.sh /usr/local/bin/entrypoint.sh
 
+# Change permissions
 RUN chmod 550 "${OAR_UI_HOME}" && \
     chown ${OAR_UID}:${OAR_GID} "${OAR_UI_HOME}" && \
     chmod 550 /usr/local/bin/entrypoint.sh && \
