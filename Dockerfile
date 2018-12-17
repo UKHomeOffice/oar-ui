@@ -25,7 +25,7 @@ RUN groupadd --system --gid ${OAR_GID} "${OAR_GROUP}" && \
     mkdir -p "${OAR_UI_HOME}"
 
 # Install packages
-RUN yum -y net-tools  && \
+RUN yum -y install net-tools  && \
     yum clean all    
 
 # Copy dependency definitions
