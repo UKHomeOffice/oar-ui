@@ -164,12 +164,12 @@ class MaritimeContainer extends Component {
   <p>
     <table>
         <td className="govuk-!-padding-right-5 govuk-!-padding-top-4"> 
-              <a href={nextturl} role="button"  id="ctref-location-type-continue" draggable="false" className="govuk-button">
+              <a href={nextturl} role="button"  id="ctref-maritime-continue" draggable="false" className="govuk-button">
               Continue
               </a>
         </td>
         <td className="table_td_text"> 
-              <div className="govuk-label--s"><a href="http://localhost:4001/shiftdetails"  id="ctref-location-type-cancel">Cancel</a></div>
+              <div className="govuk-label--s"><a href="http://localhost:4001/shiftdetails"  id="ctref-maritime-cancel">Cancel</a></div>
         </td>
     </table>
   </p>

@@ -1,14 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-//import express from 'express';
-
-// 
-
-// import {AppContainer} from 'react-hot-loader';
-// import {BrowserRouter} from 'react-router-dom'
-// import {Provider} from 'react-redux';
-// import ScrollToTop from "./components/ScrollToTop";
-
 /* GDS toolkit imports */
 import 'govuk-frontend/all.scss';
 import '../public/styles/oarstyle.scss';
@@ -17,7 +8,12 @@ import { initAll } from 'govuk-frontend'
 
 // import session from 'express-session';
 // import Keycloak from 'keycloak-connect';
-
+const hosturl = "http://"+window.location.hostname + ":"+ window.location.port;
+export const oarhomeurl = hosturl + "/oarhome";
+export const shiftdetails = hosturl + "/shiftdetails";
+export const createshift = hosturl + "/createshift";
+export const ctreferralsurl = hosturl + "/ctreferrals";
+export const reportsturl = hosturl + "/reports";
 
 // const app = express();
 

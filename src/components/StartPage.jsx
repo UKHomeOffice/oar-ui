@@ -2,7 +2,7 @@ import React from 'react';
 
 class StartPage extends React.Component {
 
-
+z
    render() {
 
     return <div className="App">

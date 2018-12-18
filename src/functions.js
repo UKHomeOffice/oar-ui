@@ -1,19 +1,19 @@
 const fs = require('fs')
-function getCodeFiles (example) {
+function getCodeFiles (e) {
   const code = {}
-  if (fs.existsSync(__dirname + `/views/oar/${example}/index.html`)) {
-    code.HTML = fs.readFileSync(__dirname + `/views/oar/${example}/index.html`)
+  if (fs.existsSync(__dirname + `/views/oar/${e}/index.html`)) {
+    code.HTML = fs.readFileSync(__dirname + `/views/oar/${e}/index.html`)
   }
-  if (fs.existsSync(__dirname + `/views/oar/${example}/scripts.js`)) {
-    code.JS = fs.readFileSync(__dirname + `/views/oar/${example}/scripts.js`)
+  if (fs.existsSync(__dirname + `/views/oar/${e}/scripts.js`)) {
+    code.JS = fs.readFileSync(__dirname + `/views/oar/${e}/scripts.js`)
   }
-  if (fs.existsSync(__dirname + `/views/oar/${example}/styles.css`)) {
-    code.CSS = fs.readFileSync(__dirname + `/views/oar/${example}/styles.css`)
+  if (fs.existsSync(__dirname + `/views/oar/${e}/styles.css`)) {
+    code.CSS = fs.readFileSync(__dirname + `/views/oar/${e}/styles.css`)
   }
-  if (fs.existsSync(__dirname + `/views/oar/${example}/_styles.scss`)) {
-    code.SASS = fs.readFileSync(__dirname + `/views/oar/${example}/_styles.scss`)
+  if (fs.existsSync(__dirname + `/views/oar/${e}/_styles.scss`)) {
+    code.SASS = fs.readFileSync(__dirname + `/views/oar/${e}/_styles.scss`)
   }
-  console.log('======== code:-'+ code.CSS)
+  console.log('Code:-'+ code.CSS)
   return code;
 }
 

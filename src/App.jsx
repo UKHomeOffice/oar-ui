@@ -3,22 +3,25 @@ import Footer from './components/Footer'
 import Main from './Main'
 import Header from "./components/Header";
 import SubmissionBanner from "./components/SubmissionBanner";
-// = require_tree ./govuk
-//const showhidecontent = require('govuk_frontend_toolkit/javascripts/govuk/show-hide-content')
+import { Provider } from 'react-redux';
+import store  from './store/store';
+import {connect} from "react-redux";
+import { trackHeaderMenuChanges } from './actions/headerActions';
 
 const App = () => (
-    <div>
-        <Header/>
-        <SubmissionBanner />
-            
-        <div className="govuk-header__container--full-width" style={{paddingTop : '20px', height:'100vh'}}>
-        
-
-            <Main/>
-        </div>   
-
-        {/* <Footer/> */}
-    </div>
-);
-
+     
+    <Provider store={store}>
+            <div> 
+            <Header/>
+            <SubmissionBanner />
+                
+            <div className="govuk-header__container--full-width" style={{paddingTop : '20px', height:'100vh'}}>
+                <Main/>
+            </div>   
+    
+            {/* <Footer/> */}
+        </div>
+        </Provider>
+        );
+  
 export default App

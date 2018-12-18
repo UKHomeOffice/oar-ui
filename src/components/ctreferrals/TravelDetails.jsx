@@ -6,6 +6,7 @@ import ActivityStaffAndHours from '../partials/ActivityStaffAndHours';
 const hosturl = "http://"+window.location.hostname + ":"+ window.location.port;
 const backturl = hosturl + "/referraldetails";
 const nextturl = hosturl + "/referraldetails";
+import {callAPI} from '../../services/APICallService';
 
 class AddTransitPoint extends React.Component {
   constructor(props) {
@@ -31,17 +32,42 @@ class AddTransitPoint extends React.Component {
 
 class TravelDetails extends Component {
 
-componentWillMount() {
-       this.state = {
-        routerPath: '',
-        typed: '',
-        regionArr: ['Select:']
-    }
+  componentWillMount() {
+    this.state = {
+     routerPath: '',
+     typed: '',
+     regionArr: ['Select:'],
+     //countries : ['UK', 'USA', 'India', 'France', 'Canada', 'Sri Lanka', 'Mexico']     
+     countries: []
+ }
 }
 
-componentDidMount(){
-    document.title = "OAR - Add Shift"
+async componentDidMount(){
+  console.log("componentDidMount======")
+  const url = `https://private-ui.cop-dev.homeoffice.gov.uk:443/api/platform-data/rf_country`;
+  const results = await callAPI(url, null);
+ // console.log("==-------------results====" + results.length);
+  results.map(data => {
+   console.log("==22result===="+ data);
+   this.state.countries.push(data)
+})
+this.setState({countries:this.state.countries});
+
 }
+
+
+
+// componentWillMount() {
+//        this.state = {
+//         routerPath: '',
+//         typed: '',
+//         regionArr: ['Select:']
+//     }
+// }
+
+// componentDidMount(){
+//     document.title = "OAR - Add Shift"
+// }
 
 populateDropdowns(indicators) {
     const items = [];
@@ -70,7 +96,7 @@ appendRow(e) {
 
 render() {
       document.title = "OAR - CT referral - Travel details"
-      const countries = ['UK', 'USA', 'India', 'France', 'Canada', 'Sri Lanka', 'Mexico'];      
+      //const countries = ['UK', 'USA', 'India', 'France', 'Canada', 'Sri Lanka', 'Mexico'];      
       
 return (
   <div className="App">
@@ -144,7 +170,7 @@ return (
   <p>
     <label className="govuk-label" for="ctref-passenger-country">First point country</label>
     <select className="govuk-select govuk-input--width-m" id="ctref-travel-point-country" name="ctref-travel-point-country" width="100%" >
-    {this.populateDropdowns(countries)}
+    {this.populateDropdowns(this.state.countries)}
     </select>
   </p>
 
@@ -165,7 +191,7 @@ return (
   <p>
     <label className="govuk-label" for="ctref-passenger-country">Final destination country</label>
     <select className="govuk-select govuk-input--width-m" id="ctref-travel-final-dest-country" name="ctref-travel-final-dest-country" width="100%" >
-    {this.populateDropdowns(countries)}
+    {this.populateDropdowns(this.state.countries)}
     </select>
   </p>
 

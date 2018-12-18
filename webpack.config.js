@@ -5,6 +5,15 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const sourcePath = path.join(__dirname, './src');
 
 const port = process.env.PORT || 4001;
+const btoa = require('btoa');
+
+const basicAuthentication = () => {
+    const username= process.env.USERNAME || "test"; //TODO:- remove hardcoding
+    const password = process.env.PASSWORD || "test";
+    return "Basic " + btoa(username + ":" + password); //TODO:- remove hardcoding
+};
+//const translationserviceurl = process.env.TRANSLATION_SERVICE_URL;
+const translationserviceurl = process.env.TRANSLATION_SERVICE_URL || "http://localhost:2001"; //TODO:- remove hardcoding
 
 module.exports = {
   entry: {
@@ -16,7 +25,6 @@ module.exports = {
        './node_modules/govuk-frontend/all.js',
        './src/index'
     ],
-    
 },
 resolve: {
     extensions: ['.json', '.js', '.jsx'],
@@ -31,16 +39,32 @@ resolve: {
     new webpack.HotModuleReplacementPlugin()
 ],
 devServer: {
-  contentBase: 'public/',
-  hot: true,
-  open: true,
-  port: `${port}`,
-  historyApiFallback: true,
+    contentBase: 'public/',
+    hot: true,
+    open: true,
+    port: `${port}`,
+    historyApiFallback: true,
+    stats: {colors: true},
+    proxy: {
+        "/api/translation": {
+            target: translationserviceurl,
+            pathRewrite: {
+                '^/api/workflow': '/rest/engine/borders'
+            },
+            "changeOrigin": true,
+            "secure": false,
+            onProxyReq: function onProxyReq(proxyReq, req, res) {
+                const authHeader = basicAuthentication();
+                proxyReq.setHeader('Authorization',  authHeader);
+                proxyReq.setHeader('origin', 'http://localhost:8080 ');
+                console.log('Translation Service -->  ', req.method, req.path, '-->', `${translationserviceurl}${proxyReq.path}`);
+                console.log("==Response=="+ res)
+            },
+        },
+
+    }
 },
-// node: {
-//     fs: 'empty',
-//     net: 'empty',
-//   },
+
 plugins: [
   new webpack.NamedModulesPlugin(),
   new HtmlWebpackPlugin({
@@ -66,10 +90,6 @@ module: {
         }
     ],
   rules: [
-    //   {
-    //     test: /\.exec\.js$/,
-    //     use: [ 'script-loader' ]
-    //   },
       {
           test: /\.(js|jsx)$/,
           loaders: ['babel-loader'],

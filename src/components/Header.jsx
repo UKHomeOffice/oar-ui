@@ -1,11 +1,9 @@
 import React from 'react';
 import {connect} from "react-redux";
-import {withRouter} from 'react-router-dom'
-import LoadingBar from 'react-redux-loading-bar'
-import ResponsiveMenu from 'react-responsive-navbar';
-import * as errorActionTypes from '../error/actionTypes';
-import {bindActionCreators} from "redux";
-import PubSub from "pubsub-js";
+import { trackHeaderMenuChanges } from '../actions/headerActions';
+import PropTypes from 'prop-types';
+import  { Redirect } from 'react-router-dom'
+
 const hosturl = "http://"+window.location.hostname + ":"+ window.location.port;
 export const oarhomeurl = hosturl + "/oarhome";
 export const ctreferralsurl = hosturl + "/ctreferrals";
@@ -13,44 +11,87 @@ export const reportsturl = hosturl + "/reports";
 const queryString = require('query-string');
 
 class Header extends React.Component {
-  
-menuitems(){
-  // var $headermenu = document.querySelectorAll('[data-module="header-menu"]');
-  // var $toggleheaders = document.querySelectorAll('.js-header-item-toggle');
-  // alert("==444" + $toggleheaders);
-  // for (var i = 0; i < $toggleheaders.length; i++) {
-  //   $toggleheaders[i].addEventListener('click', this.toggleHeaderClass.bind(this));
+
+  // componentWillMount() {
+  //   this.props.trackHeaderMenuChanges();
   // }
 
-  // $("#header-crref-link").click(function(){
-  //   $("#header-crref-link").toggleClass("govuk-header__navigation-item govuk-header__navigation-item--active");
-  // });
+  //Todo:- Need to impelement  Header selection using Store (WIP)
+  constructor(props) {
+    super(props);
+    this.state = {
+      headerMenuSelected: '',
+    };
+    this.onClick = this.onClick.bind(this);
+  }  
+
+  onClick(e){
+    this.props.trackHeaderMenuChanges(e.target.id);
+  }
+
+  menuitems(){
+  const itemactive = 'govuk-header__navigation-item govuk-header__navigation-item--active';
 
 /* TODO:- need to check the token from Keycloak is valid after login or not,
           token is valid show the Menu items */
-const qryObj = queryString.parse(location.search); //if check for query string Token
-const isTokenValid = true;
+  const qryObj = queryString.parse(location.search); //if check for query string Token
+  const loc = window.location.toString(); 
+  // if(loc.indexOf("/oarhomes") !=-1){
+  // console.log("=======" +  window.location.hostname);
+  // }
+  
+  const isTokenValid = true;
     if(isTokenValid){
       return(
+        
         <div data-module="header-menu">
         <button type="button" role="button" className="govuk-header__menu-button js-header-toggle" aria-controls="navigation" aria-label="Show or hide Top Level Navigation">Menu</button>
         <nav>
           <ul id="navigation" className="govuk-header__navigation " aria-label="Top Level Navigation">
-            <li className="govuk-header__navigation-item govuk-header__navigation-item--active">
-              <a className="govuk-header__link js-header-item-toggle"  id="header-activities-link" href={oarhomeurl}>
-                Activities
-              </a>
-            </li>
-            <li className="govuk-header__navigation-item">
-              <a className="govuk-header__link js-header-item-toggle" id="header-ctref-link" href={ctreferralsurl}>
-              CT referrals
-              </a>
-            </li>
-            <li className="govuk-header__navigation-item">
-              <a className="govuk-header__link js-header-item-toggle"  id="header-reports-link" href={reportsturl}>
-              Reports
-              </a>
-            </li>
+
+            {this.props.menuselected == 'header-activities-link' ? 
+              <li className="govuk-header__navigation-item govuk-header__navigation-item--active">
+                <a className="govuk-header__link js-header-item-toggle" id="header-activities-link" href={oarhomeurl} value="activities" onClick={this.onClick.bind(this)}>
+                  Activities
+                </a>
+              </li>
+            :   
+              <li className="govuk-header__navigation-item">
+                <a className="govuk-header__link js-header-item-toggle" id="header-activities-link" href={oarhomeurl} value="activities" onClick={this.onClick.bind(this)}>
+                  Activities
+                </a>
+              </li>
+            }
+{/* Todo:- WIP: Use menuselected store elemenet to set the clicked link color 
+or assign color based on the URL */}
+            {this.props.menuselected == 'header-ctref-link' ? 
+              <li className="govuk-header__navigation-item govuk-header__navigation-item--active">
+                <a className="govuk-header__link js-header-item-toggle" id="header-ctref-link" href={ctreferralsurl} value="ctreferrals" onClick={this.onClick.bind(this)}>
+                    CT referrals
+                </a>
+              </li>
+            :   
+              <li className="govuk-header__navigation-item">
+                <a className="govuk-header__link js-header-item-toggle" id="header-ctref-link" href={ctreferralsurl} value="ctreferrals" onClick={this.onClick.bind(this)}>
+                  CT referrals
+                </a>
+              </li>
+            }
+
+            {this.props.menuselected == 'header-reports-link' ? 
+              <li className="govuk-header__navigation-item govuk-header__navigation-item--active">
+                <a className="govuk-header__link js-header-item-toggle" id="header-reports-link" href={reportsturl} value="reports" onClick={this.onClick.bind(this)}>
+                  Reports
+                </a>
+              </li>
+            :   
+              <li className="govuk-header__navigation-item">
+                <a className="govuk-header__link js-header-item-toggle" id="header-reports-link" href={reportsturl} value="reports" onClick={this.onClick.bind(this)}>
+                  Reports
+                </a>
+              </li>
+            }
+
           </ul>
         </nav>
         </div>
@@ -63,7 +104,7 @@ render() {
   
 
 return <div>
-  
+
 <header className="govuk-header" role="banner" data-module="header">
 
   <div className="govuk-header__container govuk-width-container">
@@ -98,4 +139,13 @@ return <div>
 }
 }
 
-export default Header
+Header.propTypes = {
+  trackHeaderMenuChanges: PropTypes.func.isRequired,
+  menuselected: PropTypes.object
+};
+
+const mapStateToProps = state => ({
+  menuselected: state.headerMenu.menuItem
+});
+
+export default connect(mapStateToProps, { trackHeaderMenuChanges })(Header);

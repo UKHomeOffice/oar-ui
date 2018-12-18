@@ -5,6 +5,10 @@ import ActivityHoursMinutes from '../partials/ActivityHoursMinutes';
 import ActivityStaffAndHours from '../partials/ActivityStaffAndHours';
 const hosturl = "http://"+window.location.hostname + ":"+ window.location.port;
 const backturl = hosturl + "/shiftdetails";
+require("babel-core/register");
+require("babel-polyfill");
+
+import {callAPI} from '../../services/APICallService';
 
 class CreateShift extends Component {
 
@@ -12,17 +16,65 @@ class CreateShift extends Component {
        this.state = {
         routerPath: '',
         typed: '',
-        regionArr: ['Select:']
+        regionArr: ['Select:'],
+        countries: []
     }
   }
 
-  componentDidMount(){
-    document.title = "OAR - Add Shift"
+  async componentDidMount(){
+     console.log("componentDidMount======")
+     const url = `https://private-ui.cop-dev.homeoffice.gov.uk:443/api/platform-data/rf_country`;
+     const results = await callAPI(url, null);
+    // console.log("==-------------results====" + results.length);
+     results.map(data => {
+      console.log("==22result===="+ data);
+      this.state.countries.push(data)
+  })
+  this.setState({countries:this.state.countries});
+
   }
 
-  populateDropdowns(arr) {
-    console.log("dddddd===populateDropdowns:-" + arr);
 
+
+
+
+//WORKING with AXIOS
+// componentDidMount() {
+//   //this.setState({ isLoading: true });
+//   console.log("==11result====");
+
+//   axios.get("https://private-ui.cop-dev.homeoffice.gov.uk:443/api/platform-data/rf_country").
+
+// // then(function (response) {
+// //   // handle success
+// //   console.log(response);
+// // })
+
+//   then(function (results) {
+//     //console.log("==11result111====" + results.data);
+//     return results.data
+//     }).then(data => {
+//         //console.log("==22result===="+ data);
+//         data.map(item => {
+//             //console.log("==44result===="+ item.name);
+//             //this.setState({countries: countries_.push(shift.name)})
+//             this.state.countries.push(item.name)
+//          })
+//         this.setState({countries:this.state.countries});
+//     })
+//     .catch(error => this.setState({
+//       error
+//     },
+//     console.log("==error===="+ error)
+//   ));
+// }
+
+
+  // componentDidMount(){
+  //   document.title = "OAR - Add Shift"
+  // }
+
+  populateDropdowns(arr) {
     const items = [];
     arr.forEach(function(item, index, array) {
       items.push(<option key={index} value={index}>{item}</option>);
@@ -112,7 +164,7 @@ class CreateShift extends Component {
    <p>
     <label className="govuk-label" for="select-box">Region</label>
     <select className="govuk-select govuk-input--width-m" id="shift-region" name="select-box" width="100%" onChange={this.onChange.bind(this)} >
-    {this.populateDropdowns(locations)}
+    {this.populateDropdowns(this.state.countries)} 
     </select>
    </p>
 

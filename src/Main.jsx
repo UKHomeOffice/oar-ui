@@ -17,10 +17,14 @@ import SubmitConfirm from './components/Shift/SubmitConfirm';
 import TravelDetails from './components/ctreferrals/TravelDetails';
 import FastParcels from './components/ctreferrals/FastParcels';
 import MaritimeContainer from './components/ctreferrals/MaritimeContainer';
+import RoRoFreight from './components/ctreferrals/RoRoFreight';
 
+import store  from './store/store';
+import {connect} from "react-redux";
 
 //import ActivityIntTradeCheck from './components/Shift/ActivityIntTradeCheck';
-
+const c = store.getState().menuselected
+console.log("========"+ c);
 const Main = () => ( 
     <main>
         <BrowserRouter>
@@ -32,7 +36,8 @@ const Main = () => (
                 <ShiftHome/>
             )}/>                       
             <Route name="oarhome" exact path="/oarhome" render={() => (
-                <OarHome/>
+
+                 <OarHome/>
             )}/>
             <Route name="createshift" exact path="/createshift" render={() => (
                 <CreateShift/>
@@ -81,7 +86,11 @@ const Main = () => (
             )}/>                                              
             <Route name="submitconfirm" exact path="/submitconfirm" render={() => (
                 <SubmitConfirm/>
-            )}/>                    
+            )}/>
+            <Route name="rorofreight" exact path="/rorofreight" render={() => (
+                <RoRoFreight/>
+            )}/>  
+
             <Redirect to="/oarhome"/>
         </Switch>
         </BrowserRouter>
@@ -90,4 +99,16 @@ const Main = () => (
     </main>
 );
 
-export default Main
+// const mapStateToProps = state => ({
+//     menuselected: state.menuselected
+//   });
+//export default connect(mapStateToProps)(Main);
+
+const mapStateToProps = state => ({
+    menuselected: state.headerMenu.menuItem
+  });
+
+  export default connect(mapStateToProps, null)(Main);
+
+  
+//export default Main
