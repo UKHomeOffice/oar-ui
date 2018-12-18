@@ -22,13 +22,4 @@ pipeline:
       - docker push quay.io/ukhomeofficedigital/"$${IMAGE_NAME}":$${DRONE_COMMIT_SHA}
       - docker push quay.io/ukhomeofficedigital/"$${IMAGE_NAME}":latest
     when:
-#      branch: develop
-      branch: feature/*
-
-###### Run SonarQube scan on pull / merge requests #####
-#
-#  pr_sonarqube_scan:
-#    image: quay.io/ukhomeofficedigital/sonar-scanner:v3.0.1
-#    when:
-#      branch: feature/*
-#      #event: pull_request
+      branch: develop
