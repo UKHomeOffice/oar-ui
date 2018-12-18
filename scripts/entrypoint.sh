@@ -9,9 +9,10 @@ set -o nounset
 #export UI_PORT="${UI_PORT:-8080}"
 #export OAR_UI_HOSTNAME="${OAR_UI_HOSTNAME:-localhost}"
 #export DEBUG="${DEBUG:-}"
+
 #
 # PKI
-
+#
 export UI_CERT_CRT="${UI_CERT_CRT:-/mnt/certs/tls.pem}"
 export UI_CERT_KEY="${UI_CERT_KEY:-/mnt/certs/tls-key.pem}"
 export UI_CA_BUNDLE="${UI_CA_BUNDLE:-/etc/ssl/certs/ca-bundle.crt}"
@@ -53,5 +54,6 @@ export UI_CA_BUNDLE="${UI_CA_BUNDLE:-/etc/ssl/certs/ca-bundle.crt}"
 #    "--tls_cert_cert=$UI_CERT_CRT" \
 #    "--ca_bundle=$UI_CA_BUNDLE" 
 #fi
-npm run docker
+npm run start --public 'dev.oar-notprod.homeoffice.gov.uk'
+#npm run docker  --public $UI_HOSTNAME
 
