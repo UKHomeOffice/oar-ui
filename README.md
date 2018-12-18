@@ -9,3 +9,6 @@ ToDo:-
 - Update store and related components to integrate with API responses.
 - Data base/API response to be integrated with UI screen elements.
 - Karma tests to be written.
+- Flow logic of CTReferral pages of Referral type
+- Outcomes page 
+- Detection page on CTReferral
