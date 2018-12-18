@@ -10,6 +10,7 @@ EXPOSE 8080
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
 
 ENV OAR_UI_HOME="/opt/ui" \
+    OAR_UI_HOSTNAME=localhost \
     OAR_USER=oar \
     OAR_UID=1171 \
     OAR_GROUP=oar \
