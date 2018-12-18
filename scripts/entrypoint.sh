@@ -6,14 +6,14 @@ set -o nounset
 
 # Server
 
-export UI_PORT="${UI_PORT:-4001}"
-export DEBUG="${DEBUG:-}"
-
-# PKI
-
-export UI_CERT_CRT="${UI_CERT_CRT:-/mnt/certs/tls.pem}"
-export UI_CERT_KEY="${UI_CERT_KEY:-/mnt/certs/tls-key.pem}"
-export UI_CA_BUNDLE="${UI_CA_BUNDLE:-/etc/ssl/certs/ca-bundle.crt}"
+#export UI_PORT="${UI_PORT:-4001}"
+#export DEBUG="${DEBUG:-}"
+#
+## PKI
+#
+#export UI_CERT_CRT="${UI_CERT_CRT:-/mnt/certs/tls.pem}"
+#export UI_CERT_KEY="${UI_CERT_KEY:-/mnt/certs/tls-key.pem}"
+#export UI_CA_BUNDLE="${UI_CA_BUNDLE:-/etc/ssl/certs/ca-bundle.crt}"
 
 ## Keycloak
 #
