@@ -17,6 +17,8 @@ import SubmitConfirm from './components/Shift/SubmitConfirm';
 import TravelDetails from './components/ctreferrals/TravelDetails';
 import FastParcels from './components/ctreferrals/FastParcels';
 import MaritimeContainer from './components/ctreferrals/MaritimeContainer';
+import RoRoFreight from './components/ctreferrals/RoRoFreight';
+
 import store  from './store/store';
 import {connect} from "react-redux";
 
@@ -84,7 +86,11 @@ const Main = () => (
             )}/>                                              
             <Route name="submitconfirm" exact path="/submitconfirm" render={() => (
                 <SubmitConfirm/>
-            )}/>                    
+            )}/>
+            <Route name="rorofreight" exact path="/rorofreight" render={() => (
+                <RoRoFreight/>
+            )}/>  
+
             <Redirect to="/oarhome"/>
         </Switch>
         </BrowserRouter>
@@ -96,13 +102,11 @@ const Main = () => (
 // const mapStateToProps = state => ({
 //     menuselected: state.menuselected
 //   });
-  //console.log("11-------"+ this.menuselected)
 //export default connect(mapStateToProps)(Main);
 
 const mapStateToProps = state => ({
     menuselected: state.headerMenu.menuItem
   });
-  //console.log("12-------"+ this.props.menuselected);
 
   export default connect(mapStateToProps, null)(Main);
 

@@ -49,18 +49,6 @@ onChange(event) {
  this.setState({regionArr: this.getNextArr(event.target.value)});
 }
 
- onClickFunc() {
-  //var elemnt = document.getElementById("other-agency");
-  // alert("=======" + elemnt.id);
-  // alert("=======" + elemnt.style.display);
-
- /// x.style.display = 'block';
-//elemnt.classList.add('is-visible');
-//  this.setState({typed: event.target.value});
-//  this.setState({regionArr: this.getNextArr(event.target.value)});
-}
-
-
   render() {
    const teams = ['Select:', 'DS0201 - Team1', 'DS0202 - Team2', 'DS0203 - Team3',];
    const locations = ['Select:', 'Location1', 'Location2', 'Location3'];
@@ -258,7 +246,6 @@ onChange(event) {
       </div>
  <div className="govuk-radios govuk-radios--conditional" data-module="radios">
       <div className="govuk-radios__item">
-      {/* <input className="govuk-radios__input" id="how-contacted-conditional-1" name="how-contacted" type="radio" value="email" data-aria-controls="other-agency" onClick={this.onClickFunc.bind(this, "other-agency"))}/> */}
       <input className="govuk-radios__input" id="cash-detect-other" name="cash-detect-other" type="radio" value="email" data-aria-controls="other-agency"/>
         <label className="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
           Other

@@ -1,11 +1,5 @@
 import React from 'react';
 import {connect} from "react-redux";
-import {withRouter} from 'react-router-dom'
-import LoadingBar from 'react-redux-loading-bar'
-import ResponsiveMenu from 'react-responsive-navbar';
-import * as errorActionTypes from '../error/actionTypes';
-import {bindActionCreators} from "redux";
-import PubSub from "pubsub-js";
 import { trackHeaderMenuChanges } from '../actions/headerActions';
 import PropTypes from 'prop-types';
 import  { Redirect } from 'react-router-dom'
@@ -22,7 +16,7 @@ class Header extends React.Component {
   //   this.props.trackHeaderMenuChanges();
   // }
 
-
+  //Todo:- Need to impelement  Header selection using Store (WIP)
   constructor(props) {
     super(props);
     this.state = {
@@ -31,41 +25,21 @@ class Header extends React.Component {
     this.onClick = this.onClick.bind(this);
   }  
 
+  onClick(e){
+    this.props.trackHeaderMenuChanges(e.target.id);
+  }
 
-  
-onClick(e){
-  //alert("==="+ e.target.href);
-  //e.preventDefault();
-  // const post = {
-  //   title: this.state.title,
-  //   body: this.state.body
-  // };
-  this.props.trackHeaderMenuChanges(e.target.id);
-
-  //this.props.history.push(e.target.href);
-  //this.context.router.history.push(e.target.href);
-
-//this.context.router.history.push(e.target.href);
-//this.props.push(e.target.href);
-//return <Redirect to='http://localhost:4001/ctreferral' />
-}
-
-
-menuitems(){
+  menuitems(){
   const itemactive = 'govuk-header__navigation-item govuk-header__navigation-item--active';
 
 /* TODO:- need to check the token from Keycloak is valid after login or not,
           token is valid show the Menu items */
   const qryObj = queryString.parse(location.search); //if check for query string Token
-  const qryObj1 = queryString.parse(location.search);
-  console.log("11=======" +  window.location);
-  const loc = window.location.toString();
-if(loc.indexOf("/oarhomes") !=-1){
-console.log("====ccccc===" +  window.location.hostname);
-}
-
-  console.log("=======" +  window.location.hostname);
-  console.log("=======" +hosturl);  
+  const loc = window.location.toString(); 
+  // if(loc.indexOf("/oarhomes") !=-1){
+  // console.log("=======" +  window.location.hostname);
+  // }
+  
   const isTokenValid = true;
     if(isTokenValid){
       return(
@@ -88,7 +62,8 @@ console.log("====ccccc===" +  window.location.hostname);
                 </a>
               </li>
             }
-
+{/* Todo:- WIP: Use menuselected store elemenet to set the clicked link color 
+or assign color based on the URL */}
             {this.props.menuselected == 'header-ctref-link' ? 
               <li className="govuk-header__navigation-item govuk-header__navigation-item--active">
                 <a className="govuk-header__link js-header-item-toggle" id="header-ctref-link" href={ctreferralsurl} value="ctreferrals" onClick={this.onClick.bind(this)}>

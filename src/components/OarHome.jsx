@@ -1,41 +1,41 @@
 import React from 'react';
-// import {connect} from "react-redux";
-// import {withRouter} from 'react-router-dom'
-// import LoadingBar from 'react-redux-loading-bar'
-// import ResponsiveMenu from 'react-responsive-navbar';
-// import * as errorActionTypes from '../error/actionTypes';
-// import {bindActionCreators} from "redux";
-// import PubSub from "pubsub-js";
-
-const hosturl = "http://"+window.location.hostname + ":"+ window.location.port;
-const shiftdetailsurl = hosturl + "/shiftdetails";
-const createshifturl = hosturl + "/createshift";
-const startpageurl = hosturl + "/startpage";
+import {callAPI} from '../services/APICallService';
+import {shiftdetails, createshift, createshifturl} from '../index';
 
 class OarHome extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {location: 'Default - Dover'};
+        this.state = {
+            shiftdate: 'Default - Date',
+            locationname: 'Default - Location',
+            teamcode: 'Default - Team',
+            location: 'Default - Dover'  };
     }
 
-    
+    //TODO:- Implement Store, Action, Reducers  fort he returned API results
 
-    //Code to fetch the code from Postgrest
+    //Fetch the data from Postgrest// need to seperate out to a file later
     // componentDidMount(){
-    //     fetch("http://localhost:2000/shift").
+    //     console.log("==11result==aaa==");
+
+    //     fetch("http://localhost:8080/api/translation/shifts").
     //     then(results => {
-    //     //console.log("==11result===="+ results.json());
+    //     console.log("==11result===="+ results);
     //     return results.json()
     //     }).then(data => {
     //         console.log("==22result===="+ data.results);
     //         data.map(shift => {
     //             console.log("==44result===="+ shift.teamid + "==" + shift.region + "==" + shift.location );
-    //             this.setState({location: shift.location})
+    //             this.setState({
+    //                 shiftid: shift.shiftid,
+    //                 startdatetime: shift.startdatetime,
+    //                 teamcode: shift.teamcode,
+    //                 locationname: shift.locationname,
+    //                 })
     //          })
     //     })
     // }
-
 
     // {
     //     "countryid": "TW",
@@ -46,21 +46,18 @@ class OarHome extends React.Component {
     //     "iso31661numeric": 158
     //     },
     //     {
-
-
-    // componentDidMount(){
-    //     fetch("https://private-ui.cop-dev.homeoffice.gov.uk:443/api/platform-data/rf_country").
-    //     then(results => {
-    //     //console.log("==11result===="+ results.json().toString);
-    //     return results.json()
-    //     }).then(data => {
-    //         console.log("==22result===="+ data.results);
-    //         data.map(shift => {
-    //             console.log("==44result===="+ shift.countryid + "==" + shift.region + "==" + shift.location );
-    //             this.setState({location: shift.location})
-    //          })
-    //     })
-    // }
+        // async componentDidMount(){
+        //     console.log("componentDidMount======")
+        //     const url = `http://localhost:8080/api/translation/shifts`;
+        //     const results = await callAPI(url, null);
+        //    // console.log("==-------------results====" + results.length);
+        //     results.map(data => {
+        //      console.log("==22result===="+ data);
+        //      this.state.countries.push(data)
+        //  })
+        //  this.setState({countries:this.state.countries});
+       
+        //  }
 
     render() {
             document.title = "OAR - HOME"
@@ -74,19 +71,22 @@ class OarHome extends React.Component {
                 <p className="govuk-heading-xl">Operational activity reporting</p>
 
                 <div className="govuk-label govuk-!-display-inline"> Signed in as</div>
+                
+                {/* WIP : remove hardocding values */}
                 <div className="govuk-label--s govuk-!-display-inline"> Gillian Armstrong.</div>
-                <div className="govuk-label govuk-!-margin-left-3 govuk-!-display-inline"><a href={startpageurl}>Sign out</a> </div>
+                <div className="govuk-label govuk-!-margin-left-3 govuk-!-display-inline"><a href="http://localhost:4001/startpage">Sign out</a> </div>
                 
                 <div className="govuk-label  govuk-section-break--l">
                 <p className="govuk-heading-l">Shifts</p> 
                 </div>
             
-
-                <p className="govuk-label--m"><a href={shiftdetailsurl}>Wednesday 20 October 2018</a></p>
+                {/* WIP : Need to loop with Shifts and display values
+                Todo:- remove hard coding*/}
+                <p className="govuk-label--m"><a href={shiftdetails}>Wednesday 20 October 2018</a></p>
                 <p className="govuk-label"> DS02F1 - Dover</p>
                 <hr/>
 
-                <p className="govuk-label--m"><a href={shiftdetailsurl}>Wednesday 20 October 2018</a></p>
+                <p className="govuk-label--m"><a href={shiftdetails}>Wednesday 20 October 2018</a></p>
                 <p className="govuk-label"> DS02F1 - {this.state.location}</p>
 
                 <hr/>

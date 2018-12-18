@@ -36,25 +36,7 @@ class CreateShift extends Component {
 
 
 
-//   componentDidMount(){
-//     const countries_ = []
-//     fetch("https://private-ui.cop-dev.homeoffice.gov.uk:443/api/platform-data/rf_country").
-//     then(results => {
-//     //console.log("==11result===="+ results.json().toString);
-//     return results.json()
-//     }).then(data => {
-//         //console.log("==22result===="+ data.results);
-//         data.map(item => {
-//             //console.log("==44result===="+ shift.name);
-//             //this.setState({countries: countries_.push(shift.name)})
-//             this.state.countries.push(item.name)
-//          })
-//         this.setState({countries:this.state.countries});
-//         //  const cc = this.state.countries;
-//         //  console.log("==44resultaaaabbb===="+ cc.length);
 
-//     })
-// }
 
 //WORKING with AXIOS
 // componentDidMount() {

@@ -1,20 +1,14 @@
 # oar-ui
+- This is WIP repository.
+- The UI pages (with GDS styles) have been created from Wireframes.
+- Store, Reducers, Action packages/boiler plate code have been created.
+- Service package to call outside API has been created.
 
-## borders platform ui
 
-## Build Dockerfile image 
-```
-docker build -t quay.io/ukhomeofficedigital/oar-ui  .
-```
-## Stand up local environment
-```
-git clone https://github.com/UKHomeOffice/oar-local
-
-docker-compose up
-```
-## SPA home page
-```
-http://localhost/startpage
-
-http://localhost/oarhome
-```
+ToDo:-
+- Update store and related components to integrate with API responses.
+- Data base/API response to be integrated with UI screen elements.
+- Karma tests to be written.
+- Flow logic of CTReferral pages of Referral type
+- Outcomes page 
+- Detection page on CTReferral
