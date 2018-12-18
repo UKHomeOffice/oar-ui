@@ -1,0 +1,25 @@
+pipeline:
+
+##### Build Docker image and push to Quay on commits / merges to "develop" #####
+
+  develop_docker_build_and_push:
+    image: docker:17.09.0-ce
+    secrets:
+      - docker_password
+    environment:
+      - DOCKER_HOST=tcp://172.17.0.1:2375
+      - IMAGE_NAME=oar-ui
+      - DOCKER_USERNAME=ukhomeofficedigital+oar_robot
+    commands:
+      - printf '%s\n' "$${DOCKER_PASSWORD}" | docker login --username "$${DOCKER_USERNAME}" --password-stdin quay.io/ukhomeofficedigital
+      - docker build 
+        --build-arg OAR_UIBUILD_COMMIT_SHA="$${DRONE_COMMIT_SHA}"
+        --build-arg OAR_UI_BUILD_CREATED="$${DRONE_BUILD_CREATED}"
+        --build-arg OAR_UI_BUILD_NUMBER="$${DRONE_BUILD_NUMBER}"
+        --tag quay.io/ukhomeofficedigital/"$${IMAGE_NAME}":$${DRONE_COMMIT_SHA} 
+        --tag quay.io/ukhomeofficedigital/"$${IMAGE_NAME}":latest 
+        ./
+      - docker push quay.io/ukhomeofficedigital/"$${IMAGE_NAME}":$${DRONE_COMMIT_SHA}
+      - docker push quay.io/ukhomeofficedigital/"$${IMAGE_NAME}":latest
+    when:
+      branch: develop
