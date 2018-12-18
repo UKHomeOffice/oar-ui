@@ -19,6 +19,7 @@ module.exports = {
         modules: [path.resolve(__dirname), 'node_modules', sourcePath],
     },
     devServer: {
+        disableHostCheck: true,
         contentBase: 'public/',
         historyApiFallback: true,
     },

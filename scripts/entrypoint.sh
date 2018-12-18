@@ -6,9 +6,9 @@ set -o nounset
 
 # Server
 
-export UI_PORT="${UI_PORT:-8080}"
-export OAR_UI_HOSTNAME="${OAR_UI_HOSTNAME:-localhost}"
-export DEBUG="${DEBUG:-}"
+#export UI_PORT="${UI_PORT:-8080}"
+#export OAR_UI_HOSTNAME="${OAR_UI_HOSTNAME:-localhost}"
+#export DEBUG="${DEBUG:-}"
 #
 # PKI
 
@@ -53,6 +53,5 @@ export UI_CA_BUNDLE="${UI_CA_BUNDLE:-/etc/ssl/certs/ca-bundle.crt}"
 #    "--tls_cert_cert=$UI_CERT_CRT" \
 #    "--ca_bundle=$UI_CA_BUNDLE" 
 #fi
-npm run start --public 'dev.oar-notprod.homeoffice.gov.uk'
-#npm run docker  --public $UI_HOSTNAME
+npm run docker
 
