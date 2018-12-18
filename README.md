@@ -2,7 +2,7 @@
 - This is WIP repository.
 - The UI pages (with GDS styles) have been created from Wireframes.
 - Store, Reducers, Action packages/boiler plate code have been created.
-- Service package to call outside API has been created.
+- Service package to call outside API has been created. 
 
 
 
