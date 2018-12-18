@@ -13,7 +13,7 @@ pipeline:
     commands:
       - printf '%s\n' "$${DOCKER_PASSWORD}" | docker login --username "$${DOCKER_USERNAME}" --password-stdin quay.io/ukhomeofficedigital
       - docker build 
-        --build-arg OAR_UIBUILD_COMMIT_SHA="$${DRONE_COMMIT_SHA}"
+        --build-arg OAR_UI_BUILD_COMMIT_SHA="$${DRONE_COMMIT_SHA}"
         --build-arg OAR_UI_BUILD_CREATED="$${DRONE_BUILD_CREATED}"
         --build-arg OAR_UI_BUILD_NUMBER="$${DRONE_BUILD_NUMBER}"
         --tag quay.io/ukhomeofficedigital/"$${IMAGE_NAME}":$${DRONE_COMMIT_SHA} 
