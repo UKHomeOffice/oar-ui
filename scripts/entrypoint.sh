@@ -54,5 +54,5 @@ export UI_CA_BUNDLE="${UI_CA_BUNDLE:-/etc/ssl/certs/ca-bundle.crt}"
 #    "--tls_cert_cert=$UI_CERT_CRT" \
 #    "--ca_bundle=$UI_CA_BUNDLE" 
 #fi
-npm run docker --public dev.oar-notprod.homeoffice.gov.uk
+npm run docker
 
