@@ -35,7 +35,9 @@ COPY ./package.json "${OAR_UI_HOME}"/
 COPY . "${OAR_UI_HOME}"/
 
 # Install dependecies
-RUN npm install
+RUN npm install && npm run build
+
+ENV NODE_ENV='production'
 
 # Get entrypoint script to set env vars and run the app
 COPY ./scripts/entrypoint.sh /usr/local/bin/entrypoint.sh
